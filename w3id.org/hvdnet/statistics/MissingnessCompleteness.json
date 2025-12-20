@@ -6,21 +6,21 @@
   },
   "narrower": [
     {
-      "id": "https://w3id.org/hvdnet/statistics/InvalidCases",
-      "prefLabel": {
-        "en": "Invalid cases"
-      }
-    },
-    {
-      "id": "https://w3id.org/hvdnet/statistics/NullCases",
-      "prefLabel": {
-        "en": "Cases that have null/empty value"
-      }
-    },
-    {
       "id": "https://w3id.org/hvdnet/statistics/DistinctnessRatio",
       "prefLabel": {
         "en": "Distinctness ratio"
+      }
+    },
+    {
+      "id": "https://w3id.org/hvdnet/statistics/DuplicateRows",
+      "prefLabel": {
+        "en": "Duplicate rows"
+      }
+    },
+    {
+      "id": "https://w3id.org/hvdnet/statistics/InvalidCases",
+      "prefLabel": {
+        "en": "Invalid cases"
       }
     },
     {
@@ -36,9 +36,9 @@
       }
     },
     {
-      "id": "https://w3id.org/hvdnet/statistics/DuplicateRows",
+      "id": "https://w3id.org/hvdnet/statistics/NullCases",
       "prefLabel": {
-        "en": "Duplicate rows"
+        "en": "Cases that have null/empty value"
       }
     }
   ],

@@ -6,33 +6,9 @@
   },
   "narrower": [
     {
-      "id": "https://w3id.org/hvdnet/statistics/FileRecordCount",
-      "prefLabel": {
-        "en": "Total record count"
-      }
-    },
-    {
-      "id": "https://w3id.org/hvdnet/statistics/FileVariableCount",
-      "prefLabel": {
-        "en": "Total variable/column count"
-      }
-    },
-    {
-      "id": "https://w3id.org/hvdnet/statistics/FileSizeBytes",
-      "prefLabel": {
-        "en": "File size (bytes)"
-      }
-    },
-    {
       "id": "https://w3id.org/hvdnet/statistics/FileChecksum",
       "prefLabel": {
         "en": "File checksum"
-      }
-    },
-    {
-      "id": "https://w3id.org/hvdnet/statistics/FileEncoding",
-      "prefLabel": {
-        "en": "File character encoding"
       }
     },
     {
@@ -42,9 +18,15 @@
       }
     },
     {
-      "id": "https://w3id.org/hvdnet/statistics/FileSchemaVersion",
+      "id": "https://w3id.org/hvdnet/statistics/FileCreationTime",
       "prefLabel": {
-        "en": "File schema/version"
+        "en": "File creation time"
+      }
+    },
+    {
+      "id": "https://w3id.org/hvdnet/statistics/FileEncoding",
+      "prefLabel": {
+        "en": "File character encoding"
       }
     },
     {
@@ -54,15 +36,33 @@
       }
     },
     {
-      "id": "https://w3id.org/hvdnet/statistics/FileCreationTime",
-      "prefLabel": {
-        "en": "File creation time"
-      }
-    },
-    {
       "id": "https://w3id.org/hvdnet/statistics/FileMimeType",
       "prefLabel": {
         "en": "File MIME/media type"
+      }
+    },
+    {
+      "id": "https://w3id.org/hvdnet/statistics/FileRecordCount",
+      "prefLabel": {
+        "en": "Total record count"
+      }
+    },
+    {
+      "id": "https://w3id.org/hvdnet/statistics/FileSchemaVersion",
+      "prefLabel": {
+        "en": "File schema/version"
+      }
+    },
+    {
+      "id": "https://w3id.org/hvdnet/statistics/FileSizeBytes",
+      "prefLabel": {
+        "en": "File size (bytes)"
+      }
+    },
+    {
+      "id": "https://w3id.org/hvdnet/statistics/FileVariableCount",
+      "prefLabel": {
+        "en": "Total variable/column count"
       }
     },
     {

@@ -6,15 +6,15 @@
   },
   "narrower": [
     {
-      "id": "https://w3id.org/hvdnet/statistics/ShannonEntropy",
-      "prefLabel": {
-        "en": "Shannon entropy"
-      }
-    },
-    {
       "id": "https://w3id.org/hvdnet/statistics/Perplexity",
       "prefLabel": {
         "en": "Perplexity"
+      }
+    },
+    {
+      "id": "https://w3id.org/hvdnet/statistics/ShannonEntropy",
+      "prefLabel": {
+        "en": "Shannon entropy"
       }
     }
   ],

@@ -12,18 +12,6 @@
       }
     },
     {
-      "id": "https://w3id.org/hvdnet/statistics/PearsonCorrelation",
-      "prefLabel": {
-        "en": "Pearson correlation coefficient"
-      }
-    },
-    {
-      "id": "https://w3id.org/hvdnet/statistics/SpearmanCorrelation",
-      "prefLabel": {
-        "en": "Spearman rank correlation"
-      }
-    },
-    {
       "id": "https://w3id.org/hvdnet/statistics/KendallCorrelation",
       "prefLabel": {
         "en": "Kendall rank correlation"
@@ -33,6 +21,18 @@
       "id": "https://w3id.org/hvdnet/statistics/MaxAbsCorrelation",
       "prefLabel": {
         "en": "Maximum absolute correlation (matrix summary)"
+      }
+    },
+    {
+      "id": "https://w3id.org/hvdnet/statistics/PearsonCorrelation",
+      "prefLabel": {
+        "en": "Pearson correlation coefficient"
+      }
+    },
+    {
+      "id": "https://w3id.org/hvdnet/statistics/SpearmanCorrelation",
+      "prefLabel": {
+        "en": "Spearman rank correlation"
       }
     }
   ],

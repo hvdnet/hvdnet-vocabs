@@ -6,6 +6,12 @@
   },
   "narrower": [
     {
+      "id": "https://w3id.org/hvdnet/statistics/AndersonDarling",
+      "prefLabel": {
+        "en": "Anderson–Darling test"
+      }
+    },
+    {
       "id": "https://w3id.org/hvdnet/statistics/Beta1",
       "prefLabel": {
         "en": "Skewness"
@@ -15,6 +21,12 @@
       "id": "https://w3id.org/hvdnet/statistics/Beta2",
       "prefLabel": {
         "en": "Kurtosis"
+      }
+    },
+    {
+      "id": "https://w3id.org/hvdnet/statistics/BowleySkewnessCoefficient",
+      "prefLabel": {
+        "en": "Bowley's Skewness Coefficient"
       }
     },
     {
@@ -30,15 +42,27 @@
       }
     },
     {
+      "id": "https://w3id.org/hvdnet/statistics/JarqueBera",
+      "prefLabel": {
+        "en": "Jarque–Bera test"
+      }
+    },
+    {
+      "id": "https://w3id.org/hvdnet/statistics/KolmogorovSmirnov",
+      "prefLabel": {
+        "en": "Kolmogorov–Smirnov test"
+      }
+    },
+    {
       "id": "https://w3id.org/hvdnet/statistics/PearsonSkewness",
       "prefLabel": {
         "en": "Pearson skewness (moment coefficient)"
       }
     },
     {
-      "id": "https://w3id.org/hvdnet/statistics/SampleSkewness",
+      "id": "https://w3id.org/hvdnet/statistics/PopulationExcessKurtosis",
       "prefLabel": {
-        "en": "Sample skewness"
+        "en": "Population excess kurtosis"
       }
     },
     {
@@ -54,39 +78,15 @@
       }
     },
     {
-      "id": "https://w3id.org/hvdnet/statistics/PopulationExcessKurtosis",
+      "id": "https://w3id.org/hvdnet/statistics/SampleSkewness",
       "prefLabel": {
-        "en": "Population excess kurtosis"
-      }
-    },
-    {
-      "id": "https://w3id.org/hvdnet/statistics/BowleySkewnessCoefficient",
-      "prefLabel": {
-        "en": "Bowley's Skewness Coefficient"
+        "en": "Sample skewness"
       }
     },
     {
       "id": "https://w3id.org/hvdnet/statistics/ShapiroWilk",
       "prefLabel": {
         "en": "Shapiro-Wilk"
-      }
-    },
-    {
-      "id": "https://w3id.org/hvdnet/statistics/AndersonDarling",
-      "prefLabel": {
-        "en": "Anderson–Darling test"
-      }
-    },
-    {
-      "id": "https://w3id.org/hvdnet/statistics/KolmogorovSmirnov",
-      "prefLabel": {
-        "en": "Kolmogorov–Smirnov test"
-      }
-    },
-    {
-      "id": "https://w3id.org/hvdnet/statistics/JarqueBera",
-      "prefLabel": {
-        "en": "Jarque–Bera test"
       }
     }
   ],

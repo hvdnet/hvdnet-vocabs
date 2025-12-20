@@ -6,39 +6,21 @@
   },
   "narrower": [
     {
-      "id": "https://w3id.org/hvdnet/statistics/StandardErrorOfMean",
-      "prefLabel": {
-        "en": "Standard error of the mean"
-      }
-    },
-    {
-      "id": "https://w3id.org/hvdnet/statistics/Range",
-      "prefLabel": {
-        "en": "Range"
-      }
-    },
-    {
-      "id": "https://w3id.org/hvdnet/statistics/Variance",
-      "prefLabel": {
-        "en": "Variance"
-      }
-    },
-    {
-      "id": "https://w3id.org/hvdnet/statistics/StandardDeviation",
-      "prefLabel": {
-        "en": "Standard deviation"
-      }
-    },
-    {
       "id": "https://w3id.org/hvdnet/statistics/AverageAbsoluteDeviation",
       "prefLabel": {
         "en": "Average absolute deviation"
       }
     },
     {
-      "id": "https://w3id.org/hvdnet/statistics/MedianAbsoluteDeviation",
+      "id": "https://w3id.org/hvdnet/statistics/GiniCoefficient",
       "prefLabel": {
-        "en": "Median absolute deviation"
+        "en": "Gini Coefficient"
+      }
+    },
+    {
+      "id": "https://w3id.org/hvdnet/statistics/InterdecileRange",
+      "prefLabel": {
+        "en": "Interdecile range"
       }
     },
     {
@@ -54,15 +36,9 @@
       }
     },
     {
-      "id": "https://w3id.org/hvdnet/statistics/InterdecileRange",
+      "id": "https://w3id.org/hvdnet/statistics/MedianAbsoluteDeviation",
       "prefLabel": {
-        "en": "Interdecile range"
-      }
-    },
-    {
-      "id": "https://w3id.org/hvdnet/statistics/GiniCoefficient",
-      "prefLabel": {
-        "en": "Gini Coefficient"
+        "en": "Median absolute deviation"
       }
     },
     {
@@ -72,9 +48,33 @@
       }
     },
     {
+      "id": "https://w3id.org/hvdnet/statistics/Range",
+      "prefLabel": {
+        "en": "Range"
+      }
+    },
+    {
       "id": "https://w3id.org/hvdnet/statistics/SnEstimator",
       "prefLabel": {
         "en": "Sn scale estimator"
+      }
+    },
+    {
+      "id": "https://w3id.org/hvdnet/statistics/StandardDeviation",
+      "prefLabel": {
+        "en": "Standard deviation"
+      }
+    },
+    {
+      "id": "https://w3id.org/hvdnet/statistics/StandardErrorOfMean",
+      "prefLabel": {
+        "en": "Standard error of the mean"
+      }
+    },
+    {
+      "id": "https://w3id.org/hvdnet/statistics/Variance",
+      "prefLabel": {
+        "en": "Variance"
       }
     },
     {

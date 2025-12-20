@@ -12,6 +12,48 @@
       }
     },
     {
+      "id": "https://w3id.org/hvdnet/statistics/EighthDecile",
+      "prefLabel": {
+        "en": "Eighth decile"
+      }
+    },
+    {
+      "id": "https://w3id.org/hvdnet/statistics/FifthDecile",
+      "prefLabel": {
+        "en": "Fifth decile"
+      }
+    },
+    {
+      "id": "https://w3id.org/hvdnet/statistics/FirstDecile",
+      "prefLabel": {
+        "en": "First decile"
+      }
+    },
+    {
+      "id": "https://w3id.org/hvdnet/statistics/FirstQuartile",
+      "prefLabel": {
+        "en": "First quartile"
+      }
+    },
+    {
+      "id": "https://w3id.org/hvdnet/statistics/FirstQuintile",
+      "prefLabel": {
+        "en": "First quintile"
+      }
+    },
+    {
+      "id": "https://w3id.org/hvdnet/statistics/FourthDecile",
+      "prefLabel": {
+        "en": "Fourth decile"
+      }
+    },
+    {
+      "id": "https://w3id.org/hvdnet/statistics/FourthQuintile",
+      "prefLabel": {
+        "en": "Fourth quintile"
+      }
+    },
+    {
       "id": "https://w3id.org/hvdnet/statistics/GeometricMean",
       "prefLabel": {
         "en": "Geometric mean"
@@ -24,21 +66,9 @@
       }
     },
     {
-      "id": "https://w3id.org/hvdnet/statistics/TrimmedMean",
+      "id": "https://w3id.org/hvdnet/statistics/Maximum",
       "prefLabel": {
-        "en": "Trimmed mean"
-      }
-    },
-    {
-      "id": "https://w3id.org/hvdnet/statistics/WinsorizedMean",
-      "prefLabel": {
-        "en": "Winsorized Mean"
-      }
-    },
-    {
-      "id": "https://w3id.org/hvdnet/statistics/Mode",
-      "prefLabel": {
-        "en": "Mode"
+        "en": "Maximum"
       }
     },
     {
@@ -54,105 +84,9 @@
       }
     },
     {
-      "id": "https://w3id.org/hvdnet/statistics/Maximum",
+      "id": "https://w3id.org/hvdnet/statistics/Mode",
       "prefLabel": {
-        "en": "Maximum"
-      }
-    },
-    {
-      "id": "https://w3id.org/hvdnet/statistics/Sum",
-      "prefLabel": {
-        "en": "Sum"
-      }
-    },
-    {
-      "id": "https://w3id.org/hvdnet/statistics/FirstQuartile",
-      "prefLabel": {
-        "en": "First quartile"
-      }
-    },
-    {
-      "id": "https://w3id.org/hvdnet/statistics/SecondQuartile",
-      "prefLabel": {
-        "en": "Second quartile"
-      }
-    },
-    {
-      "id": "https://w3id.org/hvdnet/statistics/ThirdQuartile",
-      "prefLabel": {
-        "en": "Third quartile"
-      }
-    },
-    {
-      "id": "https://w3id.org/hvdnet/statistics/FirstQuintile",
-      "prefLabel": {
-        "en": "First quintile"
-      }
-    },
-    {
-      "id": "https://w3id.org/hvdnet/statistics/SecondQuintile",
-      "prefLabel": {
-        "en": "Second quintile"
-      }
-    },
-    {
-      "id": "https://w3id.org/hvdnet/statistics/ThirdQuintile",
-      "prefLabel": {
-        "en": "Third quintile"
-      }
-    },
-    {
-      "id": "https://w3id.org/hvdnet/statistics/FourthQuintile",
-      "prefLabel": {
-        "en": "Fourth quintile"
-      }
-    },
-    {
-      "id": "https://w3id.org/hvdnet/statistics/FirstDecile",
-      "prefLabel": {
-        "en": "First decile"
-      }
-    },
-    {
-      "id": "https://w3id.org/hvdnet/statistics/SecondDecile",
-      "prefLabel": {
-        "en": "Second decile"
-      }
-    },
-    {
-      "id": "https://w3id.org/hvdnet/statistics/ThirdDecile",
-      "prefLabel": {
-        "en": "Third decile"
-      }
-    },
-    {
-      "id": "https://w3id.org/hvdnet/statistics/FourthDecile",
-      "prefLabel": {
-        "en": "Fourth decile"
-      }
-    },
-    {
-      "id": "https://w3id.org/hvdnet/statistics/FifthDecile",
-      "prefLabel": {
-        "en": "Fifth decile"
-      }
-    },
-    {
-      "id": "https://w3id.org/hvdnet/statistics/SixthDecile",
-      "prefLabel": {
-        "en": "Sixth decile"
-      }
-    },
-    {
-      "id": "https://w3id.org/hvdnet/statistics/SeventhDecile",
-      "prefLabel": {
-        "en": "Seventh decile"
-      }
-    },
-    {
-      "id": "https://w3id.org/hvdnet/statistics/EighthDecile",
-      "prefLabel": {
-        "en": "Eighth decile"
+        "en": "Mode"
       }
     },
     {
@@ -165,6 +99,72 @@
       "id": "https://w3id.org/hvdnet/statistics/OtherPercentile",
       "prefLabel": {
         "en": "Other percentile"
+      }
+    },
+    {
+      "id": "https://w3id.org/hvdnet/statistics/SecondDecile",
+      "prefLabel": {
+        "en": "Second decile"
+      }
+    },
+    {
+      "id": "https://w3id.org/hvdnet/statistics/SecondQuartile",
+      "prefLabel": {
+        "en": "Second quartile"
+      }
+    },
+    {
+      "id": "https://w3id.org/hvdnet/statistics/SecondQuintile",
+      "prefLabel": {
+        "en": "Second quintile"
+      }
+    },
+    {
+      "id": "https://w3id.org/hvdnet/statistics/SeventhDecile",
+      "prefLabel": {
+        "en": "Seventh decile"
+      }
+    },
+    {
+      "id": "https://w3id.org/hvdnet/statistics/SixthDecile",
+      "prefLabel": {
+        "en": "Sixth decile"
+      }
+    },
+    {
+      "id": "https://w3id.org/hvdnet/statistics/Sum",
+      "prefLabel": {
+        "en": "Sum"
+      }
+    },
+    {
+      "id": "https://w3id.org/hvdnet/statistics/ThirdDecile",
+      "prefLabel": {
+        "en": "Third decile"
+      }
+    },
+    {
+      "id": "https://w3id.org/hvdnet/statistics/ThirdQuartile",
+      "prefLabel": {
+        "en": "Third quartile"
+      }
+    },
+    {
+      "id": "https://w3id.org/hvdnet/statistics/ThirdQuintile",
+      "prefLabel": {
+        "en": "Third quintile"
+      }
+    },
+    {
+      "id": "https://w3id.org/hvdnet/statistics/TrimmedMean",
+      "prefLabel": {
+        "en": "Trimmed mean"
+      }
+    },
+    {
+      "id": "https://w3id.org/hvdnet/statistics/WinsorizedMean",
+      "prefLabel": {
+        "en": "Winsorized Mean"
       }
     }
   ],

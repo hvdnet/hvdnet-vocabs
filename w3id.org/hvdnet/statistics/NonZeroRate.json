@@ -20,7 +20,7 @@
   "broader": {
     "id": "https://w3id.org/hvdnet/statistics/DerivedRatios",
     "prefLabel": {
-      "en": "Other/Derived Ratios"
+      "en": "Derived/Other Ratios"
     }
   },
   "inScheme": [

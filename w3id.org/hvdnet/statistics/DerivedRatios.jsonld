@@ -2,43 +2,13 @@
   "id": "https://w3id.org/hvdnet/statistics/DerivedRatios",
   "type": "Concept",
   "prefLabel": {
-    "en": "Other/Derived Ratios"
+    "en": "Derived/Other Ratios"
   },
   "narrower": [
-    {
-      "id": "https://w3id.org/hvdnet/statistics/ModeZScore",
-      "prefLabel": {
-        "en": "Z-score of mode"
-      }
-    },
-    {
-      "id": "https://w3id.org/hvdnet/statistics/StdDevRangeRatio",
-      "prefLabel": {
-        "en": "Range to Standard Deviation Ratio"
-      }
-    },
     {
       "id": "https://w3id.org/hvdnet/statistics/CoefficientOfVariation",
       "prefLabel": {
         "en": "Coefficient of variation"
-      }
-    },
-    {
-      "id": "https://w3id.org/hvdnet/statistics/PercentageOfValidCases",
-      "prefLabel": {
-        "en": "Percentage of valid cases"
-      }
-    },
-    {
-      "id": "https://w3id.org/hvdnet/statistics/PercentageOfInvalidCases",
-      "prefLabel": {
-        "en": "Percentage of invalid cases"
-      }
-    },
-    {
-      "id": "https://w3id.org/hvdnet/statistics/QuartileDispersionCoefficient",
-      "prefLabel": {
-        "en": "Quartile Coefficient of Dispersion"
       }
     },
     {
@@ -54,9 +24,33 @@
       }
     },
     {
+      "id": "https://w3id.org/hvdnet/statistics/ModeZScore",
+      "prefLabel": {
+        "en": "Z-score of mode"
+      }
+    },
+    {
+      "id": "https://w3id.org/hvdnet/statistics/NegativeShare",
+      "prefLabel": {
+        "en": "Negative share"
+      }
+    },
+    {
       "id": "https://w3id.org/hvdnet/statistics/NonZeroRate",
       "prefLabel": {
         "en": "Non-zero rate"
+      }
+    },
+    {
+      "id": "https://w3id.org/hvdnet/statistics/PercentageOfInvalidCases",
+      "prefLabel": {
+        "en": "Percentage of invalid cases"
+      }
+    },
+    {
+      "id": "https://w3id.org/hvdnet/statistics/PercentageOfValidCases",
+      "prefLabel": {
+        "en": "Percentage of valid cases"
       }
     },
     {
@@ -66,9 +60,15 @@
       }
     },
     {
-      "id": "https://w3id.org/hvdnet/statistics/NegativeShare",
+      "id": "https://w3id.org/hvdnet/statistics/QuartileDispersionCoefficient",
       "prefLabel": {
-        "en": "Negative share"
+        "en": "Quartile Coefficient of Dispersion"
+      }
+    },
+    {
+      "id": "https://w3id.org/hvdnet/statistics/StdDevRangeRatio",
+      "prefLabel": {
+        "en": "Range to Standard Deviation Ratio"
       }
     }
   ],

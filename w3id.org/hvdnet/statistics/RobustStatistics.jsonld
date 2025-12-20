@@ -30,6 +30,12 @@
       }
     },
     {
+      "id": "https://w3id.org/hvdnet/statistics/BiweightMidvariance",
+      "prefLabel": {
+        "en": "Biweight midvariance"
+      }
+    },
+    {
       "id": "https://w3id.org/hvdnet/statistics/Midrange",
       "prefLabel": {
         "en": "Midrange"
@@ -39,12 +45,6 @@
       "id": "https://w3id.org/hvdnet/statistics/Trimean",
       "prefLabel": {
         "en": "Trimean"
-      }
-    },
-    {
-      "id": "https://w3id.org/hvdnet/statistics/BiweightMidvariance",
-      "prefLabel": {
-        "en": "Biweight midvariance"
       }
     }
   ],

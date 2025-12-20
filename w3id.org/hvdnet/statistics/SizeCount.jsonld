@@ -6,12 +6,6 @@
   },
   "narrower": [
     {
-      "id": "https://w3id.org/hvdnet/statistics/ValidCases",
-      "prefLabel": {
-        "en": "Valid cases"
-      }
-    },
-    {
       "id": "https://w3id.org/hvdnet/statistics/InvalidCases",
       "prefLabel": {
         "en": "Invalid cases"
@@ -24,27 +18,9 @@
       }
     },
     {
-      "id": "https://w3id.org/hvdnet/statistics/UniqueCases",
+      "id": "https://w3id.org/hvdnet/statistics/Frequency",
       "prefLabel": {
-        "en": "Unique Cases/Values"
-      }
-    },
-    {
-      "id": "https://w3id.org/hvdnet/statistics/Sparsity",
-      "prefLabel": {
-        "en": "Sparsity"
-      }
-    },
-    {
-      "id": "https://w3id.org/hvdnet/statistics/PositiveCount",
-      "prefLabel": {
-        "en": "Count of positive values"
-      }
-    },
-    {
-      "id": "https://w3id.org/hvdnet/statistics/ZeroCount",
-      "prefLabel": {
-        "en": "Count of zero values"
+        "en": "Frequency"
       }
     },
     {
@@ -54,21 +30,45 @@
       }
     },
     {
+      "id": "https://w3id.org/hvdnet/statistics/Other",
+      "prefLabel": {
+        "en": "Other"
+      }
+    },
+    {
+      "id": "https://w3id.org/hvdnet/statistics/PositiveCount",
+      "prefLabel": {
+        "en": "Count of positive values"
+      }
+    },
+    {
       "id": "https://w3id.org/hvdnet/statistics/SignificantDigits",
       "prefLabel": {
         "en": "Number of digits needed to safely store the data"
       }
     },
     {
-      "id": "https://w3id.org/hvdnet/statistics/Frequency",
+      "id": "https://w3id.org/hvdnet/statistics/Sparsity",
       "prefLabel": {
-        "en": "Frequency"
+        "en": "Sparsity"
       }
     },
     {
-      "id": "https://w3id.org/hvdnet/statistics/Other",
+      "id": "https://w3id.org/hvdnet/statistics/UniqueCases",
       "prefLabel": {
-        "en": "Other"
+        "en": "Unique Cases/Values"
+      }
+    },
+    {
+      "id": "https://w3id.org/hvdnet/statistics/ValidCases",
+      "prefLabel": {
+        "en": "Valid cases"
+      }
+    },
+    {
+      "id": "https://w3id.org/hvdnet/statistics/ZeroCount",
+      "prefLabel": {
+        "en": "Count of zero values"
       }
     }
   ],

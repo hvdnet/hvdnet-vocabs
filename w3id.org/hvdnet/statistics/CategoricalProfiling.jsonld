@@ -6,18 +6,6 @@
   },
   "narrower": [
     {
-      "id": "https://w3id.org/hvdnet/statistics/TopKCategories",
-      "prefLabel": {
-        "en": "Top-k categories"
-      }
-    },
-    {
-      "id": "https://w3id.org/hvdnet/statistics/TopKCategoryShare",
-      "prefLabel": {
-        "en": "Top-k category share"
-      }
-    },
-    {
       "id": "https://w3id.org/hvdnet/statistics/CardinalityBucket",
       "prefLabel": {
         "en": "Cardinality bucket"
@@ -27,6 +15,18 @@
       "id": "https://w3id.org/hvdnet/statistics/ImbalanceRatio",
       "prefLabel": {
         "en": "Imbalance ratio"
+      }
+    },
+    {
+      "id": "https://w3id.org/hvdnet/statistics/TopKCategories",
+      "prefLabel": {
+        "en": "Top-k categories"
+      }
+    },
+    {
+      "id": "https://w3id.org/hvdnet/statistics/TopKCategoryShare",
+      "prefLabel": {
+        "en": "Top-k category share"
       }
     }
   ],

@@ -6,21 +6,21 @@
   },
   "narrower": [
     {
-      "id": "https://w3id.org/hvdnet/statistics/MinLength",
-      "prefLabel": {
-        "en": "Minimum length"
-      }
-    },
-    {
-      "id": "https://w3id.org/hvdnet/statistics/MaxLength",
-      "prefLabel": {
-        "en": "Maximum length"
-      }
-    },
-    {
       "id": "https://w3id.org/hvdnet/statistics/AverageLength",
       "prefLabel": {
         "en": "Average length"
+      }
+    },
+    {
+      "id": "https://w3id.org/hvdnet/statistics/AverageWordCount",
+      "prefLabel": {
+        "en": "Average word count"
+      }
+    },
+    {
+      "id": "https://w3id.org/hvdnet/statistics/Languages",
+      "prefLabel": {
+        "en": "Languages"
       }
     },
     {
@@ -30,9 +30,15 @@
       }
     },
     {
-      "id": "https://w3id.org/hvdnet/statistics/MinWordCount",
+      "id": "https://w3id.org/hvdnet/statistics/LexicalDiversity",
       "prefLabel": {
-        "en": "Minimum word count"
+        "en": "Lexical diversity"
+      }
+    },
+    {
+      "id": "https://w3id.org/hvdnet/statistics/MaxLength",
+      "prefLabel": {
+        "en": "Maximum length"
       }
     },
     {
@@ -42,9 +48,15 @@
       }
     },
     {
-      "id": "https://w3id.org/hvdnet/statistics/AverageWordCount",
+      "id": "https://w3id.org/hvdnet/statistics/MinLength",
       "prefLabel": {
-        "en": "Average word count"
+        "en": "Minimum length"
+      }
+    },
+    {
+      "id": "https://w3id.org/hvdnet/statistics/MinWordCount",
+      "prefLabel": {
+        "en": "Minimum word count"
       }
     },
     {
@@ -57,18 +69,6 @@
       "id": "https://w3id.org/hvdnet/statistics/UniqueWordCount",
       "prefLabel": {
         "en": "Unique word count"
-      }
-    },
-    {
-      "id": "https://w3id.org/hvdnet/statistics/LexicalDiversity",
-      "prefLabel": {
-        "en": "Lexical diversity"
-      }
-    },
-    {
-      "id": "https://w3id.org/hvdnet/statistics/Languages",
-      "prefLabel": {
-        "en": "Languages"
       }
     }
   ],

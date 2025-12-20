@@ -16,7 +16,8 @@ stats: a skos:ConceptScheme ;
     dct:description "A vocabulary of statistical concepts and measures."@en ;
     dct:created "2025-12-19"^^xsd:date ;
     skos:hasTopConcept stats:CentralTendency, stats:Dispersion, stats:SizeCount, 
-        stats:DerivedRatios, stats:ShapeDistribution, stats:TextMeasures, stats:Metadata .
+        stats:DerivedRatios, stats:ShapeDistribution, stats:TextMeasures, stats:Metadata ;
+    dct:license <https://creativecommons.org/publicdomain/zero/1.0/> .
 
 # Categories
 

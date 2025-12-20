@@ -2,7 +2,7 @@
   "id": "https://w3id.org/hvdnet/statistics/NullCases",
   "type": "Concept",
   "prefLabel": {
-    "en": "Cases that have null/empty value"
+    "en": "Null/empty value"
   },
   "definition": {
     "en": "The count of observations with null, missing, or empty values."

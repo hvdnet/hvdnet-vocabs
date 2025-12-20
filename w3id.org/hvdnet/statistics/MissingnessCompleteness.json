@@ -38,7 +38,7 @@
     {
       "id": "https://w3id.org/hvdnet/statistics/NullCases",
       "prefLabel": {
-        "en": "Cases that have null/empty value"
+        "en": "Null/empty value"
       }
     }
   ],

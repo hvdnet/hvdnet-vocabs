@@ -12,11 +12,11 @@
 # for improved machine-resolution.
 
 stats: a skos:ConceptScheme ;
-    dct:title "Statistics Vocabulary"@en ;
-    dct:description "A vocabulary of statistical concepts and measures."@en ;
-    dct:created "2025-12-19"^^xsd:date ;
+    dct:title "Descriptive Statistics Vocabulary"@en ;
+    dct:description "The descriptive statistics vocabulary provides a controlled set of concepts for describing statistical measures and summary statistics for FAIR data."@en ;
+    dct:created "2025-12-20"^^xsd:date ;
     skos:hasTopConcept stats:CentralTendency, stats:Dispersion, stats:SizeCount, 
-        stats:DerivedRatios, stats:ShapeDistribution, stats:TextMeasures, stats:Metadata ;
+        stats:DerivedRatios, stats:ShapeDistribution, stats:TextMeasures, stats:Metadata, stats:FileLevel ;
     dct:license <https://creativecommons.org/publicdomain/zero/1.0/> .
 
 # Categories
@@ -45,7 +45,7 @@ stats:SizeCount a skos:Concept ;
     skos:topConceptOf stats: ;
     skos:narrower stats:ValidCases, stats:InvalidCases, stats:NullCases, stats:UniqueCases, 
     stats:Sparsity, stats:PositiveCount, stats:ZeroCount, stats:NegativeCount, 
-    stats:SignificantDigits, stats:Frequencies, stats:Other .
+    stats:SignificantDigits, stats:Frequency, stats:Other .
 
 stats:DerivedRatios a skos:Concept ;
     skos:prefLabel "Other/Derived Ratios"@en ;
@@ -69,6 +69,12 @@ stats:Metadata a skos:Concept ;
     skos:prefLabel "Metadata"@en ;
     skos:topConceptOf stats: ;
     skos:narrower stats:IsAscii .
+
+stats:FileLevel a skos:Concept ;
+    skos:prefLabel "File-level Statistics/Attributes"@en ;
+    skos:topConceptOf stats: ;
+    skos:narrower stats:FileRecordCount, stats:FileVariableCount, stats:FileSizeBytes, stats:FileChecksum, 
+        stats:FileEncoding, stats:FileCompression, stats:FileSchemaVersion .
 
 # Concepts - Central Tendency/Location
 
@@ -345,8 +351,8 @@ stats:SignificantDigits a skos:Concept ;
     skos:broader stats:SizeCount ;
     skos:inScheme stats: .
 
-stats:Frequencies a skos:Concept ;
-    skos:prefLabel "Frequencies"@en ;
+stats:Frequency a skos:Concept ;
+    skos:prefLabel "Frequency"@en ;
     skos:broader stats:SizeCount ;
     skos:inScheme stats: ;
     skos:exactMatch wikidata:Q762856 .
@@ -482,4 +488,41 @@ stats:Languages a skos:Concept ;
 stats:IsAscii a skos:Concept ;
     skos:prefLabel "ASCII characters only"@en ;
     skos:broader stats:Metadata ;
+    skos:inScheme stats: .
+
+# Concepts - File-level Statistics/Attributes
+
+stats:FileRecordCount a skos:Concept ;
+    skos:prefLabel "Total record count"@en ;
+    skos:broader stats:FileLevel ;
+    skos:inScheme stats: .
+
+stats:FileVariableCount a skos:Concept ;
+    skos:prefLabel "Total variable/column count"@en ;
+    skos:broader stats:FileLevel ;
+    skos:inScheme stats: .
+
+stats:FileSizeBytes a skos:Concept ;
+    skos:prefLabel "File size (bytes)"@en ;
+    skos:broader stats:FileLevel ;
+    skos:inScheme stats: .
+
+stats:FileChecksum a skos:Concept ;
+    skos:prefLabel "File checksum"@en ;
+    skos:broader stats:FileLevel ;
+    skos:inScheme stats: .
+
+stats:FileEncoding a skos:Concept ;
+    skos:prefLabel "File character encoding"@en ;
+    skos:broader stats:FileLevel ;
+    skos:inScheme stats: .
+
+stats:FileCompression a skos:Concept ;
+    skos:prefLabel "File compression"@en ;
+    skos:broader stats:FileLevel ;
+    skos:inScheme stats: .
+
+stats:FileSchemaVersion a skos:Concept ;
+    skos:prefLabel "File schema/version"@en ;
+    skos:broader stats:FileLevel ;
     skos:inScheme stats: .

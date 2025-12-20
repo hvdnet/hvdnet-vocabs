@@ -39,96 +39,95 @@ stats:computationMethod a rdf:Property ;
 
 # Categories
 
+stats:AssociationDependence a skos:Concept ;
+    skos:prefLabel "Association/Dependence"@en ;
+    skos:topConceptOf stats: ;
+    skos:narrower stats:Covariance, stats:KendallCorrelation, stats:MaxAbsCorrelation, stats:PearsonCorrelation, stats:SpearmanCorrelation .
+
+stats:CategoricalProfiling a skos:Concept ;
+    skos:prefLabel "Categorical Profiling"@en ;
+    skos:topConceptOf stats: ;
+    skos:narrower stats:CardinalityBucket, stats:ImbalanceRatio, stats:TopKCategories, stats:TopKCategoryShare .
+
 stats:CentralTendency a skos:Concept ;
     skos:prefLabel "Central Tendency/Location"@en ;
     skos:topConceptOf stats: ;
     skos:narrower 
-        stats:ArithmeticMean, stats:GeometricMean, stats:HarmonicMean,
-        stats:TrimmedMean, stats:WinsorizedMean, stats:Mode, stats:Median, 
-        stats:Minimum, stats:Maximum, stats:Sum, 
-        stats:FirstQuartile, stats:SecondQuartile, stats:ThirdQuartile, 
-        stats:FirstQuintile, stats:SecondQuintile, stats:ThirdQuintile, stats:FourthQuintile, 
-        stats:FirstDecile, stats:SecondDecile, stats:ThirdDecile, stats:FourthDecile, stats:FifthDecile, 
-        stats:SixthDecile, stats:SeventhDecile, stats:EighthDecile, stats:NinthDecile, stats:OtherPercentile .
+        stats:ArithmeticMean, stats:EighthDecile, stats:FifthDecile, stats:FirstDecile, stats:FirstQuartile, 
+        stats:FirstQuintile, stats:FourthDecile, stats:FourthQuintile, stats:GeometricMean, stats:HarmonicMean, 
+        stats:Maximum, stats:Median, stats:Minimum, stats:Mode, stats:NinthDecile, stats:OtherPercentile, 
+        stats:SecondDecile, stats:SecondQuartile, stats:SecondQuintile, stats:SeventhDecile, stats:SixthDecile, 
+        stats:Sum, stats:ThirdDecile, stats:ThirdQuartile, stats:ThirdQuintile, stats:TrimmedMean, 
+        stats:WinsorizedMean .
+
+stats:DerivedRatios a skos:Concept ;
+    skos:prefLabel "Derived/Other Ratios"@en ;
+    skos:topConceptOf stats: ;  
+    skos:narrower stats:CoefficientOfVariation, stats:DistinctnessRatio, stats:ModeFrequencyRatio, 
+    stats:ModeZScore, stats:NegativeShare, stats:NonZeroRate, stats:PercentageOfInvalidCases, 
+    stats:PercentageOfValidCases, stats:PositiveShare, stats:QuartileDispersionCoefficient, stats:StdDevRangeRatio .
 
 stats:Dispersion a skos:Concept ;
     skos:prefLabel "Dispersion/Variability"@en ;
     skos:topConceptOf stats: ;
-    skos:narrower stats:StandardErrorOfMean, stats:Range, stats:Variance, 
-    stats:StandardDeviation, stats:AverageAbsoluteDeviation, stats:MedianAbsoluteDeviation, 
-    stats:InterquartileRange, stats:InterquintileRange, stats:InterdecileRange, stats:GiniCoefficient, 
-    stats:QnEstimator, stats:SnEstimator .
+    skos:narrower stats:AverageAbsoluteDeviation, stats:GiniCoefficient, stats:InterdecileRange, 
+    stats:InterquartileRange, stats:InterquintileRange, stats:MedianAbsoluteDeviation, stats:QnEstimator, 
+    stats:Range, stats:SnEstimator, stats:StandardDeviation, stats:StandardErrorOfMean, stats:Variance .
 
-stats:SizeCount a skos:Concept ;
-    skos:prefLabel "Size/Count"@en ;
+stats:FileLevel a skos:Concept ;
+    skos:prefLabel "File-level Statistics/Attributes"@en ;
     skos:topConceptOf stats: ;
-    skos:narrower stats:ValidCases, stats:InvalidCases, stats:NullCases, stats:UniqueCases, 
-    stats:Sparsity, stats:PositiveCount, stats:ZeroCount, stats:NegativeCount, 
-    stats:SignificantDigits, stats:Frequency, stats:Other .
+    skos:narrower stats:FileChecksum, stats:FileCompression, stats:FileCreationTime, stats:FileEncoding, 
+        stats:FileLastModifiedTime, stats:FileMimeType, stats:FileRecordCount, stats:FileSchemaVersion, 
+        stats:FileSizeBytes, stats:FileVariableCount, stats:RecordVariableRatio .
 
-stats:DerivedRatios a skos:Concept ;
-    skos:prefLabel "Other/Derived Ratios"@en ;
-    skos:topConceptOf stats: ;  
-    skos:narrower stats:ModeZScore, stats:StdDevRangeRatio, stats:CoefficientOfVariation, 
-    stats:PercentageOfValidCases, stats:PercentageOfInvalidCases, stats:QuartileDispersionCoefficient, 
-    stats:DistinctnessRatio, stats:ModeFrequencyRatio, stats:NonZeroRate, stats:PositiveShare, stats:NegativeShare .
-
-stats:ShapeDistribution a skos:Concept ;
-    skos:prefLabel "Shape/Distribution"@en ;
+stats:InformationContent a skos:Concept ;
+    skos:prefLabel "Information Content"@en ;
     skos:topConceptOf stats: ;
-    skos:narrower stats:Beta1, stats:Beta2, stats:ExcessKurtosis, stats:FisherSkewness, stats:PearsonSkewness,
-        stats:SampleSkewness, stats:PopulationSkewness, stats:SampleExcessKurtosis, stats:PopulationExcessKurtosis,
-        stats:BowleySkewnessCoefficient, stats:ShapiroWilk, stats:AndersonDarling, stats:KolmogorovSmirnov, stats:JarqueBera .
-
-stats:TextMeasures a skos:Concept ;
-    skos:prefLabel "Text/String Measures"@en ;
-    skos:topConceptOf stats: ;
-    skos:narrower stats:MinLength, stats:MaxLength, stats:AverageLength, stats:LengthStdDev, 
-    stats:MinWordCount, stats:MaxWordCount, stats:AverageWordCount, stats:TotalWordCount, 
-    stats:UniqueWordCount, stats:LexicalDiversity, stats:Languages .
+    skos:narrower stats:Perplexity, stats:ShannonEntropy .
 
 stats:Metadata a skos:Concept ;
     skos:prefLabel "Metadata"@en ;
     skos:topConceptOf stats: ;
     skos:narrower stats:IsAscii .
 
-stats:FileLevel a skos:Concept ;
-    skos:prefLabel "File-level Statistics/Attributes"@en ;
-    skos:topConceptOf stats: ;
-    skos:narrower stats:FileRecordCount, stats:FileVariableCount, stats:FileSizeBytes, stats:FileChecksum, 
-        stats:FileEncoding, stats:FileCompression, stats:FileSchemaVersion, stats:FileLastModifiedTime, 
-        stats:FileCreationTime, stats:FileMimeType, stats:RecordVariableRatio .
-
 stats:MissingnessCompleteness a skos:Concept ;
     skos:prefLabel "Missingness/Completeness"@en ;
     skos:topConceptOf stats: ;
-    skos:narrower stats:MissingRate, stats:NonNullRate, stats:NullCases, stats:InvalidCases, stats:DuplicateRows, stats:DistinctnessRatio .
-
-stats:RobustStatistics a skos:Concept ;
-    skos:prefLabel "Robust Location/Scale"@en ;
-    skos:topConceptOf stats: ;
-    skos:narrower stats:Midrange, stats:Trimean, stats:BiweightMidvariance, stats:TrimmedMean, stats:WinsorizedMean, 
-        stats:QnEstimator, stats:SnEstimator .
-
-stats:AssociationDependence a skos:Concept ;
-    skos:prefLabel "Association/Dependence"@en ;
-    skos:topConceptOf stats: ;
-    skos:narrower stats:Covariance, stats:PearsonCorrelation, stats:SpearmanCorrelation, stats:KendallCorrelation, stats:MaxAbsCorrelation .
-
-stats:InformationContent a skos:Concept ;
-    skos:prefLabel "Information Content"@en ;
-    skos:topConceptOf stats: ;
-    skos:narrower stats:ShannonEntropy, stats:Perplexity .
+    skos:narrower stats:DistinctnessRatio, stats:DuplicateRows, stats:InvalidCases, stats:MissingRate, stats:NonNullRate, stats:NullCases .
 
 stats:Outliers a skos:Concept ;
     skos:prefLabel "Outlier Flags"@en ;
     skos:topConceptOf stats: ;
     skos:narrower stats:OutlierCountIQR, stats:OutlierCountZScore .
 
-stats:CategoricalProfiling a skos:Concept ;
-    skos:prefLabel "Categorical Profiling"@en ;
+stats:RobustStatistics a skos:Concept ;
+    skos:prefLabel "Robust Location/Scale"@en ;
     skos:topConceptOf stats: ;
-    skos:narrower stats:TopKCategories, stats:TopKCategoryShare, stats:CardinalityBucket, stats:ImbalanceRatio .
+    skos:narrower stats:BiweightMidvariance, stats:Midrange, stats:QnEstimator, stats:SnEstimator, 
+        stats:Trimean, stats:TrimmedMean, stats:WinsorizedMean .
+
+stats:ShapeDistribution a skos:Concept ;
+    skos:prefLabel "Shape/Distribution"@en ;
+    skos:topConceptOf stats: ;
+    skos:narrower stats:AndersonDarling, stats:Beta1, stats:Beta2, stats:BowleySkewnessCoefficient, 
+        stats:ExcessKurtosis, stats:FisherSkewness, stats:JarqueBera, stats:KolmogorovSmirnov, 
+        stats:PearsonSkewness, stats:PopulationExcessKurtosis, stats:PopulationSkewness, stats:SampleExcessKurtosis, 
+        stats:SampleSkewness, stats:ShapiroWilk .
+
+stats:SizeCount a skos:Concept ;
+    skos:prefLabel "Size/Count"@en ;
+    skos:topConceptOf stats: ;
+    skos:narrower stats:Frequency, stats:InvalidCases, stats:NegativeCount, stats:NullCases, stats:Other, 
+    stats:PositiveCount, stats:SignificantDigits, stats:Sparsity, stats:UniqueCases, stats:ValidCases, 
+    stats:ZeroCount .
+
+stats:TextMeasures a skos:Concept ;
+    skos:prefLabel "Text/String Measures"@en ;
+    skos:topConceptOf stats: ;
+    skos:narrower stats:AverageLength, stats:AverageWordCount, stats:Languages, stats:LengthStdDev, 
+    stats:LexicalDiversity, stats:MaxLength, stats:MaxWordCount, stats:MinLength, stats:MinWordCount, 
+    stats:TotalWordCount, stats:UniqueWordCount .
 
 # Concepts - Central Tendency/Location
 

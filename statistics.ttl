@@ -17,8 +17,10 @@ stats: a skos:ConceptScheme ;
     dct:title "Descriptive Statistics Vocabulary"@en ;
     dct:description "The descriptive statistics vocabulary provides a controlled set of concepts for describing statistical measures and summary statistics for FAIR data."@en ;
     dct:created "2025-12-20"^^xsd:date ;
-    skos:hasTopConcept stats:CentralTendency, stats:Dispersion, stats:SizeCount, 
-        stats:DerivedRatios, stats:ShapeDistribution, stats:TextMeasures, stats:Metadata, stats:FileLevel, stats:MissingnessCompleteness, stats:RobustStatistics, stats:AssociationDependence, stats:InformationContent, stats:Outliers ;
+    skos:hasTopConcept stats:AssociationDependence, stats:CategoricalProfiling, stats:CentralTendency, 
+        stats:DerivedRatios, stats:Dispersion, stats:FileLevel, stats:InformationContent, 
+        stats:Metadata, stats:MissingnessCompleteness, stats:Outliers, stats:RobustStatistics, 
+        stats:ShapeDistribution, stats:SizeCount, stats:TextMeasures ;
     dct:license <https://creativecommons.org/publicdomain/zero/1.0/> .
 
 # Property declarations (custom annotations)

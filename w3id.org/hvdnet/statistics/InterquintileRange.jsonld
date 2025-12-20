@@ -4,6 +4,9 @@
   "prefLabel": {
     "en": "Interquintile range"
   },
+  "definition": {
+    "en": "The difference between the fourth and first quintiles."
+  },
   "broader": {
     "id": "https://w3id.org/hvdnet/statistics/Dispersion",
     "prefLabel": {
@@ -19,7 +22,7 @@
     {
       "id": "https://w3id.org/hvdnet/statistics/",
       "title": {
-        "en": "Statistics Vocabulary"
+        "en": "Descriptive Statistics Vocabulary"
       }
     }
   ],

@@ -4,11 +4,8 @@
   "prefLabel": {
     "en": "Winsorized Mean"
   },
-  "broader": {
-    "id": "https://w3id.org/hvdnet/statistics/CentralTendency",
-    "prefLabel": {
-      "en": "Central Tendency/Location"
-    }
+  "definition": {
+    "en": "The mean calculated after replacing extreme values with less extreme values at specified percentiles."
   },
   "exactMatch": [
     {
@@ -19,7 +16,7 @@
     {
       "id": "https://w3id.org/hvdnet/statistics/",
       "title": {
-        "en": "Statistics Vocabulary"
+        "en": "Descriptive Statistics Vocabulary"
       }
     }
   ],

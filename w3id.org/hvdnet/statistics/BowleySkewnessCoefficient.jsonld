@@ -4,6 +4,9 @@
   "prefLabel": {
     "en": "Bowley's Skewness Coefficient"
   },
+  "definition": {
+    "en": "A quartile-based measure of skewness robust to outliers."
+  },
   "broader": {
     "id": "https://w3id.org/hvdnet/statistics/ShapeDistribution",
     "prefLabel": {
@@ -19,7 +22,7 @@
     {
       "id": "https://w3id.org/hvdnet/statistics/",
       "title": {
-        "en": "Statistics Vocabulary"
+        "en": "Descriptive Statistics Vocabulary"
       }
     }
   ],

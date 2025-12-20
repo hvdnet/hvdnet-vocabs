@@ -4,11 +4,8 @@
   "prefLabel": {
     "en": "Trimmed mean"
   },
-  "broader": {
-    "id": "https://w3id.org/hvdnet/statistics/CentralTendency",
-    "prefLabel": {
-      "en": "Central Tendency/Location"
-    }
+  "definition": {
+    "en": "The mean calculated after removing a specified percentage of extreme values from both ends."
   },
   "exactMatch": [
     {
@@ -22,7 +19,7 @@
     {
       "id": "https://w3id.org/hvdnet/statistics/",
       "title": {
-        "en": "Statistics Vocabulary"
+        "en": "Descriptive Statistics Vocabulary"
       }
     }
   ],

@@ -4,6 +4,9 @@
   "prefLabel": {
     "en": "Number of digits needed to safely store the data"
   },
+  "definition": {
+    "en": "The precision or number of significant digits required to represent the values."
+  },
   "broader": {
     "id": "https://w3id.org/hvdnet/statistics/SizeCount",
     "prefLabel": {
@@ -14,7 +17,7 @@
     {
       "id": "https://w3id.org/hvdnet/statistics/",
       "title": {
-        "en": "Statistics Vocabulary"
+        "en": "Descriptive Statistics Vocabulary"
       }
     }
   ],

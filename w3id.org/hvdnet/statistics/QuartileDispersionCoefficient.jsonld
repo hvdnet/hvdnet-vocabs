@@ -4,6 +4,9 @@
   "prefLabel": {
     "en": "Quartile Coefficient of Dispersion"
   },
+  "definition": {
+    "en": "A relative measure of dispersion based on quartiles: (Q3 - Q1) / (Q3 + Q1)."
+  },
   "broader": {
     "id": "https://w3id.org/hvdnet/statistics/DerivedRatios",
     "prefLabel": {
@@ -14,7 +17,7 @@
     {
       "id": "https://w3id.org/hvdnet/statistics/",
       "title": {
-        "en": "Statistics Vocabulary"
+        "en": "Descriptive Statistics Vocabulary"
       }
     }
   ],

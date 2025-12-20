@@ -4,6 +4,9 @@
   "prefLabel": {
     "en": "Standard error of the mean"
   },
+  "definition": {
+    "en": "The standard deviation of the sampling distribution of the mean."
+  },
   "broader": {
     "id": "https://w3id.org/hvdnet/statistics/Dispersion",
     "prefLabel": {
@@ -22,7 +25,7 @@
     {
       "id": "https://w3id.org/hvdnet/statistics/",
       "title": {
-        "en": "Statistics Vocabulary"
+        "en": "Descriptive Statistics Vocabulary"
       }
     }
   ],

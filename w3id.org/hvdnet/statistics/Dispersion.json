@@ -64,13 +64,31 @@
       "prefLabel": {
         "en": "Gini Coefficient"
       }
+    },
+    {
+      "id": "https://w3id.org/hvdnet/statistics/QnEstimator",
+      "prefLabel": {
+        "en": "Qn scale estimator"
+      }
+    },
+    {
+      "id": "https://w3id.org/hvdnet/statistics/SnEstimator",
+      "prefLabel": {
+        "en": "Sn scale estimator"
+      }
+    },
+    {
+      "id": "https://w3id.org/hvdnet/statistics/BiweightMidvariance",
+      "prefLabel": {
+        "en": "Biweight midvariance"
+      }
     }
   ],
   "inScheme": [
     {
       "id": "https://w3id.org/hvdnet/statistics/",
       "title": {
-        "en": "Statistics Vocabulary"
+        "en": "Descriptive Statistics Vocabulary"
       }
     }
   ],
@@ -83,7 +101,7 @@
     {
       "id": "https://w3id.org/hvdnet/statistics/",
       "title": {
-        "en": "Statistics Vocabulary"
+        "en": "Descriptive Statistics Vocabulary"
       }
     }
   ],

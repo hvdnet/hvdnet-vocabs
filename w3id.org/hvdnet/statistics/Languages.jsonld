@@ -4,6 +4,9 @@
   "prefLabel": {
     "en": "Languages"
   },
+  "definition": {
+    "en": "The set of natural languages detected or present in text values."
+  },
   "broader": {
     "id": "https://w3id.org/hvdnet/statistics/TextMeasures",
     "prefLabel": {
@@ -19,7 +22,7 @@
     {
       "id": "https://w3id.org/hvdnet/statistics/",
       "title": {
-        "en": "Statistics Vocabulary"
+        "en": "Descriptive Statistics Vocabulary"
       }
     }
   ],

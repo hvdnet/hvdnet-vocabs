@@ -4,6 +4,9 @@
   "prefLabel": {
     "en": "Other"
   },
+  "definition": {
+    "en": "A count or size measure not otherwise categorized."
+  },
   "broader": {
     "id": "https://w3id.org/hvdnet/statistics/SizeCount",
     "prefLabel": {
@@ -19,7 +22,7 @@
     {
       "id": "https://w3id.org/hvdnet/statistics/",
       "title": {
-        "en": "Statistics Vocabulary"
+        "en": "Descriptive Statistics Vocabulary"
       }
     }
   ],

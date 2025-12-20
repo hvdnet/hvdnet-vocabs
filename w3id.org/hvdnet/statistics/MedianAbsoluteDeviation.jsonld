@@ -4,6 +4,9 @@
   "prefLabel": {
     "en": "Median absolute deviation"
   },
+  "definition": {
+    "en": "The median of the absolute deviations from the median, a robust measure of variability."
+  },
   "broader": {
     "id": "https://w3id.org/hvdnet/statistics/Dispersion",
     "prefLabel": {
@@ -22,7 +25,7 @@
     {
       "id": "https://w3id.org/hvdnet/statistics/",
       "title": {
-        "en": "Statistics Vocabulary"
+        "en": "Descriptive Statistics Vocabulary"
       }
     }
   ],

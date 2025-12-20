@@ -4,6 +4,9 @@
   "prefLabel": {
     "en": "Total word count"
   },
+  "definition": {
+    "en": "The sum of all words across all text values."
+  },
   "broader": {
     "id": "https://w3id.org/hvdnet/statistics/TextMeasures",
     "prefLabel": {
@@ -14,7 +17,7 @@
     {
       "id": "https://w3id.org/hvdnet/statistics/",
       "title": {
-        "en": "Statistics Vocabulary"
+        "en": "Descriptive Statistics Vocabulary"
       }
     }
   ],

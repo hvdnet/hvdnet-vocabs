@@ -4,6 +4,9 @@
   "prefLabel": {
     "en": "Sum"
   },
+  "definition": {
+    "en": "The total obtained by adding all values together."
+  },
   "broader": {
     "id": "https://w3id.org/hvdnet/statistics/CentralTendency",
     "prefLabel": {
@@ -22,7 +25,7 @@
     {
       "id": "https://w3id.org/hvdnet/statistics/",
       "title": {
-        "en": "Statistics Vocabulary"
+        "en": "Descriptive Statistics Vocabulary"
       }
     }
   ],

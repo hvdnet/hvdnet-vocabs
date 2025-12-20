@@ -4,6 +4,9 @@
   "prefLabel": {
     "en": "Gini Coefficient"
   },
+  "definition": {
+    "en": "A measure of statistical dispersion representing inequality in a distribution."
+  },
   "broader": {
     "id": "https://w3id.org/hvdnet/statistics/Dispersion",
     "prefLabel": {
@@ -19,7 +22,7 @@
     {
       "id": "https://w3id.org/hvdnet/statistics/",
       "title": {
-        "en": "Statistics Vocabulary"
+        "en": "Descriptive Statistics Vocabulary"
       }
     }
   ],

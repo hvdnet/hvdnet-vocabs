@@ -4,6 +4,9 @@
   "prefLabel": {
     "en": "Lexical diversity"
   },
+  "definition": {
+    "en": "The ratio of unique words to total words, measuring vocabulary richness."
+  },
   "broader": {
     "id": "https://w3id.org/hvdnet/statistics/TextMeasures",
     "prefLabel": {
@@ -19,7 +22,7 @@
     {
       "id": "https://w3id.org/hvdnet/statistics/",
       "title": {
-        "en": "Statistics Vocabulary"
+        "en": "Descriptive Statistics Vocabulary"
       }
     }
   ],

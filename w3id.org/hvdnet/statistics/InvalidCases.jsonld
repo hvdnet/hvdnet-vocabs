@@ -4,11 +4,8 @@
   "prefLabel": {
     "en": "Invalid cases"
   },
-  "broader": {
-    "id": "https://w3id.org/hvdnet/statistics/SizeCount",
-    "prefLabel": {
-      "en": "Size/Count"
-    }
+  "definition": {
+    "en": "The count of observations with invalid or out-of-range values."
   },
   "exactMatch": [
     {
@@ -19,7 +16,7 @@
     {
       "id": "https://w3id.org/hvdnet/statistics/",
       "title": {
-        "en": "Statistics Vocabulary"
+        "en": "Descriptive Statistics Vocabulary"
       }
     }
   ],

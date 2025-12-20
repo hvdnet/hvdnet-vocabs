@@ -4,6 +4,9 @@
   "prefLabel": {
     "en": "Median"
   },
+  "definition": {
+    "en": "The middle value when data are sorted in order."
+  },
   "broader": {
     "id": "https://w3id.org/hvdnet/statistics/CentralTendency",
     "prefLabel": {
@@ -22,7 +25,7 @@
     {
       "id": "https://w3id.org/hvdnet/statistics/",
       "title": {
-        "en": "Statistics Vocabulary"
+        "en": "Descriptive Statistics Vocabulary"
       }
     }
   ],

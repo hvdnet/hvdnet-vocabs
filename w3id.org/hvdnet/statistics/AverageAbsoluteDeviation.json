@@ -4,6 +4,9 @@
   "prefLabel": {
     "en": "Average absolute deviation"
   },
+  "definition": {
+    "en": "The mean of the absolute deviations from a central point (typically the mean)."
+  },
   "broader": {
     "id": "https://w3id.org/hvdnet/statistics/Dispersion",
     "prefLabel": {
@@ -22,7 +25,7 @@
     {
       "id": "https://w3id.org/hvdnet/statistics/",
       "title": {
-        "en": "Statistics Vocabulary"
+        "en": "Descriptive Statistics Vocabulary"
       }
     }
   ],

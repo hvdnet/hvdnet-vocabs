@@ -4,6 +4,14 @@
   "prefLabel": {
     "en": "Interdecile range"
   },
+  "altLabel": {
+    "en": [
+      "P90-P10 range"
+    ]
+  },
+  "definition": {
+    "en": "The difference between the ninth and first deciles (P90 - P10)."
+  },
   "broader": {
     "id": "https://w3id.org/hvdnet/statistics/Dispersion",
     "prefLabel": {
@@ -22,7 +30,7 @@
     {
       "id": "https://w3id.org/hvdnet/statistics/",
       "title": {
-        "en": "Statistics Vocabulary"
+        "en": "Descriptive Statistics Vocabulary"
       }
     }
   ],

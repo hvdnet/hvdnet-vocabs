@@ -4,6 +4,9 @@
   "prefLabel": {
     "en": "Standard deviation"
   },
+  "definition": {
+    "en": "The square root of the variance, measuring spread around the mean."
+  },
   "broader": {
     "id": "https://w3id.org/hvdnet/statistics/Dispersion",
     "prefLabel": {
@@ -19,7 +22,7 @@
     {
       "id": "https://w3id.org/hvdnet/statistics/",
       "title": {
-        "en": "Statistics Vocabulary"
+        "en": "Descriptive Statistics Vocabulary"
       }
     }
   ],

@@ -4,6 +4,9 @@
   "prefLabel": {
     "en": "Range to Standard Deviation Ratio"
   },
+  "definition": {
+    "en": "The ratio of the range to the standard deviation."
+  },
   "broader": {
     "id": "https://w3id.org/hvdnet/statistics/DerivedRatios",
     "prefLabel": {
@@ -14,7 +17,7 @@
     {
       "id": "https://w3id.org/hvdnet/statistics/",
       "title": {
-        "en": "Statistics Vocabulary"
+        "en": "Descriptive Statistics Vocabulary"
       }
     }
   ],

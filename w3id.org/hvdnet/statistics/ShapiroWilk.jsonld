@@ -4,6 +4,9 @@
   "prefLabel": {
     "en": "Shapiro-Wilk"
   },
+  "definition": {
+    "en": "A test statistic for assessing normality of a distribution."
+  },
   "broader": {
     "id": "https://w3id.org/hvdnet/statistics/ShapeDistribution",
     "prefLabel": {
@@ -22,7 +25,7 @@
     {
       "id": "https://w3id.org/hvdnet/statistics/",
       "title": {
-        "en": "Statistics Vocabulary"
+        "en": "Descriptive Statistics Vocabulary"
       }
     }
   ],

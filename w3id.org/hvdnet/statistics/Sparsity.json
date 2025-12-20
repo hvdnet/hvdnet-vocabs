@@ -4,6 +4,9 @@
   "prefLabel": {
     "en": "Sparsity"
   },
+  "definition": {
+    "en": "The proportion of zero or null values in a dataset."
+  },
   "broader": {
     "id": "https://w3id.org/hvdnet/statistics/SizeCount",
     "prefLabel": {
@@ -14,7 +17,7 @@
     {
       "id": "https://w3id.org/hvdnet/statistics/",
       "title": {
-        "en": "Statistics Vocabulary"
+        "en": "Descriptive Statistics Vocabulary"
       }
     }
   ],

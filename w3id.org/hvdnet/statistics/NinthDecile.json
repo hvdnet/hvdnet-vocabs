@@ -4,6 +4,9 @@
   "prefLabel": {
     "en": "Ninth decile"
   },
+  "definition": {
+    "en": "The 90th percentile, below which 90% of data values fall."
+  },
   "broader": {
     "id": "https://w3id.org/hvdnet/statistics/CentralTendency",
     "prefLabel": {
@@ -22,7 +25,7 @@
     {
       "id": "https://w3id.org/hvdnet/statistics/",
       "title": {
-        "en": "Statistics Vocabulary"
+        "en": "Descriptive Statistics Vocabulary"
       }
     }
   ],

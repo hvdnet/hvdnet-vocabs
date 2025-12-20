@@ -4,6 +4,9 @@
   "prefLabel": {
     "en": "Kurtosis"
   },
+  "definition": {
+    "en": "A measure of the tailedness or peakedness of the distribution."
+  },
   "broader": {
     "id": "https://w3id.org/hvdnet/statistics/ShapeDistribution",
     "prefLabel": {
@@ -22,7 +25,7 @@
     {
       "id": "https://w3id.org/hvdnet/statistics/",
       "title": {
-        "en": "Statistics Vocabulary"
+        "en": "Descriptive Statistics Vocabulary"
       }
     }
   ],

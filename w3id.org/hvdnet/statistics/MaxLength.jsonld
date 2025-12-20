@@ -4,6 +4,9 @@
   "prefLabel": {
     "en": "Maximum length"
   },
+  "definition": {
+    "en": "The length of the longest text value in characters."
+  },
   "broader": {
     "id": "https://w3id.org/hvdnet/statistics/TextMeasures",
     "prefLabel": {
@@ -14,7 +17,7 @@
     {
       "id": "https://w3id.org/hvdnet/statistics/",
       "title": {
-        "en": "Statistics Vocabulary"
+        "en": "Descriptive Statistics Vocabulary"
       }
     }
   ],

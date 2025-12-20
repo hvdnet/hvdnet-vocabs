@@ -4,6 +4,9 @@
   "prefLabel": {
     "en": "Percentage of valid cases"
   },
+  "definition": {
+    "en": "The proportion of valid observations expressed as a percentage."
+  },
   "broader": {
     "id": "https://w3id.org/hvdnet/statistics/DerivedRatios",
     "prefLabel": {
@@ -19,7 +22,7 @@
     {
       "id": "https://w3id.org/hvdnet/statistics/",
       "title": {
-        "en": "Statistics Vocabulary"
+        "en": "Descriptive Statistics Vocabulary"
       }
     }
   ],

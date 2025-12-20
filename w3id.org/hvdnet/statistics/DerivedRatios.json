@@ -40,13 +40,43 @@
       "prefLabel": {
         "en": "Quartile Coefficient of Dispersion"
       }
+    },
+    {
+      "id": "https://w3id.org/hvdnet/statistics/DistinctnessRatio",
+      "prefLabel": {
+        "en": "Distinctness ratio"
+      }
+    },
+    {
+      "id": "https://w3id.org/hvdnet/statistics/ModeFrequencyRatio",
+      "prefLabel": {
+        "en": "Mode frequency ratio"
+      }
+    },
+    {
+      "id": "https://w3id.org/hvdnet/statistics/NonZeroRate",
+      "prefLabel": {
+        "en": "Non-zero rate"
+      }
+    },
+    {
+      "id": "https://w3id.org/hvdnet/statistics/PositiveShare",
+      "prefLabel": {
+        "en": "Positive share"
+      }
+    },
+    {
+      "id": "https://w3id.org/hvdnet/statistics/NegativeShare",
+      "prefLabel": {
+        "en": "Negative share"
+      }
     }
   ],
   "inScheme": [
     {
       "id": "https://w3id.org/hvdnet/statistics/",
       "title": {
-        "en": "Statistics Vocabulary"
+        "en": "Descriptive Statistics Vocabulary"
       }
     }
   ],
@@ -59,7 +89,7 @@
     {
       "id": "https://w3id.org/hvdnet/statistics/",
       "title": {
-        "en": "Statistics Vocabulary"
+        "en": "Descriptive Statistics Vocabulary"
       }
     }
   ],

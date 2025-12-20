@@ -18,6 +18,48 @@
       }
     },
     {
+      "id": "https://w3id.org/hvdnet/statistics/ExcessKurtosis",
+      "prefLabel": {
+        "en": "Excess kurtosis"
+      }
+    },
+    {
+      "id": "https://w3id.org/hvdnet/statistics/FisherSkewness",
+      "prefLabel": {
+        "en": "Fisher skewness (moment coefficient)"
+      }
+    },
+    {
+      "id": "https://w3id.org/hvdnet/statistics/PearsonSkewness",
+      "prefLabel": {
+        "en": "Pearson skewness (moment coefficient)"
+      }
+    },
+    {
+      "id": "https://w3id.org/hvdnet/statistics/SampleSkewness",
+      "prefLabel": {
+        "en": "Sample skewness"
+      }
+    },
+    {
+      "id": "https://w3id.org/hvdnet/statistics/PopulationSkewness",
+      "prefLabel": {
+        "en": "Population skewness"
+      }
+    },
+    {
+      "id": "https://w3id.org/hvdnet/statistics/SampleExcessKurtosis",
+      "prefLabel": {
+        "en": "Sample excess kurtosis"
+      }
+    },
+    {
+      "id": "https://w3id.org/hvdnet/statistics/PopulationExcessKurtosis",
+      "prefLabel": {
+        "en": "Population excess kurtosis"
+      }
+    },
+    {
       "id": "https://w3id.org/hvdnet/statistics/BowleySkewnessCoefficient",
       "prefLabel": {
         "en": "Bowley's Skewness Coefficient"
@@ -28,13 +70,31 @@
       "prefLabel": {
         "en": "Shapiro-Wilk"
       }
+    },
+    {
+      "id": "https://w3id.org/hvdnet/statistics/AndersonDarling",
+      "prefLabel": {
+        "en": "Anderson–Darling test"
+      }
+    },
+    {
+      "id": "https://w3id.org/hvdnet/statistics/KolmogorovSmirnov",
+      "prefLabel": {
+        "en": "Kolmogorov–Smirnov test"
+      }
+    },
+    {
+      "id": "https://w3id.org/hvdnet/statistics/JarqueBera",
+      "prefLabel": {
+        "en": "Jarque–Bera test"
+      }
     }
   ],
   "inScheme": [
     {
       "id": "https://w3id.org/hvdnet/statistics/",
       "title": {
-        "en": "Statistics Vocabulary"
+        "en": "Descriptive Statistics Vocabulary"
       }
     }
   ],
@@ -47,7 +107,7 @@
     {
       "id": "https://w3id.org/hvdnet/statistics/",
       "title": {
-        "en": "Statistics Vocabulary"
+        "en": "Descriptive Statistics Vocabulary"
       }
     }
   ],

@@ -4,6 +4,9 @@
   "prefLabel": {
     "en": "Length standard deviation"
   },
+  "definition": {
+    "en": "The standard deviation of text lengths in characters."
+  },
   "broader": {
     "id": "https://w3id.org/hvdnet/statistics/TextMeasures",
     "prefLabel": {
@@ -14,7 +17,7 @@
     {
       "id": "https://w3id.org/hvdnet/statistics/",
       "title": {
-        "en": "Statistics Vocabulary"
+        "en": "Descriptive Statistics Vocabulary"
       }
     }
   ],

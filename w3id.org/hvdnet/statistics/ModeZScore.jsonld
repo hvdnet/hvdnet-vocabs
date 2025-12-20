@@ -4,6 +4,9 @@
   "prefLabel": {
     "en": "Z-score of mode"
   },
+  "definition": {
+    "en": "The standardized distance of the mode from the mean in standard deviation units."
+  },
   "broader": {
     "id": "https://w3id.org/hvdnet/statistics/DerivedRatios",
     "prefLabel": {
@@ -14,7 +17,7 @@
     {
       "id": "https://w3id.org/hvdnet/statistics/",
       "title": {
-        "en": "Statistics Vocabulary"
+        "en": "Descriptive Statistics Vocabulary"
       }
     }
   ],

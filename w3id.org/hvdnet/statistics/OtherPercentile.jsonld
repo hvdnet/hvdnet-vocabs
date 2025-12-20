@@ -4,6 +4,9 @@
   "prefLabel": {
     "en": "Other percentile"
   },
+  "definition": {
+    "en": "A percentile value not covered by quartiles, quintiles, or deciles."
+  },
   "broader": {
     "id": "https://w3id.org/hvdnet/statistics/CentralTendency",
     "prefLabel": {
@@ -22,7 +25,7 @@
     {
       "id": "https://w3id.org/hvdnet/statistics/",
       "title": {
-        "en": "Statistics Vocabulary"
+        "en": "Descriptive Statistics Vocabulary"
       }
     }
   ],

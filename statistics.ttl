@@ -16,7 +16,7 @@ stats: a skos:ConceptScheme ;
     dct:description "The descriptive statistics vocabulary provides a controlled set of concepts for describing statistical measures and summary statistics for FAIR data."@en ;
     dct:created "2025-12-20"^^xsd:date ;
     skos:hasTopConcept stats:CentralTendency, stats:Dispersion, stats:SizeCount, 
-        stats:DerivedRatios, stats:ShapeDistribution, stats:TextMeasures, stats:Metadata, stats:FileLevel ;
+        stats:DerivedRatios, stats:ShapeDistribution, stats:TextMeasures, stats:Metadata, stats:FileLevel, stats:MissingnessCompleteness, stats:RobustStatistics, stats:AssociationDependence, stats:InformationContent, stats:Outliers ;
     dct:license <https://creativecommons.org/publicdomain/zero/1.0/> .
 
 # Categories
@@ -38,7 +38,8 @@ stats:Dispersion a skos:Concept ;
     skos:topConceptOf stats: ;
     skos:narrower stats:StandardErrorOfMean, stats:Range, stats:Variance, 
     stats:StandardDeviation, stats:AverageAbsoluteDeviation, stats:MedianAbsoluteDeviation, 
-    stats:InterquartileRange, stats:InterquintileRange, stats:InterdecileRange, stats:GiniCoefficient .
+    stats:InterquartileRange, stats:InterquintileRange, stats:InterdecileRange, stats:GiniCoefficient, 
+    stats:QnEstimator, stats:SnEstimator .
 
 stats:SizeCount a skos:Concept ;
     skos:prefLabel "Size/Count"@en ;
@@ -51,12 +52,15 @@ stats:DerivedRatios a skos:Concept ;
     skos:prefLabel "Other/Derived Ratios"@en ;
     skos:topConceptOf stats: ;  
     skos:narrower stats:ModeZScore, stats:StdDevRangeRatio, stats:CoefficientOfVariation, 
-    stats:PercentageOfValidCases, stats:PercentageOfInvalidCases, stats:QuartileDispersionCoefficient .
+    stats:PercentageOfValidCases, stats:PercentageOfInvalidCases, stats:QuartileDispersionCoefficient, 
+    stats:DistinctnessRatio, stats:ModeFrequencyRatio, stats:NonZeroRate, stats:PositiveShare, stats:NegativeShare .
 
 stats:ShapeDistribution a skos:Concept ;
     skos:prefLabel "Shape/Distribution"@en ;
     skos:topConceptOf stats: ;
-    skos:narrower stats:Beta1, stats:Beta2, stats:BowleySkewnessCoefficient, stats:ShapiroWilk .
+    skos:narrower stats:Beta1, stats:Beta2, stats:ExcessKurtosis, stats:FisherSkewness, stats:PearsonSkewness,
+        stats:SampleSkewness, stats:PopulationSkewness, stats:SampleExcessKurtosis, stats:PopulationExcessKurtosis,
+        stats:BowleySkewnessCoefficient, stats:ShapiroWilk, stats:AndersonDarling, stats:KolmogorovSmirnov, stats:JarqueBera .
 
 stats:TextMeasures a skos:Concept ;
     skos:prefLabel "Text/String Measures"@en ;
@@ -74,230 +78,370 @@ stats:FileLevel a skos:Concept ;
     skos:prefLabel "File-level Statistics/Attributes"@en ;
     skos:topConceptOf stats: ;
     skos:narrower stats:FileRecordCount, stats:FileVariableCount, stats:FileSizeBytes, stats:FileChecksum, 
-        stats:FileEncoding, stats:FileCompression, stats:FileSchemaVersion .
+        stats:FileEncoding, stats:FileCompression, stats:FileSchemaVersion, stats:FileLastModifiedTime, 
+        stats:FileCreationTime, stats:FileMimeType, stats:RecordVariableRatio .
+
+stats:MissingnessCompleteness a skos:Concept ;
+    skos:prefLabel "Missingness/Completeness"@en ;
+    skos:topConceptOf stats: ;
+    skos:narrower stats:MissingRate, stats:NonNullRate, stats:NullCases, stats:InvalidCases, stats:DuplicateRows, stats:DistinctnessRatio .
+
+stats:RobustStatistics a skos:Concept ;
+    skos:prefLabel "Robust Location/Scale"@en ;
+    skos:topConceptOf stats: ;
+    skos:narrower stats:Midrange, stats:Trimean, stats:BiweightMidvariance, stats:TrimmedMean, stats:WinsorizedMean, 
+        stats:QnEstimator, stats:SnEstimator .
+
+stats:AssociationDependence a skos:Concept ;
+    skos:prefLabel "Association/Dependence"@en ;
+    skos:topConceptOf stats: ;
+    skos:narrower stats:Covariance, stats:PearsonCorrelation, stats:SpearmanCorrelation, stats:KendallCorrelation, stats:MaxAbsCorrelation .
+
+stats:InformationContent a skos:Concept ;
+    skos:prefLabel "Information Content"@en ;
+    skos:topConceptOf stats: ;
+    skos:narrower stats:ShannonEntropy, stats:Perplexity .
+
+stats:Outliers a skos:Concept ;
+    skos:prefLabel "Outlier Flags"@en ;
+    skos:topConceptOf stats: ;
+    skos:narrower stats:OutlierCountIQR, stats:OutlierCountZScore .
+
+stats:CategoricalProfiling a skos:Concept ;
+    skos:prefLabel "Categorical Profiling"@en ;
+    skos:topConceptOf stats: ;
+    skos:narrower stats:TopKCategories, stats:TopKCategoryShare, stats:CardinalityBucket, stats:ImbalanceRatio .
 
 # Concepts - Central Tendency/Location
 
 stats:ArithmeticMean a skos:Concept ;
     skos:prefLabel "Arithmetic mean"@en ;
+    skos:definition "The sum of all values divided by the number of values."@en ;
     skos:broader stats:CentralTendency ;
     skos:inScheme stats: ;
     skos:exactMatch wikidata:Q19033, ddi:7975ed0 .
 
 stats:GeometricMean a skos:Concept ;
     skos:prefLabel "Geometric mean"@en ;
+    skos:definition "The nth root of the product of n values."@en ;
     skos:broader stats:CentralTendency ;
     skos:inScheme stats: ;
     skos:exactMatch wikidata:Q185049, ddi:cd8ebb0 .
 
 stats:HarmonicMean a skos:Concept ;
     skos:prefLabel "Harmonic mean"@en ;
+    skos:definition "The reciprocal of the arithmetic mean of reciprocals."@en ;
     skos:broader stats:CentralTendency ;
     skos:inScheme stats: ;
     skos:exactMatch wikidata:Q188347, ddi:71996c9 .
 
 stats:TrimmedMean a skos:Concept ;
     skos:prefLabel "Trimmed mean"@en ;
-    skos:broader stats:CentralTendency ;
+    skos:definition "The mean calculated after removing a specified percentage of extreme values from both ends."@en ;
+    skos:broader stats:CentralTendency, stats:RobustStatistics ;
     skos:inScheme stats: ;
     skos:exactMatch wikidata:Q32278, ddi:17ff276 .
 
 stats:WinsorizedMean a skos:Concept ;
     skos:prefLabel "Winsorized Mean"@en ;
-    skos:broader stats:CentralTendency ;
+    skos:definition "The mean calculated after replacing extreme values with less extreme values at specified percentiles."@en ;
+    skos:broader stats:CentralTendency, stats:RobustStatistics ;
     skos:inScheme stats: ;
     skos:exactMatch wikidata:Q2989389 .
 
 stats:Mode a skos:Concept ;
     skos:prefLabel "Mode"@en ;
+    skos:definition "The most frequently occurring value in a dataset."@en ;
     skos:broader stats:CentralTendency ;
     skos:inScheme stats: ;
     skos:exactMatch wikidata:Q188224, ddi:650be61 .
 
 stats:Median a skos:Concept ;
     skos:prefLabel "Median"@en ;
+    skos:definition "The middle value when data are sorted in order."@en ;
     skos:broader stats:CentralTendency ;
     skos:inScheme stats: ;
     skos:exactMatch wikidata:Q226995, ddi:66851a3 .
 
 stats:Minimum a skos:Concept ;
     skos:prefLabel "Minimum"@en ;
+    skos:definition "The smallest value in a dataset."@en ;
     skos:broader stats:CentralTendency ;
     skos:inScheme stats: ;
     skos:exactMatch wikidata:Q10585806, ddi:a1d0ec6 .
 
 stats:Maximum a skos:Concept ;
     skos:prefLabel "Maximum"@en ;
+    skos:definition "The largest value in a dataset."@en ;
     skos:broader stats:CentralTendency ;
     skos:inScheme stats: ;
     skos:exactMatch wikidata:Q10578722, ddi:8321e79 .
 
 stats:Sum a skos:Concept ;
     skos:prefLabel "Sum"@en ;
+    skos:definition "The total obtained by adding all values together."@en ;
     skos:broader stats:CentralTendency ;
     skos:inScheme stats: ;
     skos:exactMatch wikidata:Q218005, ddi:a0ec870 .
 
 stats:FirstQuartile a skos:Concept ;
     skos:prefLabel "First quartile"@en ;
+    skos:definition "The 25th percentile, below which 25% of data values fall."@en ;
     skos:broader stats:CentralTendency ;
     skos:inScheme stats: ;
     skos:exactMatch wikidata:Q112468319, ddi:350c70a .
 
 stats:SecondQuartile a skos:Concept ;
     skos:prefLabel "Second quartile"@en ;
+    skos:definition "The 50th percentile (median), below which 50% of data values fall."@en ;
     skos:broader stats:CentralTendency ;
     skos:inScheme stats: ;
     skos:exactMatch wikidata:Q226995, ddi:f02fd7a .
 
 stats:ThirdQuartile a skos:Concept ;
     skos:prefLabel "Third quartile"@en ;
+    skos:definition "The 75th percentile, below which 75% of data values fall."@en ;
     skos:broader stats:CentralTendency ;
     skos:inScheme stats: ;
     skos:exactMatch wikidata:Q112468502, ddi:ebe9990 .
 
 stats:FirstQuintile a skos:Concept ;
     skos:prefLabel "First quintile"@en ;
+    skos:definition "The 20th percentile, below which 20% of data values fall."@en ;
     skos:broader stats:CentralTendency ;
     skos:inScheme stats: ;
     skos:exactMatch wikidata:Q3176606, ddi:ccfc0c3 .
 
 stats:SecondQuintile a skos:Concept ;
     skos:prefLabel "Second quintile"@en ;
+    skos:definition "The 40th percentile, below which 40% of data values fall."@en ;
     skos:broader stats:CentralTendency ;
     skos:inScheme stats: ;
     skos:exactMatch wikidata:Q3176606, ddi:3ca7a64 .
 
 stats:ThirdQuintile a skos:Concept ;
     skos:prefLabel "Third quintile"@en ;
+    skos:definition "The 60th percentile, below which 60% of data values fall."@en ;
     skos:broader stats:CentralTendency ;
     skos:inScheme stats: ;
     skos:exactMatch wikidata:Q3176606, ddi:e9f3735 .
 
 stats:FourthQuintile a skos:Concept ;
     skos:prefLabel "Fourth quintile"@en ;
+    skos:definition "The 80th percentile, below which 80% of data values fall."@en ;
     skos:broader stats:CentralTendency ;
     skos:inScheme stats: ;
     skos:exactMatch wikidata:Q3176606, ddi:c3a6a12 .
 
 stats:FirstDecile a skos:Concept ;
     skos:prefLabel "First decile"@en ;
+    skos:definition "The 10th percentile, below which 10% of data values fall."@en ;
     skos:broader stats:CentralTendency ;
     skos:inScheme stats: ;
     skos:exactMatch wikidata:Q3027971, ddi:ac62c25 .
 
 stats:SecondDecile a skos:Concept ;
     skos:prefLabel "Second decile"@en ;
+    skos:definition "The 20th percentile, below which 20% of data values fall."@en ;
     skos:broader stats:CentralTendency ;
     skos:inScheme stats: ;
     skos:exactMatch wikidata:Q3027971, ddi:93d51e9 .
 
 stats:ThirdDecile a skos:Concept ;
     skos:prefLabel "Third decile"@en ;
+    skos:definition "The 30th percentile, below which 30% of data values fall."@en ;
     skos:broader stats:CentralTendency ;
     skos:inScheme stats: ;
     skos:exactMatch wikidata:Q3027971, ddi:85cba81 .
 
 stats:FourthDecile a skos:Concept ;
     skos:prefLabel "Fourth decile"@en ;
+    skos:definition "The 40th percentile, below which 40% of data values fall."@en ;
     skos:broader stats:CentralTendency ;
     skos:inScheme stats: ;
     skos:exactMatch wikidata:Q3027971, ddi:2381913 .
 
 stats:FifthDecile a skos:Concept ;
     skos:prefLabel "Fifth decile"@en ;
+    skos:definition "The 50th percentile (median), below which 50% of data values fall."@en ;
     skos:broader stats:CentralTendency ;
     skos:inScheme stats: ;
     skos:exactMatch wikidata:Q3027971, ddi:9eb1ff9 .
 
 stats:SixthDecile a skos:Concept ;
     skos:prefLabel "Sixth decile"@en ;
+    skos:definition "The 60th percentile, below which 60% of data values fall."@en ;
     skos:broader stats:CentralTendency ;
     skos:inScheme stats: ;
     skos:exactMatch wikidata:Q3027971, ddi:380846d .
 
 stats:SeventhDecile a skos:Concept ;
     skos:prefLabel "Seventh decile"@en ;
+    skos:definition "The 70th percentile, below which 70% of data values fall."@en ;
     skos:broader stats:CentralTendency ;
     skos:inScheme stats: ;
     skos:exactMatch wikidata:Q3027971, ddi:edf2add .
 
 stats:EighthDecile a skos:Concept ;
     skos:prefLabel "Eighth decile"@en ;
+    skos:definition "The 80th percentile, below which 80% of data values fall."@en ;
     skos:broader stats:CentralTendency ;
     skos:inScheme stats: ;
     skos:exactMatch wikidata:Q3027971, ddi:03dbd00 .
 
 stats:NinthDecile a skos:Concept ;
     skos:prefLabel "Ninth decile"@en ;
+    skos:definition "The 90th percentile, below which 90% of data values fall."@en ;
     skos:broader stats:CentralTendency ;
     skos:inScheme stats: ;
     skos:exactMatch wikidata:Q3027971, ddi:9dea4c0 .
 
 stats:OtherPercentile a skos:Concept ;
     skos:prefLabel "Other percentile"@en ;
+    skos:definition "A percentile value not covered by quartiles, quintiles, or deciles."@en ;
     skos:broader stats:CentralTendency ;
     skos:inScheme stats: ;
     skos:exactMatch wikidata:Q2913954, ddi:9947048 .
+
+# Concepts - Robust Location/Scale
+
+stats:Midrange a skos:Concept ;
+    skos:prefLabel "Midrange"@en ;
+    skos:definition "The average of the minimum and maximum values."@en ;
+    skos:broader stats:RobustStatistics ;
+    skos:inScheme stats: .
+
+stats:Trimean a skos:Concept ;
+    skos:prefLabel "Trimean"@en ;
+    skos:definition "A weighted average of the median and two quartiles: (Q1 + 2×Q2 + Q3) / 4."@en ;
+    skos:broader stats:RobustStatistics ;
+    skos:inScheme stats: .
+
+stats:BiweightMidvariance a skos:Concept ;
+    skos:prefLabel "Biweight midvariance"@en ;
+    skos:definition "A robust measure of scale based on the biweight (bisquare) function."@en ;
+    skos:broader stats:RobustStatistics, stats:Dispersion ;
+    skos:inScheme stats: .
+
+stats:QnEstimator a skos:Concept ;
+    skos:prefLabel "Qn scale estimator"@en ;
+    skos:definition "A robust scale estimator based on the first quartile of pairwise absolute differences."@en ;
+    skos:altLabel "Rousseeuw-Croux Qn"@en ;
+    skos:broader stats:RobustStatistics, stats:Dispersion ;
+    skos:inScheme stats: .
+
+stats:SnEstimator a skos:Concept ;
+    skos:prefLabel "Sn scale estimator"@en ;
+    skos:definition "A robust scale estimator based on median of medians of pairwise absolute differences."@en ;
+    skos:altLabel "Rousseeuw-Croux Sn"@en ;
+    skos:broader stats:RobustStatistics, stats:Dispersion ;
+    skos:inScheme stats: .
+
+# Concepts - Association/Dependence
+
+stats:Covariance a skos:Concept ;
+    skos:prefLabel "Covariance"@en ;
+    skos:definition "A measure of the joint variability between two variables."@en ;
+    skos:broader stats:AssociationDependence ;
+    skos:inScheme stats: ;
+    skos:exactMatch wikidata:Q208273 .
+
+stats:PearsonCorrelation a skos:Concept ;
+    skos:prefLabel "Pearson correlation coefficient"@en ;
+    skos:definition "A measure of linear correlation between two variables, ranging from -1 to +1."@en ;
+    skos:broader stats:AssociationDependence ;
+    skos:inScheme stats: ;
+    skos:exactMatch wikidata:Q51993 .
+
+stats:SpearmanCorrelation a skos:Concept ;
+    skos:prefLabel "Spearman rank correlation"@en ;
+    skos:definition "A non-parametric measure of rank correlation between two variables."@en ;
+    skos:broader stats:AssociationDependence ;
+    skos:inScheme stats: ;
+    skos:exactMatch wikidata:Q79867 .
+
+stats:KendallCorrelation a skos:Concept ;
+    skos:prefLabel "Kendall rank correlation"@en ;
+    skos:definition "A measure of ordinal association based on concordant and discordant pairs."@en ;
+    skos:broader stats:AssociationDependence ;
+    skos:inScheme stats: ;
+    skos:exactMatch wikidata:Q1133707 .
+
+stats:MaxAbsCorrelation a skos:Concept ;
+    skos:prefLabel "Maximum absolute correlation (matrix summary)"@en ;
+    skos:definition "The largest absolute correlation coefficient found in a correlation matrix."@en ;
+    skos:broader stats:AssociationDependence ;
+    skos:inScheme stats: .
 
 # Concepts - Dispersion/Variability
 
 stats:StandardErrorOfMean a skos:Concept ;
     skos:prefLabel "Standard error of the mean"@en ;
+    skos:definition "The standard deviation of the sampling distribution of the mean."@en ;
     skos:broader stats:Dispersion ;
     skos:inScheme stats: ;
     skos:exactMatch wikidata:Q111972245, ddi:2c03973 .
 
 stats:Range a skos:Concept ;
     skos:prefLabel "Range"@en ;
+    skos:definition "The difference between the maximum and minimum values."@en ;
     skos:broader stats:Dispersion ;
     skos:inScheme stats: ;
     skos:exactMatch wikidata:Q1165839 .
 
 stats:Variance a skos:Concept ;
     skos:prefLabel "Variance"@en ;
+    skos:definition "The average of the squared deviations from the mean."@en ;
     skos:broader stats:Dispersion ;
     skos:inScheme stats: ;
     skos:exactMatch wikidata:Q175199 .
 
 stats:StandardDeviation a skos:Concept ;
     skos:prefLabel "Standard deviation"@en ;
+    skos:definition "The square root of the variance, measuring spread around the mean."@en ;
     skos:broader stats:Dispersion ;
     skos:inScheme stats: ;
     skos:exactMatch wikidata:Q159375 .
 
 stats:AverageAbsoluteDeviation a skos:Concept ;
     skos:prefLabel "Average absolute deviation"@en ;
+    skos:definition "The mean of the absolute deviations from a central point (typically the mean)."@en ;
     skos:broader stats:Dispersion ;
     skos:inScheme stats: ;
     skos:exactMatch wikidata:Q1067186, ddi:015ce0a .
 
 stats:MedianAbsoluteDeviation a skos:Concept ;
     skos:prefLabel "Median absolute deviation"@en ;
+    skos:definition "The median of the absolute deviations from the median, a robust measure of variability."@en ;
     skos:broader stats:Dispersion ;
     skos:inScheme stats: ;
     skos:exactMatch wikidata:Q3853702, ddi:5dc5781 .
 
 stats:InterquartileRange a skos:Concept ;
     skos:prefLabel "Interquartile range"@en ;
+    skos:definition "The difference between the third and first quartiles (Q3 - Q1)."@en ;
     skos:broader stats:Dispersion ;
     skos:inScheme stats: ;
     skos:exactMatch wikidata:Q1916617, ddi:a7f7339 .
 
 stats:InterquintileRange a skos:Concept ;
     skos:prefLabel "Interquintile range"@en ;
+    skos:definition "The difference between the fourth and first quintiles."@en ;
     skos:broader stats:Dispersion ;
     skos:inScheme stats: ;
     skos:exactMatch ddi:b3ab24e .
 
 stats:InterdecileRange a skos:Concept ;
     skos:prefLabel "Interdecile range"@en ;
+    skos:definition "The difference between the ninth and first deciles (P90 - P10)."@en ;
     skos:broader stats:Dispersion ;
     skos:inScheme stats: ;
+    skos:altLabel "P90-P10 range"@en ;
     skos:exactMatch wikidata:Q6046031, ddi:26ad7e5 .
 
 stats:GiniCoefficient a skos:Concept ;
     skos:prefLabel "Gini Coefficient"@en ;
+    skos:definition "A measure of statistical dispersion representing inequality in a distribution."@en ;
     skos:broader stats:Dispersion ;
     skos:inScheme stats: ;
     skos:exactMatch wikidata:Q162455 .
@@ -306,59 +450,70 @@ stats:GiniCoefficient a skos:Concept ;
 
 stats:ValidCases a skos:Concept ;
     skos:prefLabel "Valid cases"@en ;
+    skos:definition "The count of observations with valid, non-missing values."@en ;
     skos:broader stats:SizeCount ;
     skos:inScheme stats: ;
     skos:exactMatch ddi:c646dd8 .
 
 stats:InvalidCases a skos:Concept ;
     skos:prefLabel "Invalid cases"@en ;
-    skos:broader stats:SizeCount ;
+    skos:definition "The count of observations with invalid or out-of-range values."@en ;
+    skos:broader stats:SizeCount, stats:MissingnessCompleteness ;
     skos:inScheme stats: ;
     skos:exactMatch ddi:6459c62 .
 
 stats:NullCases a skos:Concept ;
     skos:prefLabel "Cases that have null/empty value"@en ;
-    skos:broader stats:SizeCount ;
+    skos:definition "The count of observations with null, missing, or empty values."@en ;
+    skos:broader stats:SizeCount, stats:MissingnessCompleteness ;
     skos:inScheme stats: .
 
 stats:UniqueCases a skos:Concept ;
     skos:prefLabel "Unique Cases/Values"@en ;
+    skos:definition "The count of distinct values in the dataset."@en ;
     skos:broader stats:SizeCount ;
     skos:inScheme stats: .
 
 stats:Sparsity a skos:Concept ;
     skos:prefLabel "Sparsity"@en ;
+    skos:definition "The proportion of zero or null values in a dataset."@en ;
     skos:broader stats:SizeCount ;
     skos:inScheme stats: .
 
 stats:PositiveCount a skos:Concept ;
     skos:prefLabel "Count of positive values"@en ;
+    skos:definition "The number of observations with positive values (> 0)."@en ;
     skos:broader stats:SizeCount ;
     skos:inScheme stats: .
 
 stats:ZeroCount a skos:Concept ;
     skos:prefLabel "Count of zero values"@en ;
+    skos:definition "The number of observations with exactly zero value."@en ;
     skos:broader stats:SizeCount ;
     skos:inScheme stats: .
 
 stats:NegativeCount a skos:Concept ;
     skos:prefLabel "Count of negative values"@en ;
+    skos:definition "The number of observations with negative values (< 0)."@en ;
     skos:broader stats:SizeCount ;
     skos:inScheme stats: .
 
 stats:SignificantDigits a skos:Concept ;
     skos:prefLabel "Number of digits needed to safely store the data"@en ;
+    skos:definition "The precision or number of significant digits required to represent the values."@en ;
     skos:broader stats:SizeCount ;
     skos:inScheme stats: .
 
 stats:Frequency a skos:Concept ;
     skos:prefLabel "Frequency"@en ;
+    skos:definition "The number of times a particular value or category appears."@en ;
     skos:broader stats:SizeCount ;
     skos:inScheme stats: ;
     skos:exactMatch wikidata:Q762856 .
 
 stats:Other a skos:Concept ;
     skos:prefLabel "Other"@en ;
+    skos:definition "A count or size measure not otherwise categorized."@en ;
     skos:broader stats:SizeCount ;
     skos:inScheme stats: ;
     skos:exactMatch ddi:6311ae1 .
@@ -367,34 +522,68 @@ stats:Other a skos:Concept ;
 
 stats:ModeZScore a skos:Concept ;
     skos:prefLabel "Z-score of mode"@en ;
+    skos:definition "The standardized distance of the mode from the mean in standard deviation units."@en ;
     skos:broader stats:DerivedRatios ;
     skos:inScheme stats: .
 
 stats:StdDevRangeRatio a skos:Concept ;
     skos:prefLabel "Range to Standard Deviation Ratio"@en ;
+    skos:definition "The ratio of the range to the standard deviation."@en ;
     skos:broader stats:DerivedRatios ;
     skos:inScheme stats: .
 
 stats:CoefficientOfVariation a skos:Concept ;
     skos:prefLabel "Coefficient of variation"@en ;
+    skos:definition "The ratio of the standard deviation to the mean, expressing variability relative to the mean."@en ;
     skos:broader stats:DerivedRatios ;
     skos:inScheme stats: ;
     skos:exactMatch wikidata:Q623738, ddi:3279fce .
 
 stats:PercentageOfValidCases a skos:Concept ;
     skos:prefLabel "Percentage of valid cases"@en ;
+    skos:definition "The proportion of valid observations expressed as a percentage."@en ;
     skos:broader stats:DerivedRatios ;
     skos:inScheme stats: ;
     skos:exactMatch ddi:ecf4107 .
 
 stats:PercentageOfInvalidCases a skos:Concept ;
     skos:prefLabel "Percentage of invalid cases"@en ;
+    skos:definition "The proportion of invalid observations expressed as a percentage."@en ;
     skos:broader stats:DerivedRatios ;
     skos:inScheme stats: ;
     skos:exactMatch ddi:e592a55 .
 
 stats:QuartileDispersionCoefficient a skos:Concept ;
     skos:prefLabel "Quartile Coefficient of Dispersion"@en ;
+    skos:definition "A relative measure of dispersion based on quartiles: (Q3 - Q1) / (Q3 + Q1)."@en ;
+    skos:broader stats:DerivedRatios ;
+    skos:inScheme stats: .
+
+stats:ModeFrequencyRatio a skos:Concept ;
+    skos:prefLabel "Mode frequency ratio"@en ;
+    skos:definition "The proportion of observations equal to the mode value."@en ;
+    skos:altLabel "Mode share"@en ;
+    skos:broader stats:DerivedRatios ;
+    skos:inScheme stats: .
+
+stats:NonZeroRate a skos:Concept ;
+    skos:prefLabel "Non-zero rate"@en ;
+    skos:definition "The proportion of observations with non-zero values."@en ;
+    skos:altLabel "Non-zero share"@en ;
+    skos:broader stats:DerivedRatios ;
+    skos:inScheme stats: .
+
+stats:PositiveShare a skos:Concept ;
+    skos:prefLabel "Positive share"@en ;
+    skos:definition "The proportion of observations with positive values."@en ;
+    skos:altLabel "Positive proportion"@en ;
+    skos:broader stats:DerivedRatios ;
+    skos:inScheme stats: .
+
+stats:NegativeShare a skos:Concept ;
+    skos:prefLabel "Negative share"@en ;
+    skos:definition "The proportion of observations with negative values."@en ;
+    skos:altLabel "Negative proportion"@en ;
     skos:broader stats:DerivedRatios ;
     skos:inScheme stats: .
 
@@ -402,83 +591,158 @@ stats:QuartileDispersionCoefficient a skos:Concept ;
 
 stats:Beta1 a skos:Concept ;
     skos:prefLabel "Skewness"@en ;
+    skos:definition "A measure of the asymmetry of the distribution around its mean."@en ;
     skos:broader stats:ShapeDistribution ;
     skos:inScheme stats: ;
     skos:exactMatch wikidata:Q1037340, ddi:3713b65 .
 
 stats:Beta2 a skos:Concept ;
     skos:prefLabel "Kurtosis"@en ;
+    skos:definition "A measure of the tailedness or peakedness of the distribution."@en ;
     skos:broader stats:ShapeDistribution ;
     skos:inScheme stats: ;
     skos:exactMatch wikidata:Q287251, ddi:01aac65 .
 
 stats:BowleySkewnessCoefficient a skos:Concept ;
     skos:prefLabel "Bowley's Skewness Coefficient"@en ;
+    skos:definition "A quartile-based measure of skewness robust to outliers."@en ;
     skos:broader stats:ShapeDistribution ;
     skos:inScheme stats: ;
     skos:exactMatch wikidata:Q108253995 .
 
 stats:ShapiroWilk a skos:Concept ;
     skos:prefLabel "Shapiro-Wilk"@en ;
+    skos:definition "A test statistic for assessing normality of a distribution."@en ;
     skos:broader stats:ShapeDistribution ;
     skos:inScheme stats: ;
     skos:exactMatch wikidata:Q1396441, ddi:699a82e .
+
+stats:AndersonDarling a skos:Concept ;
+    skos:prefLabel "Anderson–Darling test"@en ;
+    skos:definition "A statistical test for whether a sample comes from a specified distribution."@en ;
+    skos:broader stats:ShapeDistribution ;
+    skos:inScheme stats: .
+
+stats:KolmogorovSmirnov a skos:Concept ;
+    skos:prefLabel "Kolmogorov–Smirnov test"@en ;
+    skos:definition "A nonparametric test for comparing a sample distribution with a reference distribution."@en ;
+    skos:broader stats:ShapeDistribution ;
+    skos:inScheme stats: .
+
+stats:JarqueBera a skos:Concept ;
+    skos:prefLabel "Jarque–Bera test"@en ;
+    skos:definition "A goodness-of-fit test for normality based on skewness and kurtosis."@en ;
+    skos:broader stats:ShapeDistribution ;
+    skos:inScheme stats: .
+
+stats:ExcessKurtosis a skos:Concept ;
+    skos:prefLabel "Excess kurtosis"@en ;
+    skos:definition "Kurtosis minus 3, measuring deviation from the normal distribution's tailedness."@en ;
+    skos:broader stats:ShapeDistribution ;
+    skos:inScheme stats: .
+
+stats:FisherSkewness a skos:Concept ;
+    skos:prefLabel "Fisher skewness (moment coefficient)"@en ;
+    skos:definition "The standardized third moment about the mean."@en ;
+    skos:broader stats:ShapeDistribution ;
+    skos:inScheme stats: .
+
+stats:PearsonSkewness a skos:Concept ;
+    skos:prefLabel "Pearson skewness (moment coefficient)"@en ;
+    skos:definition "A skewness measure based on the third standardized moment."@en ;
+    skos:broader stats:ShapeDistribution ;
+    skos:inScheme stats: .
+
+stats:SampleSkewness a skos:Concept ;
+    skos:prefLabel "Sample skewness"@en ;
+    skos:definition "Skewness calculated with sample-based denominator adjustment."@en ;
+    skos:broader stats:ShapeDistribution ;
+    skos:inScheme stats: .
+
+stats:PopulationSkewness a skos:Concept ;
+    skos:prefLabel "Population skewness"@en ;
+    skos:definition "Skewness calculated assuming the data represents the entire population."@en ;
+    skos:broader stats:ShapeDistribution ;
+    skos:inScheme stats: .
+
+stats:SampleExcessKurtosis a skos:Concept ;
+    skos:prefLabel "Sample excess kurtosis"@en ;
+    skos:definition "Excess kurtosis calculated with sample-based denominator adjustment."@en ;
+    skos:broader stats:ShapeDistribution ;
+    skos:inScheme stats: .
+
+stats:PopulationExcessKurtosis a skos:Concept ;
+    skos:prefLabel "Population excess kurtosis"@en ;
+    skos:definition "Excess kurtosis calculated assuming the data represents the entire population."@en ;
+    skos:broader stats:ShapeDistribution ;
+    skos:inScheme stats: .
 
 # Concepts - Text/String Measures
 
 stats:MinLength a skos:Concept ;
     skos:prefLabel "Minimum length"@en ;
+    skos:definition "The length of the shortest text value in characters."@en ;
     skos:broader stats:TextMeasures ;
     skos:inScheme stats: .
 
 stats:MaxLength a skos:Concept ;
     skos:prefLabel "Maximum length"@en ;
+    skos:definition "The length of the longest text value in characters."@en ;
     skos:broader stats:TextMeasures ;
     skos:inScheme stats: .
 
 stats:AverageLength a skos:Concept ;
     skos:prefLabel "Average length"@en ;
+    skos:definition "The mean length of text values in characters."@en ;
     skos:broader stats:TextMeasures ;
     skos:inScheme stats: .
 
 stats:LengthStdDev a skos:Concept ;
     skos:prefLabel "Length standard deviation"@en ;
+    skos:definition "The standard deviation of text lengths in characters."@en ;
     skos:broader stats:TextMeasures ;
     skos:inScheme stats: .
 
 stats:MinWordCount a skos:Concept ;
     skos:prefLabel "Minimum word count"@en ;
+    skos:definition "The smallest number of words in any text value."@en ;
     skos:broader stats:TextMeasures ;
     skos:inScheme stats: .
 
 stats:MaxWordCount a skos:Concept ;
     skos:prefLabel "Maximum word count"@en ;
+    skos:definition "The largest number of words in any text value."@en ;
     skos:broader stats:TextMeasures ;
     skos:inScheme stats: .
 
 stats:AverageWordCount a skos:Concept ;
     skos:prefLabel "Average word count"@en ;
+    skos:definition "The mean number of words per text value."@en ;
     skos:broader stats:TextMeasures ;
     skos:inScheme stats: .
 
 stats:TotalWordCount a skos:Concept ;
     skos:prefLabel "Total word count"@en ;
+    skos:definition "The sum of all words across all text values."@en ;
     skos:broader stats:TextMeasures ;
     skos:inScheme stats: .
 
 stats:UniqueWordCount a skos:Concept ;
     skos:prefLabel "Unique word count"@en ;
+    skos:definition "The number of distinct words appearing across all text values."@en ;
     skos:broader stats:TextMeasures ;
     skos:inScheme stats: .
 
 stats:LexicalDiversity a skos:Concept ;
     skos:prefLabel "Lexical diversity"@en ;
+    skos:definition "The ratio of unique words to total words, measuring vocabulary richness."@en ;
     skos:broader stats:TextMeasures ;
     skos:inScheme stats: ;
     skos:exactMatch wikidata:Q18346297 .
 
 stats:Languages a skos:Concept ;
     skos:prefLabel "Languages"@en ;
+    skos:definition "The set of natural languages detected or present in text values."@en ;
     skos:broader stats:TextMeasures ;
     skos:inScheme stats: ;
     skos:exactMatch wikidata:Q34770 .
@@ -487,42 +751,172 @@ stats:Languages a skos:Concept ;
 
 stats:IsAscii a skos:Concept ;
     skos:prefLabel "ASCII characters only"@en ;
+    skos:definition "Indicates whether values contain only ASCII characters."@en ;
     skos:broader stats:Metadata ;
+    skos:inScheme stats: .
+
+# Concepts - Missingness/Completeness
+
+stats:MissingRate a skos:Concept ;
+    skos:prefLabel "Missing rate"@en ;
+    skos:altLabel "Null rate"@en ;
+    skos:definition "The proportion of values that are missing or null."@en ;
+    skos:broader stats:MissingnessCompleteness ;
+    skos:inScheme stats: .
+
+stats:NonNullRate a skos:Concept ;
+    skos:prefLabel "Non-null rate"@en ;
+    skos:altLabel "Completeness"@en ;
+    skos:definition "The proportion of values that are present and non-null."@en ;
+    skos:broader stats:MissingnessCompleteness ;
+    skos:inScheme stats: .
+
+stats:DuplicateRows a skos:Concept ;
+    skos:prefLabel "Duplicate rows"@en ;
+    skos:altLabel "Duplicate count"@en ;
+    skos:definition "The number of duplicated records based on chosen key(s)."@en ;
+    skos:broader stats:MissingnessCompleteness ;
+    skos:inScheme stats: .
+
+stats:DistinctnessRatio a skos:Concept ;
+    skos:prefLabel "Distinctness ratio"@en ;
+    skos:altLabel "Uniqueness ratio"@en ;
+    skos:definition "The fraction of distinct values relative to total observations."@en ;
+    skos:broader stats:MissingnessCompleteness ;
     skos:inScheme stats: .
 
 # Concepts - File-level Statistics/Attributes
 
 stats:FileRecordCount a skos:Concept ;
     skos:prefLabel "Total record count"@en ;
+    skos:altLabel "Row count"@en ;
+    skos:definition "The total number of records (rows) in the file."@en ;
     skos:broader stats:FileLevel ;
     skos:inScheme stats: .
 
 stats:FileVariableCount a skos:Concept ;
     skos:prefLabel "Total variable/column count"@en ;
+    skos:altLabel "Column count"@en ;
+    skos:definition "The total number of variables or columns in the file."@en ;
     skos:broader stats:FileLevel ;
     skos:inScheme stats: .
 
 stats:FileSizeBytes a skos:Concept ;
     skos:prefLabel "File size (bytes)"@en ;
+    skos:definition "The size of the file measured in bytes."@en ;
     skos:broader stats:FileLevel ;
     skos:inScheme stats: .
 
 stats:FileChecksum a skos:Concept ;
     skos:prefLabel "File checksum"@en ;
+    skos:definition "A hash value used to verify file integrity."@en ;
     skos:broader stats:FileLevel ;
     skos:inScheme stats: .
 
 stats:FileEncoding a skos:Concept ;
     skos:prefLabel "File character encoding"@en ;
+    skos:definition "The character encoding used to represent text in the file (e.g., UTF-8)."@en ;
     skos:broader stats:FileLevel ;
     skos:inScheme stats: .
 
 stats:FileCompression a skos:Concept ;
     skos:prefLabel "File compression"@en ;
+    skos:definition "The compression format or status applied to the file (e.g., gzip)."@en ;
     skos:broader stats:FileLevel ;
     skos:inScheme stats: .
 
 stats:FileSchemaVersion a skos:Concept ;
     skos:prefLabel "File schema/version"@en ;
+    skos:definition "The schema identifier or version describing the file's structure."@en ;
     skos:broader stats:FileLevel ;
+    skos:inScheme stats: .
+
+stats:FileLastModifiedTime a skos:Concept ;
+    skos:prefLabel "File last modified time"@en ;
+    skos:altLabel "Last modified timestamp"@en ;
+    skos:definition "The timestamp when the file was last modified."@en ;
+    skos:broader stats:FileLevel ;
+    skos:inScheme stats: .
+
+stats:FileCreationTime a skos:Concept ;
+    skos:prefLabel "File creation time"@en ;
+    skos:altLabel "Created timestamp"@en ;
+    skos:definition "The timestamp when the file was originally created."@en ;
+    skos:broader stats:FileLevel ;
+    skos:inScheme stats: .
+
+stats:FileMimeType a skos:Concept ;
+    skos:prefLabel "File MIME/media type"@en ;
+    skos:altLabel "Media type"@en ;
+    skos:definition "The media type that describes the file's format (e.g., text/csv)."@en ;
+    skos:broader stats:FileLevel ;
+    skos:inScheme stats: .
+
+stats:RecordVariableRatio a skos:Concept ;
+    skos:prefLabel "Record-to-variable ratio"@en ;
+    skos:altLabel "Rows-to-columns ratio"@en ;
+    skos:definition "The ratio of records to variables, indicating dataset shape."@en ;
+    skos:broader stats:FileLevel ;
+    skos:inScheme stats: .
+
+# Concepts - Information Content
+
+stats:ShannonEntropy a skos:Concept ;
+    skos:prefLabel "Shannon entropy"@en ;
+    skos:altLabel "Information entropy"@en ;
+    skos:definition "The expected information content per symbol based on its probability distribution."@en ;
+    skos:broader stats:InformationContent ;
+    skos:inScheme stats: .
+
+stats:Perplexity a skos:Concept ;
+    skos:prefLabel "Perplexity"@en ;
+    skos:altLabel "Language-model perplexity"@en ;
+    skos:definition "An exponentiated form of entropy indicating average branching or uncertainty."@en ;
+    skos:broader stats:InformationContent ;
+    skos:inScheme stats: .
+
+# Concepts - Outlier Flags
+
+stats:OutlierCountIQR a skos:Concept ;
+    skos:prefLabel "Outlier count (IQR rule)"@en ;
+    skos:altLabel "Tukey fence outliers"@en ;
+    skos:definition "The number of observations beyond k×IQR fences from the quartiles."@en ;
+    skos:broader stats:Outliers ;
+    skos:inScheme stats: .
+
+stats:OutlierCountZScore a skos:Concept ;
+    skos:prefLabel "Outlier count (Z-score rule)"@en ;
+    skos:altLabel "Z-score outliers"@en ;
+    skos:definition "The number of observations with standardized values exceeding a threshold (e.g., |z|>3)."@en ;
+    skos:broader stats:Outliers ;
+    skos:inScheme stats: .
+
+# Concepts - Categorical Profiling
+
+stats:TopKCategories a skos:Concept ;
+    skos:prefLabel "Top-k categories"@en ;
+    skos:altLabel "Top categories"@en ;
+    skos:definition "The most frequent k categories ranked by count."@en ;
+    skos:broader stats:CategoricalProfiling ;
+    skos:inScheme stats: .
+
+stats:TopKCategoryShare a skos:Concept ;
+    skos:prefLabel "Top-k category share"@en ;
+    skos:altLabel "Top-k cumulative share"@en ;
+    skos:definition "The cumulative proportion contributed by the top k categories."@en ;
+    skos:broader stats:CategoricalProfiling ;
+    skos:inScheme stats: .
+
+stats:CardinalityBucket a skos:Concept ;
+    skos:prefLabel "Cardinality bucket"@en ;
+    skos:altLabel "Cardinality class"@en ;
+    skos:definition "A categorization of the number of distinct values into predefined buckets."@en ;
+    skos:broader stats:CategoricalProfiling ;
+    skos:inScheme stats: .
+
+stats:ImbalanceRatio a skos:Concept ;
+    skos:prefLabel "Imbalance ratio"@en ;
+    skos:altLabel "Class imbalance ratio"@en ;
+    skos:definition "The ratio between majority and minority class frequencies."@en ;
+    skos:broader stats:CategoricalProfiling ;
     skos:inScheme stats: .

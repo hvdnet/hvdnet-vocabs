@@ -1,0 +1,484 @@
+@prefix stats: <https://w3id.org/hvdnet/statistics/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix wikidata: <https://wikidata.org/wiki/> .
+@prefix ddi: <http://rdf-vocabulary.ddialliance.org/cv/SummaryStatisticType/2.1.2/> .
+
+# Crosswalks: Concepts may include skos:exactMatch links to Wikidata
+# using the wikidata: prefix above (https://wikidata.org/wiki/).
+# Use skos:closeMatch where equivalence is weaker. Future revisions may
+# adopt Wikidata entity IRIs (e.g., http://www.wikidata.org/entity/Q19033)
+# for improved machine-resolution.
+
+stats: a skos:ConceptScheme ;
+    dct:title "Statistics Vocabulary"@en ;
+    dct:description "A vocabulary of statistical concepts and measures."@en ;
+    dct:created "2025-12-19"^^xsd:date ;
+    skos:hasTopConcept stats:CentralTendency, stats:Dispersion, stats:SizeCount, 
+        stats:DerivedRatios, stats:ShapeDistribution, stats:TextMeasures, stats:Metadata .
+
+# Categories
+
+stats:CentralTendency a skos:Concept ;
+    skos:prefLabel "Central Tendency/Location"@en ;
+    skos:topConceptOf stats: ;
+    skos:narrower 
+        stats:ArithmeticMean, stats:GeometricMean, stats:HarmonicMean,
+        stats:TrimmedMean, stats:WinsorizedMean, stats:Mode, stats:Median, 
+        stats:Minimum, stats:Maximum, stats:Sum, 
+        stats:FirstQuartile, stats:SecondQuartile, stats:ThirdQuartile, 
+        stats:FirstQuintile, stats:SecondQuintile, stats:ThirdQuintile, stats:FourthQuintile, 
+        stats:FirstDecile, stats:SecondDecile, stats:ThirdDecile, stats:FourthDecile, stats:FifthDecile, 
+        stats:SixthDecile, stats:SeventhDecile, stats:EighthDecile, stats:NinthDecile, stats:OtherPercentile .
+
+stats:Dispersion a skos:Concept ;
+    skos:prefLabel "Dispersion/Variability"@en ;
+    skos:topConceptOf stats: ;
+    skos:narrower stats:StandardErrorOfMean, stats:Range, stats:Variance, 
+    stats:StandardDeviation, stats:AverageAbsoluteDeviation, stats:MedianAbsoluteDeviation, 
+    stats:InterquartileRange, stats:InterquintileRange, stats:InterdecileRange, stats:GiniCoefficient .
+
+stats:SizeCount a skos:Concept ;
+    skos:prefLabel "Size/Count"@en ;
+    skos:topConceptOf stats: ;
+    skos:narrower stats:ValidCases, stats:InvalidCases, stats:NullCases, stats:UniqueCases, 
+    stats:Sparsity, stats:PositiveCount, stats:ZeroCount, stats:NegativeCount, 
+    stats:SignificantDigits, stats:Frequencies, stats:Other .
+
+stats:DerivedRatios a skos:Concept ;
+    skos:prefLabel "Other/Derived Ratios"@en ;
+    skos:topConceptOf stats: ;  
+    skos:narrower stats:ModeZScore, stats:StdDevRangeRatio, stats:CoefficientOfVariation, 
+    stats:PercentageOfValidCases, stats:PercentageOfInvalidCases, stats:QuartileDispersionCoefficient .
+
+stats:ShapeDistribution a skos:Concept ;
+    skos:prefLabel "Shape/Distribution"@en ;
+    skos:topConceptOf stats: ;
+    skos:narrower stats:Beta1, stats:Beta2, stats:BowleySkewnessCoefficient, stats:ShapiroWilk .
+
+stats:TextMeasures a skos:Concept ;
+    skos:prefLabel "Text/String Measures"@en ;
+    skos:topConceptOf stats: ;
+    skos:narrower stats:MinLength, stats:MaxLength, stats:AverageLength, stats:LengthStdDev, 
+    stats:MinWordCount, stats:MaxWordCount, stats:AverageWordCount, stats:TotalWordCount, 
+    stats:UniqueWordCount, stats:LexicalDiversity, stats:Languages .
+
+stats:Metadata a skos:Concept ;
+    skos:prefLabel "Metadata"@en ;
+    skos:topConceptOf stats: ;
+    skos:narrower stats:IsAscii .
+
+# Concepts - Central Tendency/Location
+
+stats:ArithmeticMean a skos:Concept ;
+    skos:prefLabel "Arithmetic mean"@en ;
+    skos:broader stats:CentralTendency ;
+    skos:inScheme stats: ;
+    skos:exactMatch wikidata:Q19033, ddi:7975ed0 .
+
+stats:GeometricMean a skos:Concept ;
+    skos:prefLabel "Geometric mean"@en ;
+    skos:broader stats:CentralTendency ;
+    skos:inScheme stats: ;
+    skos:exactMatch wikidata:Q185049, ddi:cd8ebb0 .
+
+stats:HarmonicMean a skos:Concept ;
+    skos:prefLabel "Harmonic mean"@en ;
+    skos:broader stats:CentralTendency ;
+    skos:inScheme stats: ;
+    skos:exactMatch wikidata:Q188347, ddi:71996c9 .
+
+stats:TrimmedMean a skos:Concept ;
+    skos:prefLabel "Trimmed mean"@en ;
+    skos:broader stats:CentralTendency ;
+    skos:inScheme stats: ;
+    skos:exactMatch wikidata:Q32278, ddi:17ff276 .
+
+stats:WinsorizedMean a skos:Concept ;
+    skos:prefLabel "Winsorized Mean"@en ;
+    skos:broader stats:CentralTendency ;
+    skos:inScheme stats: ;
+    skos:exactMatch wikidata:Q2989389 .
+
+stats:Mode a skos:Concept ;
+    skos:prefLabel "Mode"@en ;
+    skos:broader stats:CentralTendency ;
+    skos:inScheme stats: ;
+    skos:exactMatch wikidata:Q188224, ddi:650be61 .
+
+stats:Median a skos:Concept ;
+    skos:prefLabel "Median"@en ;
+    skos:broader stats:CentralTendency ;
+    skos:inScheme stats: ;
+    skos:exactMatch wikidata:Q226995, ddi:66851a3 .
+
+stats:Minimum a skos:Concept ;
+    skos:prefLabel "Minimum"@en ;
+    skos:broader stats:CentralTendency ;
+    skos:inScheme stats: ;
+    skos:exactMatch wikidata:Q10585806, ddi:a1d0ec6 .
+
+stats:Maximum a skos:Concept ;
+    skos:prefLabel "Maximum"@en ;
+    skos:broader stats:CentralTendency ;
+    skos:inScheme stats: ;
+    skos:exactMatch wikidata:Q10578722, ddi:8321e79 .
+
+stats:Sum a skos:Concept ;
+    skos:prefLabel "Sum"@en ;
+    skos:broader stats:CentralTendency ;
+    skos:inScheme stats: ;
+    skos:exactMatch wikidata:Q218005, ddi:a0ec870 .
+
+stats:FirstQuartile a skos:Concept ;
+    skos:prefLabel "First quartile"@en ;
+    skos:broader stats:CentralTendency ;
+    skos:inScheme stats: ;
+    skos:exactMatch wikidata:Q112468319, ddi:350c70a .
+
+stats:SecondQuartile a skos:Concept ;
+    skos:prefLabel "Second quartile"@en ;
+    skos:broader stats:CentralTendency ;
+    skos:inScheme stats: ;
+    skos:exactMatch wikidata:Q226995, ddi:f02fd7a .
+
+stats:ThirdQuartile a skos:Concept ;
+    skos:prefLabel "Third quartile"@en ;
+    skos:broader stats:CentralTendency ;
+    skos:inScheme stats: ;
+    skos:exactMatch wikidata:Q112468502, ddi:ebe9990 .
+
+stats:FirstQuintile a skos:Concept ;
+    skos:prefLabel "First quintile"@en ;
+    skos:broader stats:CentralTendency ;
+    skos:inScheme stats: ;
+    skos:exactMatch wikidata:Q3176606, ddi:ccfc0c3 .
+
+stats:SecondQuintile a skos:Concept ;
+    skos:prefLabel "Second quintile"@en ;
+    skos:broader stats:CentralTendency ;
+    skos:inScheme stats: ;
+    skos:exactMatch wikidata:Q3176606, ddi:3ca7a64 .
+
+stats:ThirdQuintile a skos:Concept ;
+    skos:prefLabel "Third quintile"@en ;
+    skos:broader stats:CentralTendency ;
+    skos:inScheme stats: ;
+    skos:exactMatch wikidata:Q3176606, ddi:e9f3735 .
+
+stats:FourthQuintile a skos:Concept ;
+    skos:prefLabel "Fourth quintile"@en ;
+    skos:broader stats:CentralTendency ;
+    skos:inScheme stats: ;
+    skos:exactMatch wikidata:Q3176606, ddi:c3a6a12 .
+
+stats:FirstDecile a skos:Concept ;
+    skos:prefLabel "First decile"@en ;
+    skos:broader stats:CentralTendency ;
+    skos:inScheme stats: ;
+    skos:exactMatch wikidata:Q3027971, ddi:ac62c25 .
+
+stats:SecondDecile a skos:Concept ;
+    skos:prefLabel "Second decile"@en ;
+    skos:broader stats:CentralTendency ;
+    skos:inScheme stats: ;
+    skos:exactMatch wikidata:Q3027971, ddi:93d51e9 .
+
+stats:ThirdDecile a skos:Concept ;
+    skos:prefLabel "Third decile"@en ;
+    skos:broader stats:CentralTendency ;
+    skos:inScheme stats: ;
+    skos:exactMatch wikidata:Q3027971, ddi:85cba81 .
+
+stats:FourthDecile a skos:Concept ;
+    skos:prefLabel "Fourth decile"@en ;
+    skos:broader stats:CentralTendency ;
+    skos:inScheme stats: ;
+    skos:exactMatch wikidata:Q3027971, ddi:2381913 .
+
+stats:FifthDecile a skos:Concept ;
+    skos:prefLabel "Fifth decile"@en ;
+    skos:broader stats:CentralTendency ;
+    skos:inScheme stats: ;
+    skos:exactMatch wikidata:Q3027971, ddi:9eb1ff9 .
+
+stats:SixthDecile a skos:Concept ;
+    skos:prefLabel "Sixth decile"@en ;
+    skos:broader stats:CentralTendency ;
+    skos:inScheme stats: ;
+    skos:exactMatch wikidata:Q3027971, ddi:380846d .
+
+stats:SeventhDecile a skos:Concept ;
+    skos:prefLabel "Seventh decile"@en ;
+    skos:broader stats:CentralTendency ;
+    skos:inScheme stats: ;
+    skos:exactMatch wikidata:Q3027971, ddi:edf2add .
+
+stats:EighthDecile a skos:Concept ;
+    skos:prefLabel "Eighth decile"@en ;
+    skos:broader stats:CentralTendency ;
+    skos:inScheme stats: ;
+    skos:exactMatch wikidata:Q3027971, ddi:03dbd00 .
+
+stats:NinthDecile a skos:Concept ;
+    skos:prefLabel "Ninth decile"@en ;
+    skos:broader stats:CentralTendency ;
+    skos:inScheme stats: ;
+    skos:exactMatch wikidata:Q3027971, ddi:9dea4c0 .
+
+stats:OtherPercentile a skos:Concept ;
+    skos:prefLabel "Other percentile"@en ;
+    skos:broader stats:CentralTendency ;
+    skos:inScheme stats: ;
+    skos:exactMatch wikidata:Q2913954, ddi:9947048 .
+
+# Concepts - Dispersion/Variability
+
+stats:StandardErrorOfMean a skos:Concept ;
+    skos:prefLabel "Standard error of the mean"@en ;
+    skos:broader stats:Dispersion ;
+    skos:inScheme stats: ;
+    skos:exactMatch wikidata:Q111972245, ddi:2c03973 .
+
+stats:Range a skos:Concept ;
+    skos:prefLabel "Range"@en ;
+    skos:broader stats:Dispersion ;
+    skos:inScheme stats: ;
+    skos:exactMatch wikidata:Q1165839 .
+
+stats:Variance a skos:Concept ;
+    skos:prefLabel "Variance"@en ;
+    skos:broader stats:Dispersion ;
+    skos:inScheme stats: ;
+    skos:exactMatch wikidata:Q175199 .
+
+stats:StandardDeviation a skos:Concept ;
+    skos:prefLabel "Standard deviation"@en ;
+    skos:broader stats:Dispersion ;
+    skos:inScheme stats: ;
+    skos:exactMatch wikidata:Q159375 .
+
+stats:AverageAbsoluteDeviation a skos:Concept ;
+    skos:prefLabel "Average absolute deviation"@en ;
+    skos:broader stats:Dispersion ;
+    skos:inScheme stats: ;
+    skos:exactMatch wikidata:Q1067186, ddi:015ce0a .
+
+stats:MedianAbsoluteDeviation a skos:Concept ;
+    skos:prefLabel "Median absolute deviation"@en ;
+    skos:broader stats:Dispersion ;
+    skos:inScheme stats: ;
+    skos:exactMatch wikidata:Q3853702, ddi:5dc5781 .
+
+stats:InterquartileRange a skos:Concept ;
+    skos:prefLabel "Interquartile range"@en ;
+    skos:broader stats:Dispersion ;
+    skos:inScheme stats: ;
+    skos:exactMatch wikidata:Q1916617, ddi:a7f7339 .
+
+stats:InterquintileRange a skos:Concept ;
+    skos:prefLabel "Interquintile range"@en ;
+    skos:broader stats:Dispersion ;
+    skos:inScheme stats: ;
+    skos:exactMatch ddi:b3ab24e .
+
+stats:InterdecileRange a skos:Concept ;
+    skos:prefLabel "Interdecile range"@en ;
+    skos:broader stats:Dispersion ;
+    skos:inScheme stats: ;
+    skos:exactMatch wikidata:Q6046031, ddi:26ad7e5 .
+
+stats:GiniCoefficient a skos:Concept ;
+    skos:prefLabel "Gini Coefficient"@en ;
+    skos:broader stats:Dispersion ;
+    skos:inScheme stats: ;
+    skos:exactMatch wikidata:Q162455 .
+
+# Concepts - Size/Count
+
+stats:ValidCases a skos:Concept ;
+    skos:prefLabel "Valid cases"@en ;
+    skos:broader stats:SizeCount ;
+    skos:inScheme stats: ;
+    skos:exactMatch ddi:c646dd8 .
+
+stats:InvalidCases a skos:Concept ;
+    skos:prefLabel "Invalid cases"@en ;
+    skos:broader stats:SizeCount ;
+    skos:inScheme stats: ;
+    skos:exactMatch ddi:6459c62 .
+
+stats:NullCases a skos:Concept ;
+    skos:prefLabel "Cases that have null/empty value"@en ;
+    skos:broader stats:SizeCount ;
+    skos:inScheme stats: .
+
+stats:UniqueCases a skos:Concept ;
+    skos:prefLabel "Unique Cases/Values"@en ;
+    skos:broader stats:SizeCount ;
+    skos:inScheme stats: .
+
+stats:Sparsity a skos:Concept ;
+    skos:prefLabel "Sparsity"@en ;
+    skos:broader stats:SizeCount ;
+    skos:inScheme stats: .
+
+stats:PositiveCount a skos:Concept ;
+    skos:prefLabel "Count of positive values"@en ;
+    skos:broader stats:SizeCount ;
+    skos:inScheme stats: .
+
+stats:ZeroCount a skos:Concept ;
+    skos:prefLabel "Count of zero values"@en ;
+    skos:broader stats:SizeCount ;
+    skos:inScheme stats: .
+
+stats:NegativeCount a skos:Concept ;
+    skos:prefLabel "Count of negative values"@en ;
+    skos:broader stats:SizeCount ;
+    skos:inScheme stats: .
+
+stats:SignificantDigits a skos:Concept ;
+    skos:prefLabel "Number of digits needed to safely store the data"@en ;
+    skos:broader stats:SizeCount ;
+    skos:inScheme stats: .
+
+stats:Frequencies a skos:Concept ;
+    skos:prefLabel "Frequencies"@en ;
+    skos:broader stats:SizeCount ;
+    skos:inScheme stats: ;
+    skos:exactMatch wikidata:Q762856 .
+
+stats:Other a skos:Concept ;
+    skos:prefLabel "Other"@en ;
+    skos:broader stats:SizeCount ;
+    skos:inScheme stats: ;
+    skos:exactMatch ddi:6311ae1 .
+
+# Concepts - Other/Derived Ratios
+
+stats:ModeZScore a skos:Concept ;
+    skos:prefLabel "Z-score of mode"@en ;
+    skos:broader stats:DerivedRatios ;
+    skos:inScheme stats: .
+
+stats:StdDevRangeRatio a skos:Concept ;
+    skos:prefLabel "Range to Standard Deviation Ratio"@en ;
+    skos:broader stats:DerivedRatios ;
+    skos:inScheme stats: .
+
+stats:CoefficientOfVariation a skos:Concept ;
+    skos:prefLabel "Coefficient of variation"@en ;
+    skos:broader stats:DerivedRatios ;
+    skos:inScheme stats: ;
+    skos:exactMatch wikidata:Q623738, ddi:3279fce .
+
+stats:PercentageOfValidCases a skos:Concept ;
+    skos:prefLabel "Percentage of valid cases"@en ;
+    skos:broader stats:DerivedRatios ;
+    skos:inScheme stats: ;
+    skos:exactMatch ddi:ecf4107 .
+
+stats:PercentageOfInvalidCases a skos:Concept ;
+    skos:prefLabel "Percentage of invalid cases"@en ;
+    skos:broader stats:DerivedRatios ;
+    skos:inScheme stats: ;
+    skos:exactMatch ddi:e592a55 .
+
+stats:QuartileDispersionCoefficient a skos:Concept ;
+    skos:prefLabel "Quartile Coefficient of Dispersion"@en ;
+    skos:broader stats:DerivedRatios ;
+    skos:inScheme stats: .
+
+# Concepts - Shape/Distribution
+
+stats:Beta1 a skos:Concept ;
+    skos:prefLabel "Skewness"@en ;
+    skos:broader stats:ShapeDistribution ;
+    skos:inScheme stats: ;
+    skos:exactMatch wikidata:Q1037340, ddi:3713b65 .
+
+stats:Beta2 a skos:Concept ;
+    skos:prefLabel "Kurtosis"@en ;
+    skos:broader stats:ShapeDistribution ;
+    skos:inScheme stats: ;
+    skos:exactMatch wikidata:Q287251, ddi:01aac65 .
+
+stats:BowleySkewnessCoefficient a skos:Concept ;
+    skos:prefLabel "Bowley's Skewness Coefficient"@en ;
+    skos:broader stats:ShapeDistribution ;
+    skos:inScheme stats: ;
+    skos:exactMatch wikidata:Q108253995 .
+
+stats:ShapiroWilk a skos:Concept ;
+    skos:prefLabel "Shapiro-Wilk"@en ;
+    skos:broader stats:ShapeDistribution ;
+    skos:inScheme stats: ;
+    skos:exactMatch wikidata:Q1396441, ddi:699a82e .
+
+# Concepts - Text/String Measures
+
+stats:MinLength a skos:Concept ;
+    skos:prefLabel "Minimum length"@en ;
+    skos:broader stats:TextMeasures ;
+    skos:inScheme stats: .
+
+stats:MaxLength a skos:Concept ;
+    skos:prefLabel "Maximum length"@en ;
+    skos:broader stats:TextMeasures ;
+    skos:inScheme stats: .
+
+stats:AverageLength a skos:Concept ;
+    skos:prefLabel "Average length"@en ;
+    skos:broader stats:TextMeasures ;
+    skos:inScheme stats: .
+
+stats:LengthStdDev a skos:Concept ;
+    skos:prefLabel "Length standard deviation"@en ;
+    skos:broader stats:TextMeasures ;
+    skos:inScheme stats: .
+
+stats:MinWordCount a skos:Concept ;
+    skos:prefLabel "Minimum word count"@en ;
+    skos:broader stats:TextMeasures ;
+    skos:inScheme stats: .
+
+stats:MaxWordCount a skos:Concept ;
+    skos:prefLabel "Maximum word count"@en ;
+    skos:broader stats:TextMeasures ;
+    skos:inScheme stats: .
+
+stats:AverageWordCount a skos:Concept ;
+    skos:prefLabel "Average word count"@en ;
+    skos:broader stats:TextMeasures ;
+    skos:inScheme stats: .
+
+stats:TotalWordCount a skos:Concept ;
+    skos:prefLabel "Total word count"@en ;
+    skos:broader stats:TextMeasures ;
+    skos:inScheme stats: .
+
+stats:UniqueWordCount a skos:Concept ;
+    skos:prefLabel "Unique word count"@en ;
+    skos:broader stats:TextMeasures ;
+    skos:inScheme stats: .
+
+stats:LexicalDiversity a skos:Concept ;
+    skos:prefLabel "Lexical diversity"@en ;
+    skos:broader stats:TextMeasures ;
+    skos:inScheme stats: ;
+    skos:exactMatch wikidata:Q18346297 .
+
+stats:Languages a skos:Concept ;
+    skos:prefLabel "Languages"@en ;
+    skos:broader stats:TextMeasures ;
+    skos:inScheme stats: ;
+    skos:exactMatch wikidata:Q34770 .
+
+# Concepts - Metadata
+
+stats:IsAscii a skos:Concept ;
+    skos:prefLabel "ASCII characters only"@en ;
+    skos:broader stats:Metadata ;
+    skos:inScheme stats: .

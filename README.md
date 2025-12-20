@@ -1,59 +1,43 @@
-# SkoHub Pages
+# HVDNet Descriptive Statistics Vocabulary
 
-This is an example repository (formerly named `skohub-docker-vocabs`) to show how you can publish your SKOS vocabulary using GitHub infrastructure (Actions and Pages).
+**Note: This vocabulary is currently in early development and is not intended for use in production environments.**
 
-Every time a change is made to a vocabulary a GitHub-workflow-action is triggered to publish the most recent vocabulary to the `gh-pages`-branch, which is used by GitHub pages.
-It spins up a Docker container made from [SkoHub Vocabs](https://github.com/hbz/skohub-vocabs).
+This repository contains a controlled vocabulary for descriptive and summary statistics for FAIR data. 
+
+The vocabulary is modeled using [SKOS](https://www.w3.org/2004/02/skos/) (Simple Knowledge Organization System) and is designed to provide a standard set of concepts for describing statistical measures across various datasets and domains.
+
+Published and maintained by the [**High-Value Data Network**](https://highvaluedata.net).
+
+## Feedback
+
+We welcome feedback, suggestions, and comments. Please use [GitHub issues](https://github.com/highvaluedata/statistics-vocabulary/issues) to contribute.
+
+## Related Vocabularies
+
+This vocabulary complements existing standards in the field. For related work, see the [DDI Alliance controlled vocabulary for summary statistics](https://rdf-vocabulary.ddialliance.org/ddi-cv/SummaryStatisticType/2.1.2/SummaryStatisticType.html).
+
+Many of the concepts in this vocabulary are also available on [Wikidata](https://www.wikidata.org/), enabling interoperability with other linked data resources and knowledge graphs.
+
+Where applicable, this vocabulary provides crosswalks to related vocabularies and ontologies to facilitate mapping and interoperability with other data standards and knowledge organization systems.
+
+## Structure
+
+The vocabulary is organized into several categories:
+- **Central Tendency/Location**: Mean, Median, Mode, etc.
+- **Dispersion/Variability**: Variance, Standard Deviation, Range, etc.
+- **Size/Count**: Valid/Invalid cases, Sample size, etc.
+- **Other/Derived Ratios**: Z-score, Coefficient of variation, etc.
+- **Shape/Distribution**: Skewness, Kurtosis, etc.
+- **Text/String Measures**: Length, Word count, Lexical diversity, etc.
+- **Metadata**: Technical metadata like ASCII indicators.
 
 ## Usage
 
-If you want to reuse this repo and have your vocabulary automatically pushed und published via GitHub-Pages, follow these steps:
+This vocabulary is published using [SkoHub Pages](https://github.com/skohub-io/skohub-pages). 
 
-1. Fork this repo. **Uncheck the box to only fork the main branch**.
-1. Go to "Actions" tab and if not already activated, activate GitHub Actions.
-1. Go to "Settings", navigate to the "Pages" setting and select `gh-pages` as the branch your site is being built from. 
-1. Go back to the main page of your repo and click the little gear icon in the top right of the "About" section. Check the box at "Use your GitHub Pages website".
-1. Add a commit to the main branch and your vocabulary will be automatically published (sometimes it takes a little to see the changes, remember to do some hard refreshing).
+The source file is [statistics.ttl](./statistics.ttl).
 
-Any issues? Please open up a issue [here](https://github.com/skohub-io/skohub-pages/issues)
+## License
 
-## Custom Domain
-
-If you want to host your vocabularies under your GitHub pages domain (so no W3 perma-id or purl.org redirect), you have to provide that domain in the [`config.yaml`](./config.yaml).
-
-Example:
-
-Your GitHub Pages domain is: `https://skohub-io.github.io/skohub-pages/`
-Then provide `https://skohub-io.github.io/skohub-pages/` as `custom_domain` in your `config.yaml`.
-
-The base of your concept scheme could then be something like: `https://skohub-io.github.io/skohub-pages/colours/`
-
-Notice that this will apply to all your hosted vocabularies.
-
-## Troubleshooting
-
-### There is no `gh-pages` branch to select for GitHub Pages
-
-You probably only forked the main branch.
-You have two options:
-
-- Delete the repo and fork it again, but make sure to uncheck the box to only fork the main branch
-- Make sure the GitHub Action is activated ➡️ Go to "Actions" tab and activate it. After that commit changes to a vocabulary in the main branch. This should trigger the build and create a `gh-pages` branch.
-
-### I push changes, but they seem to have no effect. My vocabulary stays the same
-
-Maybe your GitHub Action is not activated yet.
-Go to the "Actions" tab and activate GitHub Actions for your repository.
-
-### During the build I get an error saying `The requested URL returned error: 403`
-
-You maybe need to update permissions like described here: https://github.com/peaceiris/actions-gh-pages/issues/744
-Go to `Settings` > `Actions` > `General` > `Workflow permissions` and toggle the Read and write permissions.
-
-## CHANGELOG
-
-09.02.2021:
-
-- In an earlier version, there was the .env variable `PATH_PREFIX` set to point to the repository the vocabulary is hosted at. To align with rest of code, this was changed to `BASEURL`.
-- The docker image now also support i18n
+This vocabulary is licensed under the [CC0 1.0 Universal (CC0 1.0) Public Domain Dedication](https://creativecommons.org/publicdomain/zero/1.0/).
 

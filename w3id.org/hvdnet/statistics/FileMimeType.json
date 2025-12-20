@@ -12,6 +12,11 @@
   "definition": {
     "en": "The media type that describes the file's format (e.g., text/csv)."
   },
+  "scopeNote": {
+    "en": [
+      "Determine the MIME type from file extension, magic bytes, or content inspection."
+    ]
+  },
   "broader": {
     "id": "https://w3id.org/hvdnet/statistics/FileLevel",
     "prefLabel": {

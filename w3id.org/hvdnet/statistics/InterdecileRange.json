@@ -12,6 +12,11 @@
   "definition": {
     "en": "The difference between the ninth and first deciles (P90 - P10)."
   },
+  "scopeNote": {
+    "en": [
+      "Estimate deciles under a chosen method; subtract P10 from P90."
+    ]
+  },
   "broader": {
     "id": "https://w3id.org/hvdnet/statistics/Dispersion",
     "prefLabel": {

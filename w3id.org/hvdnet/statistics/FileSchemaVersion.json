@@ -7,6 +7,11 @@
   "definition": {
     "en": "The schema identifier or version describing the file's structure."
   },
+  "scopeNote": {
+    "en": [
+      "Extract the schema version or identifier from file metadata or embedded schema declarations."
+    ]
+  },
   "broader": {
     "id": "https://w3id.org/hvdnet/statistics/FileLevel",
     "prefLabel": {

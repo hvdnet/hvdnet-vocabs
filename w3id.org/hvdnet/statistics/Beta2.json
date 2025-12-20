@@ -7,6 +7,11 @@
   "definition": {
     "en": "A measure of the tailedness or peakedness of the distribution."
   },
+  "scopeNote": {
+    "en": [
+      "Compute standardized fourth moment; optionally report excess kurtosis (minus 3)."
+    ]
+  },
   "broader": {
     "id": "https://w3id.org/hvdnet/statistics/ShapeDistribution",
     "prefLabel": {

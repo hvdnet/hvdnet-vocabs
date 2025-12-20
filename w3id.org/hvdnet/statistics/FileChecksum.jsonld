@@ -7,6 +7,11 @@
   "definition": {
     "en": "A hash value used to verify file integrity."
   },
+  "scopeNote": {
+    "en": [
+      "Compute a cryptographic hash (e.g., MD5, SHA-256) of the file contents to verify integrity."
+    ]
+  },
   "broader": {
     "id": "https://w3id.org/hvdnet/statistics/FileLevel",
     "prefLabel": {

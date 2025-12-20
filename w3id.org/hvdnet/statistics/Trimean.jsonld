@@ -7,6 +7,11 @@
   "definition": {
     "en": "A weighted average of the median and two quartiles: (Q1 + 2×Q2 + Q3) / 4."
   },
+  "scopeNote": {
+    "en": [
+      "Compute Q1, Q2 (median), Q3 under a chosen convention; apply weighted average."
+    ]
+  },
   "broader": {
     "id": "https://w3id.org/hvdnet/statistics/RobustStatistics",
     "prefLabel": {

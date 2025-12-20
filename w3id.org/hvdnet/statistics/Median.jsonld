@@ -7,6 +7,11 @@
   "definition": {
     "en": "The middle value when data are sorted in order."
   },
+  "scopeNote": {
+    "en": [
+      "Sort values; pick the middle for odd n, or average the two middles for even n (depending on convention)."
+    ]
+  },
   "broader": {
     "id": "https://w3id.org/hvdnet/statistics/CentralTendency",
     "prefLabel": {

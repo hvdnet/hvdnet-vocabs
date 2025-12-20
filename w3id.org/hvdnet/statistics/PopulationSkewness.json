@@ -7,6 +7,11 @@
   "definition": {
     "en": "Skewness calculated assuming the data represents the entire population."
   },
+  "scopeNote": {
+    "en": [
+      "Use population standardized moment definition without finite-sample correction."
+    ]
+  },
   "broader": {
     "id": "https://w3id.org/hvdnet/statistics/ShapeDistribution",
     "prefLabel": {

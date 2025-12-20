@@ -7,6 +7,11 @@
   "definition": {
     "en": "A relative measure of dispersion based on quartiles: (Q3 - Q1) / (Q3 + Q1)."
   },
+  "scopeNote": {
+    "en": [
+      "Estimate Q1 and Q3; take their difference over their sum."
+    ]
+  },
   "broader": {
     "id": "https://w3id.org/hvdnet/statistics/DerivedRatios",
     "prefLabel": {

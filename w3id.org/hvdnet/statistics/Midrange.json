@@ -7,6 +7,11 @@
   "definition": {
     "en": "The average of the minimum and maximum values."
   },
+  "scopeNote": {
+    "en": [
+      "Compute min and max; average them."
+    ]
+  },
   "broader": {
     "id": "https://w3id.org/hvdnet/statistics/RobustStatistics",
     "prefLabel": {

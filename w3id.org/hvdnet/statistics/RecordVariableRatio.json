@@ -12,6 +12,11 @@
   "definition": {
     "en": "The ratio of records to variables, indicating dataset shape."
   },
+  "scopeNote": {
+    "en": [
+      "Compute by dividing the number of records (rows) by the number of variables (columns)."
+    ]
+  },
   "broader": {
     "id": "https://w3id.org/hvdnet/statistics/FileLevel",
     "prefLabel": {

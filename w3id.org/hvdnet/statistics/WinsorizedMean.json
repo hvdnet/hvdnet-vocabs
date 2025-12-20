@@ -7,6 +7,11 @@
   "definition": {
     "en": "The mean calculated after replacing extreme values with less extreme values at specified percentiles."
   },
+  "scopeNote": {
+    "en": [
+      "Replace α-tail extremes with boundary values at chosen percentiles, then average."
+    ]
+  },
   "exactMatch": [
     {
       "id": "https://wikidata.org/wiki/Q2989389"

@@ -7,6 +7,11 @@
   "definition": {
     "en": "A non-parametric measure of rank correlation between two variables."
   },
+  "scopeNote": {
+    "en": [
+      "Replace values with ranks and compute Pearson correlation of the ranks."
+    ]
+  },
   "broader": {
     "id": "https://w3id.org/hvdnet/statistics/AssociationDependence",
     "prefLabel": {

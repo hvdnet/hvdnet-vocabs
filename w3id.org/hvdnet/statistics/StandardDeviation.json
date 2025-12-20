@@ -7,6 +7,11 @@
   "definition": {
     "en": "The square root of the variance, measuring spread around the mean."
   },
+  "scopeNote": {
+    "en": [
+      "Compute as the square root of variance; choose sample or population version consistently with variance."
+    ]
+  },
   "broader": {
     "id": "https://w3id.org/hvdnet/statistics/Dispersion",
     "prefLabel": {

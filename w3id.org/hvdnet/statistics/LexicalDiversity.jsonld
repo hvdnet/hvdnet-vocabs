@@ -7,6 +7,11 @@
   "definition": {
     "en": "The ratio of unique words to total words, measuring vocabulary richness."
   },
+  "scopeNote": {
+    "en": [
+      "Compute type-token ratio (unique/total) or alternative normalized measures as needed."
+    ]
+  },
   "broader": {
     "id": "https://w3id.org/hvdnet/statistics/TextMeasures",
     "prefLabel": {

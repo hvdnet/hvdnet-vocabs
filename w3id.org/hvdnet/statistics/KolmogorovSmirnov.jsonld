@@ -7,6 +7,11 @@
   "definition": {
     "en": "A nonparametric test for comparing a sample distribution with a reference distribution."
   },
+  "scopeNote": {
+    "en": [
+      "Compute D as the maximum absolute difference between EDF and reference CDF; use KS tables or p-values."
+    ]
+  },
   "broader": {
     "id": "https://w3id.org/hvdnet/statistics/ShapeDistribution",
     "prefLabel": {

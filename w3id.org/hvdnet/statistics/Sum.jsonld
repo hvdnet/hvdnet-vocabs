@@ -7,6 +7,11 @@
   "definition": {
     "en": "The total obtained by adding all values together."
   },
+  "scopeNote": {
+    "en": [
+      "Add up all valid values; exclude missing or invalid entries."
+    ]
+  },
   "broader": {
     "id": "https://w3id.org/hvdnet/statistics/CentralTendency",
     "prefLabel": {

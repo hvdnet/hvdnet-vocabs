@@ -7,6 +7,11 @@
   "definition": {
     "en": "A test statistic for assessing normality of a distribution."
   },
+  "scopeNote": {
+    "en": [
+      "Compute W using ordered sample and tabulated coefficients; compare to critical values or p-values."
+    ]
+  },
   "broader": {
     "id": "https://w3id.org/hvdnet/statistics/ShapeDistribution",
     "prefLabel": {

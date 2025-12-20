@@ -12,6 +12,11 @@
   "definition": {
     "en": "The total number of variables or columns in the file."
   },
+  "scopeNote": {
+    "en": [
+      "Count the number of variables (columns) in the file based on the schema or header row."
+    ]
+  },
   "broader": {
     "id": "https://w3id.org/hvdnet/statistics/FileLevel",
     "prefLabel": {

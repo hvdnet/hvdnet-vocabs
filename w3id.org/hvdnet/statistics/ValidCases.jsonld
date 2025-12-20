@@ -7,6 +7,11 @@
   "definition": {
     "en": "The count of observations with valid, non-missing values."
   },
+  "scopeNote": {
+    "en": [
+      "Exclude missing and invalid values; count remaining observations."
+    ]
+  },
   "broader": {
     "id": "https://w3id.org/hvdnet/statistics/SizeCount",
     "prefLabel": {

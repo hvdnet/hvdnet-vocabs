@@ -7,6 +7,11 @@
   "definition": {
     "en": "Excess kurtosis calculated assuming the data represents the entire population."
   },
+  "scopeNote": {
+    "en": [
+      "Compute population kurtosis and subtract 3 (no finite-sample correction)."
+    ]
+  },
   "broader": {
     "id": "https://w3id.org/hvdnet/statistics/ShapeDistribution",
     "prefLabel": {

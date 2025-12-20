@@ -7,6 +7,11 @@
   "definition": {
     "en": "The number of times a particular value or category appears."
   },
+  "scopeNote": {
+    "en": [
+      "Count occurrences per distinct value or category; may be used to form histograms."
+    ]
+  },
   "broader": {
     "id": "https://w3id.org/hvdnet/statistics/SizeCount",
     "prefLabel": {

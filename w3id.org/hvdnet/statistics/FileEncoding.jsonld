@@ -7,6 +7,11 @@
   "definition": {
     "en": "The character encoding used to represent text in the file (e.g., UTF-8)."
   },
+  "scopeNote": {
+    "en": [
+      "Detect or retrieve the character encoding (e.g., UTF-8, ISO-8859-1) from file metadata or content analysis."
+    ]
+  },
   "broader": {
     "id": "https://w3id.org/hvdnet/statistics/FileLevel",
     "prefLabel": {

@@ -7,6 +7,11 @@
   "definition": {
     "en": "The standard deviation of the sampling distribution of the mean."
   },
+  "scopeNote": {
+    "en": [
+      "Estimate as sample standard deviation divided by square root of sample size (for iid samples)."
+    ]
+  },
   "broader": {
     "id": "https://w3id.org/hvdnet/statistics/Dispersion",
     "prefLabel": {

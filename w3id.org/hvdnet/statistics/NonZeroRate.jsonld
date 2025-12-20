@@ -12,6 +12,11 @@
   "definition": {
     "en": "The proportion of observations with non-zero values."
   },
+  "scopeNote": {
+    "en": [
+      "Count non-zero values and divide by total observations."
+    ]
+  },
   "broader": {
     "id": "https://w3id.org/hvdnet/statistics/DerivedRatios",
     "prefLabel": {

@@ -7,6 +7,11 @@
   "definition": {
     "en": "The size of the file measured in bytes."
   },
+  "scopeNote": {
+    "en": [
+      "Retrieve the file size in bytes from the file system metadata."
+    ]
+  },
   "broader": {
     "id": "https://w3id.org/hvdnet/statistics/FileLevel",
     "prefLabel": {

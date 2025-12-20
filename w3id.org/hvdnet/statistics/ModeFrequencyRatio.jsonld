@@ -12,6 +12,11 @@
   "definition": {
     "en": "The proportion of observations equal to the mode value."
   },
+  "scopeNote": {
+    "en": [
+      "Compute the frequency of the modal value and divide by total observations."
+    ]
+  },
   "broader": {
     "id": "https://w3id.org/hvdnet/statistics/DerivedRatios",
     "prefLabel": {

@@ -12,6 +12,11 @@
   "definition": {
     "en": "The timestamp when the file was originally created."
   },
+  "scopeNote": {
+    "en": [
+      "Retrieve the creation timestamp from file system metadata (may not be available on all systems)."
+    ]
+  },
   "broader": {
     "id": "https://w3id.org/hvdnet/statistics/FileLevel",
     "prefLabel": {

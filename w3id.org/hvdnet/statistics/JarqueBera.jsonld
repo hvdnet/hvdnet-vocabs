@@ -7,6 +7,11 @@
   "definition": {
     "en": "A goodness-of-fit test for normality based on skewness and kurtosis."
   },
+  "scopeNote": {
+    "en": [
+      "Compute JB = n/6·(S² + (K−3)²/4) and compare to chi-square distribution with 2 df."
+    ]
+  },
   "broader": {
     "id": "https://w3id.org/hvdnet/statistics/ShapeDistribution",
     "prefLabel": {

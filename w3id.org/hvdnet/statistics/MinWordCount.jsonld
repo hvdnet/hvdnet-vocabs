@@ -7,6 +7,11 @@
   "definition": {
     "en": "The smallest number of words in any text value."
   },
+  "scopeNote": {
+    "en": [
+      "Tokenize text to words using a defined tokenizer; take minimum count."
+    ]
+  },
   "broader": {
     "id": "https://w3id.org/hvdnet/statistics/TextMeasures",
     "prefLabel": {

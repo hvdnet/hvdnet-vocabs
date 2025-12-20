@@ -7,6 +7,11 @@
   "definition": {
     "en": "The difference between the fourth and first quintiles."
   },
+  "scopeNote": {
+    "en": [
+      "Estimate quintiles under a chosen method; subtract Q20 from Q80."
+    ]
+  },
   "broader": {
     "id": "https://w3id.org/hvdnet/statistics/Dispersion",
     "prefLabel": {

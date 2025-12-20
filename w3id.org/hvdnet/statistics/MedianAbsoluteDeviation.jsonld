@@ -7,6 +7,11 @@
   "definition": {
     "en": "The median of the absolute deviations from the median, a robust measure of variability."
   },
+  "scopeNote": {
+    "en": [
+      "Compute the median; take absolute deviations from the median; take the median of those deviations (optionally scale by 1.4826)."
+    ]
+  },
   "broader": {
     "id": "https://w3id.org/hvdnet/statistics/Dispersion",
     "prefLabel": {

@@ -12,6 +12,11 @@
   "definition": {
     "en": "The timestamp when the file was last modified."
   },
+  "scopeNote": {
+    "en": [
+      "Retrieve the last modified timestamp from file system metadata."
+    ]
+  },
   "broader": {
     "id": "https://w3id.org/hvdnet/statistics/FileLevel",
     "prefLabel": {

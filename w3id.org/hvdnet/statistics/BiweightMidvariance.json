@@ -7,6 +7,11 @@
   "definition": {
     "en": "A robust measure of scale based on the biweight (bisquare) function."
   },
+  "scopeNote": {
+    "en": [
+      "Compute a robust center (median); apply weighted variance using biweight weight function; typically with c=9 MAD."
+    ]
+  },
   "inScheme": [
     {
       "id": "https://w3id.org/hvdnet/statistics/",

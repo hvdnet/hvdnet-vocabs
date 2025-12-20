@@ -12,6 +12,11 @@
   "definition": {
     "en": "The proportion of values that are present and non-null."
   },
+  "scopeNote": {
+    "en": [
+      "Divide the number of present, non-null entries by the total number of observations."
+    ]
+  },
   "broader": {
     "id": "https://w3id.org/hvdnet/statistics/MissingnessCompleteness",
     "prefLabel": {

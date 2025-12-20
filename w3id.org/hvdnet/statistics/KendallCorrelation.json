@@ -7,6 +7,11 @@
   "definition": {
     "en": "A measure of ordinal association based on concordant and discordant pairs."
   },
+  "scopeNote": {
+    "en": [
+      "Count concordant and discordant pairs among all observation pairs; adjust variant for ties as needed."
+    ]
+  },
   "broader": {
     "id": "https://w3id.org/hvdnet/statistics/AssociationDependence",
     "prefLabel": {

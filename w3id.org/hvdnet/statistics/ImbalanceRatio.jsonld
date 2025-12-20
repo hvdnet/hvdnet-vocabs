@@ -12,6 +12,11 @@
   "definition": {
     "en": "The ratio between majority and minority class frequencies."
   },
+  "scopeNote": {
+    "en": [
+      "Compute by dividing the frequency of the most common category by the frequency of the least common category."
+    ]
+  },
   "broader": {
     "id": "https://w3id.org/hvdnet/statistics/CategoricalProfiling",
     "prefLabel": {

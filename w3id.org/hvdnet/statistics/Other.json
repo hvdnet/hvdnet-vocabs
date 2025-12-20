@@ -7,6 +7,11 @@
   "definition": {
     "en": "A count or size measure not otherwise categorized."
   },
+  "scopeNote": {
+    "en": [
+      "Specify custom count/size computation; document filters and units."
+    ]
+  },
   "broader": {
     "id": "https://w3id.org/hvdnet/statistics/SizeCount",
     "prefLabel": {

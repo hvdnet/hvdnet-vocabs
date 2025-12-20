@@ -12,6 +12,11 @@
   "definition": {
     "en": "The cumulative proportion contributed by the top k categories."
   },
+  "scopeNote": {
+    "en": [
+      "Compute by summing the frequencies of the top k categories and dividing by the total frequency."
+    ]
+  },
   "broader": {
     "id": "https://w3id.org/hvdnet/statistics/CategoricalProfiling",
     "prefLabel": {

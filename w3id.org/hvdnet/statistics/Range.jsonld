@@ -7,6 +7,11 @@
   "definition": {
     "en": "The difference between the maximum and minimum values."
   },
+  "scopeNote": {
+    "en": [
+      "Compute max and min over valid values and subtract: Range = max − min."
+    ]
+  },
   "broader": {
     "id": "https://w3id.org/hvdnet/statistics/Dispersion",
     "prefLabel": {

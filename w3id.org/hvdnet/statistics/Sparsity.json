@@ -7,6 +7,11 @@
   "definition": {
     "en": "The proportion of zero or null values in a dataset."
   },
+  "scopeNote": {
+    "en": [
+      "Compute ratio of (zero + null) entries to total observations."
+    ]
+  },
   "broader": {
     "id": "https://w3id.org/hvdnet/statistics/SizeCount",
     "prefLabel": {

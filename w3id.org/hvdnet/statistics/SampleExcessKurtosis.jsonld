@@ -7,6 +7,11 @@
   "definition": {
     "en": "Excess kurtosis calculated with sample-based denominator adjustment."
   },
+  "scopeNote": {
+    "en": [
+      "Apply unbiased sample estimator for excess kurtosis; subtract 3 from kurtosis after correction."
+    ]
+  },
   "broader": {
     "id": "https://w3id.org/hvdnet/statistics/ShapeDistribution",
     "prefLabel": {

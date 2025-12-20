@@ -12,6 +12,11 @@
   "definition": {
     "en": "The number of observations beyond k×IQR fences from the quartiles."
   },
+  "scopeNote": {
+    "en": [
+      "Compute IQR; define lower/upper fences Q1 − k·IQR and Q3 + k·IQR (k typically 1.5 or 3); count values outside."
+    ]
+  },
   "broader": {
     "id": "https://w3id.org/hvdnet/statistics/Outliers",
     "prefLabel": {

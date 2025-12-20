@@ -7,6 +7,11 @@
   "definition": {
     "en": "A measure of the joint variability between two variables."
   },
+  "scopeNote": {
+    "en": [
+      "Center both variables by their means; average the product of centered values using sample or population denominator."
+    ]
+  },
   "broader": {
     "id": "https://w3id.org/hvdnet/statistics/AssociationDependence",
     "prefLabel": {

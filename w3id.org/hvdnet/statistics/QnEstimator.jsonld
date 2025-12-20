@@ -12,6 +12,11 @@
   "definition": {
     "en": "A robust scale estimator based on the first quartile of pairwise absolute differences."
   },
+  "scopeNote": {
+    "en": [
+      "For n observations, compute all {|x_i − x_j| : i < j}; take first quartile and apply constant factor for consistency."
+    ]
+  },
   "inScheme": [
     {
       "id": "https://w3id.org/hvdnet/statistics/",

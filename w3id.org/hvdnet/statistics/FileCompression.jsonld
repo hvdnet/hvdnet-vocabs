@@ -7,6 +7,11 @@
   "definition": {
     "en": "The compression format or status applied to the file (e.g., gzip)."
   },
+  "scopeNote": {
+    "en": [
+      "Identify the compression format (e.g., gzip, zip, bzip2) or confirm if the file is uncompressed."
+    ]
+  },
   "broader": {
     "id": "https://w3id.org/hvdnet/statistics/FileLevel",
     "prefLabel": {

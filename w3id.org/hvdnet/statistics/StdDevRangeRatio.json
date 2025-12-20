@@ -7,6 +7,11 @@
   "definition": {
     "en": "The ratio of the range to the standard deviation."
   },
+  "scopeNote": {
+    "en": [
+      "Compute range and sample standard deviation; divide range by s."
+    ]
+  },
   "broader": {
     "id": "https://w3id.org/hvdnet/statistics/DerivedRatios",
     "prefLabel": {

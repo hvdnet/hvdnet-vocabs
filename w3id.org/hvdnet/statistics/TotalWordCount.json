@@ -7,6 +7,11 @@
   "definition": {
     "en": "The sum of all words across all text values."
   },
+  "scopeNote": {
+    "en": [
+      "Tokenize to words and sum counts across all values."
+    ]
+  },
   "broader": {
     "id": "https://w3id.org/hvdnet/statistics/TextMeasures",
     "prefLabel": {

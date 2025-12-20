@@ -7,6 +7,11 @@
   "definition": {
     "en": "The count of observations with invalid or out-of-range values."
   },
+  "scopeNote": {
+    "en": [
+      "Apply validation rules or ranges; count entries failing them."
+    ]
+  },
   "exactMatch": [
     {
       "id": "http://rdf-vocabulary.ddialliance.org/cv/SummaryStatisticType/2.1.2/6459c62"

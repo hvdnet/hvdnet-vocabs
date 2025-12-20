@@ -12,6 +12,11 @@
   "definition": {
     "en": "The proportion of observations with positive values."
   },
+  "scopeNote": {
+    "en": [
+      "Count positive values (>0) and divide by total observations."
+    ]
+  },
   "broader": {
     "id": "https://w3id.org/hvdnet/statistics/DerivedRatios",
     "prefLabel": {

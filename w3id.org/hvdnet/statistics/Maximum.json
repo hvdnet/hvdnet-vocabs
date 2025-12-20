@@ -7,6 +7,11 @@
   "definition": {
     "en": "The largest value in a dataset."
   },
+  "scopeNote": {
+    "en": [
+      "Scan all valid values and return the largest observed value."
+    ]
+  },
   "broader": {
     "id": "https://w3id.org/hvdnet/statistics/CentralTendency",
     "prefLabel": {

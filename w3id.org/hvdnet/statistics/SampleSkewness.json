@@ -7,6 +7,11 @@
   "definition": {
     "en": "Skewness calculated with sample-based denominator adjustment."
   },
+  "scopeNote": {
+    "en": [
+      "Use common unbiased estimator for finite samples (e.g., adjusted Fisher-Pearson coefficient)."
+    ]
+  },
   "broader": {
     "id": "https://w3id.org/hvdnet/statistics/ShapeDistribution",
     "prefLabel": {

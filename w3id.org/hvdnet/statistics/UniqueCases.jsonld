@@ -7,6 +7,11 @@
   "definition": {
     "en": "The count of distinct values in the dataset."
   },
+  "scopeNote": {
+    "en": [
+      "Use a set/deduplication over valid values; report cardinality."
+    ]
+  },
   "broader": {
     "id": "https://w3id.org/hvdnet/statistics/SizeCount",
     "prefLabel": {

@@ -7,6 +7,11 @@
   "definition": {
     "en": "A skewness measure based on the third standardized moment."
   },
+  "scopeNote": {
+    "en": [
+      "Compute third standardized moment using Pearson’s convention; specify sample or population."
+    ]
+  },
   "broader": {
     "id": "https://w3id.org/hvdnet/statistics/ShapeDistribution",
     "prefLabel": {

@@ -7,6 +7,11 @@
   "definition": {
     "en": "A measure of statistical dispersion representing inequality in a distribution."
   },
+  "scopeNote": {
+    "en": [
+      "Compute area between the Lorenz curve and line of equality; normalize to [0,1]."
+    ]
+  },
   "broader": {
     "id": "https://w3id.org/hvdnet/statistics/Dispersion",
     "prefLabel": {

@@ -7,6 +7,11 @@
   "definition": {
     "en": "The ratio of the standard deviation to the mean, expressing variability relative to the mean."
   },
+  "scopeNote": {
+    "en": [
+      "Use sample or population definitions consistently; divide standard deviation by mean (mean > 0)."
+    ]
+  },
   "broader": {
     "id": "https://w3id.org/hvdnet/statistics/DerivedRatios",
     "prefLabel": {

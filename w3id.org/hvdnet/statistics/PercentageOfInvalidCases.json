@@ -7,6 +7,11 @@
   "definition": {
     "en": "The proportion of invalid observations expressed as a percentage."
   },
+  "scopeNote": {
+    "en": [
+      "Compute the fraction of invalid observations and multiply by 100 to express as a percentage."
+    ]
+  },
   "broader": {
     "id": "https://w3id.org/hvdnet/statistics/DerivedRatios",
     "prefLabel": {

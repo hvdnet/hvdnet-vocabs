@@ -7,6 +7,11 @@
   "definition": {
     "en": "The standardized distance of the mode from the mean in standard deviation units."
   },
+  "scopeNote": {
+    "en": [
+      "Compute the mode; standardize its value using mean and standard deviation to obtain a z-score."
+    ]
+  },
   "broader": {
     "id": "https://w3id.org/hvdnet/statistics/DerivedRatios",
     "prefLabel": {

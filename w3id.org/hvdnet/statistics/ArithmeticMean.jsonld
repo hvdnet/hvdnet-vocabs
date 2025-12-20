@@ -7,6 +7,11 @@
   "definition": {
     "en": "The sum of all values divided by the number of values."
   },
+  "scopeNote": {
+    "en": [
+      "Compute by summing valid values and dividing by the count; exclude missing or invalid entries."
+    ]
+  },
   "broader": {
     "id": "https://w3id.org/hvdnet/statistics/CentralTendency",
     "prefLabel": {

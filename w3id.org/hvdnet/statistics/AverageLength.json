@@ -7,6 +7,11 @@
   "definition": {
     "en": "The mean length of text values in characters."
   },
+  "scopeNote": {
+    "en": [
+      "Compute character counts per value; average over valid values."
+    ]
+  },
   "broader": {
     "id": "https://w3id.org/hvdnet/statistics/TextMeasures",
     "prefLabel": {

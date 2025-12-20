@@ -7,6 +7,11 @@
   "definition": {
     "en": "The number of observations with exactly zero value."
   },
+  "scopeNote": {
+    "en": [
+      "Count observations equal to zero among valid values."
+    ]
+  },
   "broader": {
     "id": "https://w3id.org/hvdnet/statistics/SizeCount",
     "prefLabel": {

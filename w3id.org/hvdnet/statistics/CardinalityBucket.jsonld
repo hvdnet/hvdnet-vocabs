@@ -12,6 +12,11 @@
   "definition": {
     "en": "A categorization of the number of distinct values into predefined buckets."
   },
+  "scopeNote": {
+    "en": [
+      "Classify the cardinality (number of unique values) into buckets (e.g., low, medium, high) based on thresholds."
+    ]
+  },
   "broader": {
     "id": "https://w3id.org/hvdnet/statistics/CategoricalProfiling",
     "prefLabel": {

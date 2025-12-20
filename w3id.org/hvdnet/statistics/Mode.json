@@ -7,6 +7,11 @@
   "definition": {
     "en": "The most frequently occurring value in a dataset."
   },
+  "scopeNote": {
+    "en": [
+      "Count the frequency of each distinct value; select the value(s) with maximum count."
+    ]
+  },
   "broader": {
     "id": "https://w3id.org/hvdnet/statistics/CentralTendency",
     "prefLabel": {

@@ -7,6 +7,11 @@
   "definition": {
     "en": "The count of observations with null, missing, or empty values."
   },
+  "scopeNote": {
+    "en": [
+      "Identify null, NaN, empty strings or designated missing codes; count occurrences."
+    ]
+  },
   "inScheme": [
     {
       "id": "https://w3id.org/hvdnet/statistics/",

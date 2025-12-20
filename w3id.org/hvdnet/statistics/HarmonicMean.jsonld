@@ -7,6 +7,11 @@
   "definition": {
     "en": "The reciprocal of the arithmetic mean of reciprocals."
   },
+  "scopeNote": {
+    "en": [
+      "Useful for rates; invert non-zero values, average, then invert back."
+    ]
+  },
   "broader": {
     "id": "https://w3id.org/hvdnet/statistics/CentralTendency",
     "prefLabel": {

@@ -7,6 +7,11 @@
   "definition": {
     "en": "The average of the squared deviations from the mean."
   },
+  "scopeNote": {
+    "en": [
+      "Use population or sample denominator as appropriate; compute squared deviations from the mean and average."
+    ]
+  },
   "broader": {
     "id": "https://w3id.org/hvdnet/statistics/Dispersion",
     "prefLabel": {

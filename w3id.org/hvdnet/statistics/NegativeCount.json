@@ -7,6 +7,11 @@
   "definition": {
     "en": "The number of observations with negative values (< 0)."
   },
+  "scopeNote": {
+    "en": [
+      "Count observations strictly less than zero among valid values."
+    ]
+  },
   "broader": {
     "id": "https://w3id.org/hvdnet/statistics/SizeCount",
     "prefLabel": {

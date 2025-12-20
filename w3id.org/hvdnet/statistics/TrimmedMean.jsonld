@@ -7,6 +7,11 @@
   "definition": {
     "en": "The mean calculated after removing a specified percentage of extreme values from both ends."
   },
+  "scopeNote": {
+    "en": [
+      "Sort values, drop a fixed proportion from both tails, then average the remainder."
+    ]
+  },
   "exactMatch": [
     {
       "id": "https://wikidata.org/wiki/Q32278"

@@ -7,6 +7,11 @@
   "definition": {
     "en": "The nth root of the product of n values."
   },
+  "scopeNote": {
+    "en": [
+      "Use only for positive values; multiply valid values and take the nth root."
+    ]
+  },
   "broader": {
     "id": "https://w3id.org/hvdnet/statistics/CentralTendency",
     "prefLabel": {

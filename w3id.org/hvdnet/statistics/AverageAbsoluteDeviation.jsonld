@@ -7,6 +7,11 @@
   "definition": {
     "en": "The mean of the absolute deviations from a central point (typically the mean)."
   },
+  "scopeNote": {
+    "en": [
+      "Choose a center (mean or median); take absolute deviations and average them."
+    ]
+  },
   "broader": {
     "id": "https://w3id.org/hvdnet/statistics/Dispersion",
     "prefLabel": {

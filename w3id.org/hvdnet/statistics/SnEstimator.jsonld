@@ -12,6 +12,11 @@
   "definition": {
     "en": "A robust scale estimator based on median of medians of pairwise absolute differences."
   },
+  "scopeNote": {
+    "en": [
+      "For each i, compute median of |x_i − x_j| over j; take median of these medians and apply consistency factor."
+    ]
+  },
   "inScheme": [
     {
       "id": "https://w3id.org/hvdnet/statistics/",

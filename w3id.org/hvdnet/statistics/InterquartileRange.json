@@ -7,6 +7,11 @@
   "definition": {
     "en": "The difference between the third and first quartiles (Q3 - Q1)."
   },
+  "scopeNote": {
+    "en": [
+      "Compute quartiles using a defined convention; subtract Q1 from Q3."
+    ]
+  },
   "broader": {
     "id": "https://w3id.org/hvdnet/statistics/Dispersion",
     "prefLabel": {

@@ -7,6 +7,11 @@
   "definition": {
     "en": "The set of natural languages detected or present in text values."
   },
+  "scopeNote": {
+    "en": [
+      "Apply a language detection algorithm per text; aggregate detected language set or distribution."
+    ]
+  },
   "broader": {
     "id": "https://w3id.org/hvdnet/statistics/TextMeasures",
     "prefLabel": {

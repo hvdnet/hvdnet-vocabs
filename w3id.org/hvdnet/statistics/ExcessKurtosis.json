@@ -7,6 +7,11 @@
   "definition": {
     "en": "Kurtosis minus 3, measuring deviation from the normal distribution's tailedness."
   },
+  "scopeNote": {
+    "en": [
+      "Compute kurtosis and subtract 3 to normalize relative to the normal distribution."
+    ]
+  },
   "broader": {
     "id": "https://w3id.org/hvdnet/statistics/ShapeDistribution",
     "prefLabel": {

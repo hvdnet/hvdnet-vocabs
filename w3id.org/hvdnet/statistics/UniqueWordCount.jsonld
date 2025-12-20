@@ -7,6 +7,11 @@
   "definition": {
     "en": "The number of distinct words appearing across all text values."
   },
+  "scopeNote": {
+    "en": [
+      "Normalize case and optionally strip punctuation; take set cardinality across all words."
+    ]
+  },
   "broader": {
     "id": "https://w3id.org/hvdnet/statistics/TextMeasures",
     "prefLabel": {

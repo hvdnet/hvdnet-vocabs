@@ -12,6 +12,11 @@
   "definition": {
     "en": "The total number of records (rows) in the file."
   },
+  "scopeNote": {
+    "en": [
+      "Count the number of data records (rows) in the file, excluding header rows if present."
+    ]
+  },
   "broader": {
     "id": "https://w3id.org/hvdnet/statistics/FileLevel",
     "prefLabel": {

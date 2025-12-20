@@ -12,6 +12,11 @@
   "definition": {
     "en": "The expected information content per symbol based on its probability distribution."
   },
+  "scopeNote": {
+    "en": [
+      "Estimate category probabilities (e.g., via relative frequencies) and apply the entropy formula; choose log base appropriately (e or 2)."
+    ]
+  },
   "broader": {
     "id": "https://w3id.org/hvdnet/statistics/InformationContent",
     "prefLabel": {

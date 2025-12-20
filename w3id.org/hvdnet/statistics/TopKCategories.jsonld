@@ -12,6 +12,11 @@
   "definition": {
     "en": "The most frequent k categories ranked by count."
   },
+  "scopeNote": {
+    "en": [
+      "Count the frequency of each category, sort in descending order, and select the top k most frequent categories."
+    ]
+  },
   "broader": {
     "id": "https://w3id.org/hvdnet/statistics/CategoricalProfiling",
     "prefLabel": {

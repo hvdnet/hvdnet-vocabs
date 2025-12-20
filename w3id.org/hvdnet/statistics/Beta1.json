@@ -7,6 +7,11 @@
   "definition": {
     "en": "A measure of the asymmetry of the distribution around its mean."
   },
+  "scopeNote": {
+    "en": [
+      "Compute standardized third moment or a robust alternative; report sample or population convention."
+    ]
+  },
   "broader": {
     "id": "https://w3id.org/hvdnet/statistics/ShapeDistribution",
     "prefLabel": {

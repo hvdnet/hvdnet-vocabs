@@ -7,6 +7,11 @@
   "definition": {
     "en": "The length of the shortest text value in characters."
   },
+  "scopeNote": {
+    "en": [
+      "Measure length in characters for each text; take minimum."
+    ]
+  },
   "broader": {
     "id": "https://w3id.org/hvdnet/statistics/TextMeasures",
     "prefLabel": {

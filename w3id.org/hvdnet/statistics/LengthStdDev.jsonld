@@ -7,6 +7,11 @@
   "definition": {
     "en": "The standard deviation of text lengths in characters."
   },
+  "scopeNote": {
+    "en": [
+      "Compute character counts per value; take standard deviation across counts."
+    ]
+  },
   "broader": {
     "id": "https://w3id.org/hvdnet/statistics/TextMeasures",
     "prefLabel": {

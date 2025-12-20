@@ -11,8 +11,8 @@ searchableAttributes:
   - "example"
   - "definition"
 ui:
-  title: "HVDNet Statistics Vocabulary" # Title is mandatory
-  logo: "skohub-signet-color.svg" # Path
+  title: "HVDNet Vocabularies" # Title is mandatory
+  logo: "hvdnet_acronym.png" # Path
   colors:
     skoHubWhite: "rgb(255, 255, 255)"
     skoHubDarkColor: "rgb(15, 85, 75)"

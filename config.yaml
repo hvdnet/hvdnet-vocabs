@@ -38,19 +38,11 @@ ui:
       font_weight: 700
       name: "ubuntu-v20-latin-700"
   footer:
-    - id: "imprint"
-      text: 
-        en: "Imprint"
-        de: "Impressum"
-        fr: "Mentions légales"
-    - id: "privacy"
-      text: 
-        en: "Privacy Policy"
-        de: "Datenschutz"
-        fr:  "Politique de confidentialité"
-    - id: "contact"
-      href: "https://hvdnet.example.org/contact"
+    - id:  "license"
+      href: "https://creativecommons.org/publicdomain/zero/1.0/"
       text:
-        en: "Contact"
-        de: "Kontakt"
-        fr: "Contact"
+        en: "CC0 1.0 License"
+    - id: "issues"
+      href: "https://github.com/hvdnet/hvdnet-vocabs/issues"
+      text:
+        en: "Report Issue"

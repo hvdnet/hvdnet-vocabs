@@ -39,11 +39,15 @@ ui:
       name: "ubuntu-v20-latin-700"
   footer:
     links:
-      - title:  "license"
+      - title:  "License"
         url: "https://creativecommons.org/publicdomain/zero/1.0/"
         target: _blank
         rel: "noopener noreferrer"
-      - title: "issues"
+      - title: "Issues"
         url: "https://github.com/hvdnet/hvdnet-vocabs/issues"
         target: _blank
         rel: "noopener noreferrer"
+      - title: "Contact"
+        url: "https://www.highvaluedata.net"
+        target: _blank
+        rel: "noopener noreferrer"        

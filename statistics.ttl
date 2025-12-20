@@ -565,7 +565,7 @@ stats:InvalidCases a skos:Concept ;
     skos:exactMatch ddi:6459c62 .
 
 stats:NullCases a skos:Concept ;
-    skos:prefLabel "Cases that have null/empty value"@en ;
+    skos:prefLabel "Null/empty value"@en ;
     skos:definition "The count of observations with null, missing, or empty values."@en ;
     skos:scopeNote "Identify null, NaN, empty strings or designated missing codes; count occurrences."@en ;
     stats:computationMethod "Normalize missing-value representations; count entries considered missing."@en ;

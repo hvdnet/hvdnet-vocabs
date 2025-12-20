@@ -4,6 +4,8 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix wikidata: <https://wikidata.org/wiki/> .
 @prefix ddi: <http://rdf-vocabulary.ddialliance.org/cv/SummaryStatisticType/2.1.2/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
 # Crosswalks: Concepts may include skos:exactMatch links to Wikidata
 # using the wikidata: prefix above (https://wikidata.org/wiki/).
@@ -18,6 +20,20 @@ stats: a skos:ConceptScheme ;
     skos:hasTopConcept stats:CentralTendency, stats:Dispersion, stats:SizeCount, 
         stats:DerivedRatios, stats:ShapeDistribution, stats:TextMeasures, stats:Metadata, stats:FileLevel, stats:MissingnessCompleteness, stats:RobustStatistics, stats:AssociationDependence, stats:InformationContent, stats:Outliers ;
     dct:license <https://creativecommons.org/publicdomain/zero/1.0/> .
+
+# Property declarations (custom annotations)
+
+stats:formula a rdf:Property ;
+    rdfs:label "formula"@en ;
+    rdfs:comment "Compact mathematical formula (e.g., LaTeX) describing how the statistic is computed."@en ;
+    rdfs:domain skos:Concept ;
+    rdfs:range xsd:string .
+
+stats:computationMethod a rdf:Property ;
+    rdfs:label "computation method"@en ;
+    rdfs:comment "Brief textual steps describing how to compute the statistic, including conventions and exclusions."@en ;
+    rdfs:domain skos:Concept ;
+    rdfs:range xsd:string .
 
 # Categories
 
@@ -117,6 +133,9 @@ stats:CategoricalProfiling a skos:Concept ;
 stats:ArithmeticMean a skos:Concept ;
     skos:prefLabel "Arithmetic mean"@en ;
     skos:definition "The sum of all values divided by the number of values."@en ;
+    skos:scopeNote "Compute by summing valid values and dividing by the count; exclude missing or invalid entries."@en ;
+    stats:formula "$\\bar{x} = \\frac{1}{n} \\sum_{i=1}^{n} x_i$" ;
+    stats:computationMethod "Sum all non-missing values and divide by the number of non-missing observations (n)."@en ;
     skos:broader stats:CentralTendency ;
     skos:inScheme stats: ;
     skos:exactMatch wikidata:Q19033, ddi:7975ed0 .
@@ -124,6 +143,9 @@ stats:ArithmeticMean a skos:Concept ;
 stats:GeometricMean a skos:Concept ;
     skos:prefLabel "Geometric mean"@en ;
     skos:definition "The nth root of the product of n values."@en ;
+    skos:scopeNote "Use only for positive values; multiply valid values and take the nth root."@en ;
+    stats:formula "$\\left(\\prod_{i=1}^{n} x_i\\right)^{1/n}$" ;
+    stats:computationMethod "Multiply all positive, non-missing values and raise to the power of 1/n."@en ;
     skos:broader stats:CentralTendency ;
     skos:inScheme stats: ;
     skos:exactMatch wikidata:Q185049, ddi:cd8ebb0 .
@@ -131,6 +153,9 @@ stats:GeometricMean a skos:Concept ;
 stats:HarmonicMean a skos:Concept ;
     skos:prefLabel "Harmonic mean"@en ;
     skos:definition "The reciprocal of the arithmetic mean of reciprocals."@en ;
+    skos:scopeNote "Useful for rates; invert non-zero values, average, then invert back."@en ;
+    stats:formula "$\\left( \\frac{1}{n} \\sum_{i=1}^{n} \\frac{1}{x_i} \\right)^{-1}$" ;
+    stats:computationMethod "Compute the mean of reciprocals of valid, non-zero values and invert the result."@en ;
     skos:broader stats:CentralTendency ;
     skos:inScheme stats: ;
     skos:exactMatch wikidata:Q188347, ddi:71996c9 .
@@ -138,6 +163,9 @@ stats:HarmonicMean a skos:Concept ;
 stats:TrimmedMean a skos:Concept ;
     skos:prefLabel "Trimmed mean"@en ;
     skos:definition "The mean calculated after removing a specified percentage of extreme values from both ends."@en ;
+    skos:scopeNote "Sort values, drop a fixed proportion from both tails, then average the remainder."@en ;
+    stats:formula "Informal: average of the middle (1−2α) fraction after α-trim on both tails" ;
+    stats:computationMethod "Sort valid values, remove α·n lowest and α·n highest observations, compute the arithmetic mean of the rest."@en ;
     skos:broader stats:CentralTendency, stats:RobustStatistics ;
     skos:inScheme stats: ;
     skos:exactMatch wikidata:Q32278, ddi:17ff276 .
@@ -145,6 +173,9 @@ stats:TrimmedMean a skos:Concept ;
 stats:WinsorizedMean a skos:Concept ;
     skos:prefLabel "Winsorized Mean"@en ;
     skos:definition "The mean calculated after replacing extreme values with less extreme values at specified percentiles."@en ;
+    skos:scopeNote "Replace α-tail extremes with boundary values at chosen percentiles, then average."@en ;
+    stats:formula "Informal: mean after Winsorizing tails at chosen cutoffs (e.g., 5th/95th percentiles)" ;
+    stats:computationMethod "Winsorize: clamp values below the lower cutoff to the cutoff, and above the upper cutoff to the cutoff; compute arithmetic mean."@en ;
     skos:broader stats:CentralTendency, stats:RobustStatistics ;
     skos:inScheme stats: ;
     skos:exactMatch wikidata:Q2989389 .
@@ -152,6 +183,8 @@ stats:WinsorizedMean a skos:Concept ;
 stats:Mode a skos:Concept ;
     skos:prefLabel "Mode"@en ;
     skos:definition "The most frequently occurring value in a dataset."@en ;
+    skos:scopeNote "Count the frequency of each distinct value; select the value(s) with maximum count."@en ;
+    stats:computationMethod "Compute a frequency table over valid values and return the category with highest frequency (ties possible)."@en ;
     skos:broader stats:CentralTendency ;
     skos:inScheme stats: ;
     skos:exactMatch wikidata:Q188224, ddi:650be61 .
@@ -159,6 +192,9 @@ stats:Mode a skos:Concept ;
 stats:Median a skos:Concept ;
     skos:prefLabel "Median"@en ;
     skos:definition "The middle value when data are sorted in order."@en ;
+    skos:scopeNote "Sort values; pick the middle for odd n, or average the two middles for even n (depending on convention)."@en ;
+    stats:formula "For odd n: $x_{( (n+1)/2 )}$; for even n: $\\frac{x_{(n/2)} + x_{(n/2+1)}}{2}$" ;
+    stats:computationMethod "Sort non-missing values; select median according to chosen convention (inclusive/exclusive)."@en ;
     skos:broader stats:CentralTendency ;
     skos:inScheme stats: ;
     skos:exactMatch wikidata:Q226995, ddi:66851a3 .
@@ -166,6 +202,8 @@ stats:Median a skos:Concept ;
 stats:Minimum a skos:Concept ;
     skos:prefLabel "Minimum"@en ;
     skos:definition "The smallest value in a dataset."@en ;
+    skos:scopeNote "Scan all valid values and return the smallest observed value."@en ;
+    stats:computationMethod "Compute the min over non-missing values."@en ;
     skos:broader stats:CentralTendency ;
     skos:inScheme stats: ;
     skos:exactMatch wikidata:Q10585806, ddi:a1d0ec6 .
@@ -173,6 +211,8 @@ stats:Minimum a skos:Concept ;
 stats:Maximum a skos:Concept ;
     skos:prefLabel "Maximum"@en ;
     skos:definition "The largest value in a dataset."@en ;
+    skos:scopeNote "Scan all valid values and return the largest observed value."@en ;
+    stats:computationMethod "Compute the max over non-missing values."@en ;
     skos:broader stats:CentralTendency ;
     skos:inScheme stats: ;
     skos:exactMatch wikidata:Q10578722, ddi:8321e79 .
@@ -180,6 +220,9 @@ stats:Maximum a skos:Concept ;
 stats:Sum a skos:Concept ;
     skos:prefLabel "Sum"@en ;
     skos:definition "The total obtained by adding all values together."@en ;
+    skos:scopeNote "Add up all valid values; exclude missing or invalid entries."@en ;
+    stats:formula "$\\sum_{i=1}^{n} x_i$" ;
+    stats:computationMethod "Accumulate over non-missing values."@en ;
     skos:broader stats:CentralTendency ;
     skos:inScheme stats: ;
     skos:exactMatch wikidata:Q218005, ddi:a0ec870 .
@@ -308,18 +351,26 @@ stats:OtherPercentile a skos:Concept ;
 stats:Midrange a skos:Concept ;
     skos:prefLabel "Midrange"@en ;
     skos:definition "The average of the minimum and maximum values."@en ;
+    skos:scopeNote "Compute min and max; average them."@en ;
+    stats:formula "$\\frac{x_{\\min} + x_{\\max}}{2}$" ;
+    stats:computationMethod "Find min and max among valid values; take their average."@en ;
     skos:broader stats:RobustStatistics ;
     skos:inScheme stats: .
 
 stats:Trimean a skos:Concept ;
     skos:prefLabel "Trimean"@en ;
     skos:definition "A weighted average of the median and two quartiles: (Q1 + 2×Q2 + Q3) / 4."@en ;
+    skos:scopeNote "Compute Q1, Q2 (median), Q3 under a chosen convention; apply weighted average."@en ;
+    stats:formula "$\\frac{Q_1 + 2Q_2 + Q_3}{4}$" ;
+    stats:computationMethod "Estimate quartiles; compute weighted average giving double weight to the median."@en ;
     skos:broader stats:RobustStatistics ;
     skos:inScheme stats: .
 
 stats:BiweightMidvariance a skos:Concept ;
     skos:prefLabel "Biweight midvariance"@en ;
     skos:definition "A robust measure of scale based on the biweight (bisquare) function."@en ;
+    skos:scopeNote "Compute a robust center (median); apply weighted variance using biweight weight function; typically with c=9 MAD."@en ;
+    stats:computationMethod "Median center; standardize residuals by cMAD; apply biweight weight function; estimate scale."@en ;
     skos:broader stats:RobustStatistics, stats:Dispersion ;
     skos:inScheme stats: .
 
@@ -327,6 +378,8 @@ stats:QnEstimator a skos:Concept ;
     skos:prefLabel "Qn scale estimator"@en ;
     skos:definition "A robust scale estimator based on the first quartile of pairwise absolute differences."@en ;
     skos:altLabel "Rousseeuw-Croux Qn"@en ;
+    skos:scopeNote "For n observations, compute all {|x_i − x_j| : i < j}; take first quartile and apply constant factor for consistency."@en ;
+    stats:computationMethod "Compute pairwise differences; sort; estimate Q1; multiply by 2.2219 (approx) for normality consistency."@en ;
     skos:broader stats:RobustStatistics, stats:Dispersion ;
     skos:inScheme stats: .
 
@@ -334,6 +387,8 @@ stats:SnEstimator a skos:Concept ;
     skos:prefLabel "Sn scale estimator"@en ;
     skos:definition "A robust scale estimator based on median of medians of pairwise absolute differences."@en ;
     skos:altLabel "Rousseeuw-Croux Sn"@en ;
+    skos:scopeNote "For each i, compute median of |x_i − x_j| over j; take median of these medians and apply consistency factor."@en ;
+    stats:computationMethod "Compute row medians of pairwise distance matrix; take median; multiply by 1.1926 for consistency."@en ;
     skos:broader stats:RobustStatistics, stats:Dispersion ;
     skos:inScheme stats: .
 
@@ -342,6 +397,9 @@ stats:SnEstimator a skos:Concept ;
 stats:Covariance a skos:Concept ;
     skos:prefLabel "Covariance"@en ;
     skos:definition "A measure of the joint variability between two variables."@en ;
+    skos:scopeNote "Center both variables by their means; average the product of centered values using sample or population denominator."@en ;
+    stats:formula "Sample: $s_{xy} = \\frac{1}{n-1} \\sum_{i=1}^{n} (x_i - \\bar{x})(y_i - \\bar{y})$" ;
+    stats:computationMethod "Compute means of x and y; multiply centered pairs; sum and divide by (n−1)."@en ;
     skos:broader stats:AssociationDependence ;
     skos:inScheme stats: ;
     skos:exactMatch wikidata:Q208273 .
@@ -349,6 +407,9 @@ stats:Covariance a skos:Concept ;
 stats:PearsonCorrelation a skos:Concept ;
     skos:prefLabel "Pearson correlation coefficient"@en ;
     skos:definition "A measure of linear correlation between two variables, ranging from -1 to +1."@en ;
+    skos:scopeNote "Divide the sample covariance by the product of sample standard deviations."@en ;
+    stats:formula "$r = \\frac{\\sum (x_i - \\bar{x})(y_i - \\bar{y})}{\\sqrt{\\sum (x_i - \\bar{x})^2} \\sqrt{\\sum (y_i - \\bar{y})^2}}$" ;
+    stats:computationMethod "Compute covariance of x and y and scale by their sample standard deviations."@en ;
     skos:broader stats:AssociationDependence ;
     skos:inScheme stats: ;
     skos:exactMatch wikidata:Q51993 .
@@ -356,6 +417,9 @@ stats:PearsonCorrelation a skos:Concept ;
 stats:SpearmanCorrelation a skos:Concept ;
     skos:prefLabel "Spearman rank correlation"@en ;
     skos:definition "A non-parametric measure of rank correlation between two variables."@en ;
+    skos:scopeNote "Replace values with ranks and compute Pearson correlation of the ranks."@en ;
+    stats:formula "$\\rho = 1 - \\frac{6 \\sum d_i^2}{n(n^2 - 1)}$ (when no ties)" ;
+    stats:computationMethod "Assign ranks (with tie handling), then compute Pearson correlation on ranks or use the closed-form without ties."@en ;
     skos:broader stats:AssociationDependence ;
     skos:inScheme stats: ;
     skos:exactMatch wikidata:Q79867 .
@@ -363,6 +427,9 @@ stats:SpearmanCorrelation a skos:Concept ;
 stats:KendallCorrelation a skos:Concept ;
     skos:prefLabel "Kendall rank correlation"@en ;
     skos:definition "A measure of ordinal association based on concordant and discordant pairs."@en ;
+    skos:scopeNote "Count concordant and discordant pairs among all observation pairs; adjust variant for ties as needed."@en ;
+    stats:formula "$\\tau = \\frac{N_c - N_d}{\\tfrac{1}{2}n(n-1)}$ (Tau-a)" ;
+    stats:computationMethod "For all pairs (i,j), compare relative order in x and y; compute tau using chosen variant (a/b/c)."@en ;
     skos:broader stats:AssociationDependence ;
     skos:inScheme stats: ;
     skos:exactMatch wikidata:Q1133707 .
@@ -378,6 +445,9 @@ stats:MaxAbsCorrelation a skos:Concept ;
 stats:StandardErrorOfMean a skos:Concept ;
     skos:prefLabel "Standard error of the mean"@en ;
     skos:definition "The standard deviation of the sampling distribution of the mean."@en ;
+    skos:scopeNote "Estimate as sample standard deviation divided by square root of sample size (for iid samples)."@en ;
+    stats:formula "$\\mathrm{SE}(\\bar{x}) = \\frac{s}{\\sqrt{n}}$" ;
+    stats:computationMethod "Compute sample standard deviation s and divide by sqrt(n)."@en ;
     skos:broader stats:Dispersion ;
     skos:inScheme stats: ;
     skos:exactMatch wikidata:Q111972245, ddi:2c03973 .
@@ -385,6 +455,9 @@ stats:StandardErrorOfMean a skos:Concept ;
 stats:Range a skos:Concept ;
     skos:prefLabel "Range"@en ;
     skos:definition "The difference between the maximum and minimum values."@en ;
+    skos:scopeNote "Compute max and min over valid values and subtract: Range = max − min."@en ;
+    stats:formula "$R = x_{\\max} - x_{\\min}$" ;
+    stats:computationMethod "Find maximum and minimum among non-missing values; subtract min from max."@en ;
     skos:broader stats:Dispersion ;
     skos:inScheme stats: ;
     skos:exactMatch wikidata:Q1165839 .
@@ -392,6 +465,9 @@ stats:Range a skos:Concept ;
 stats:Variance a skos:Concept ;
     skos:prefLabel "Variance"@en ;
     skos:definition "The average of the squared deviations from the mean."@en ;
+    skos:scopeNote "Use population or sample denominator as appropriate; compute squared deviations from the mean and average."@en ;
+    stats:formula "Sample: $s^2 = \\frac{1}{n-1} \\sum_{i=1}^{n} (x_i - \\bar{x})^2$; Population: $\\sigma^2 = \\frac{1}{n} \\sum_{i=1}^{n} (x_i - \\mu)^2$" ;
+    stats:computationMethod "Compute mean of valid values; sum squared deviations; divide by n or (n−1) per convention."@en ;
     skos:broader stats:Dispersion ;
     skos:inScheme stats: ;
     skos:exactMatch wikidata:Q175199 .
@@ -399,6 +475,9 @@ stats:Variance a skos:Concept ;
 stats:StandardDeviation a skos:Concept ;
     skos:prefLabel "Standard deviation"@en ;
     skos:definition "The square root of the variance, measuring spread around the mean."@en ;
+    skos:scopeNote "Compute as the square root of variance; choose sample or population version consistently with variance."@en ;
+    stats:formula "Sample: $s = \\sqrt{s^2}$; Population: $\\sigma = \\sqrt{\\sigma^2}$" ;
+    stats:computationMethod "Compute variance with the chosen denominator and take its square root."@en ;
     skos:broader stats:Dispersion ;
     skos:inScheme stats: ;
     skos:exactMatch wikidata:Q159375 .
@@ -406,6 +485,9 @@ stats:StandardDeviation a skos:Concept ;
 stats:AverageAbsoluteDeviation a skos:Concept ;
     skos:prefLabel "Average absolute deviation"@en ;
     skos:definition "The mean of the absolute deviations from a central point (typically the mean)."@en ;
+    skos:scopeNote "Choose a center (mean or median); take absolute deviations and average them."@en ;
+    stats:formula "About mean: $\\frac{1}{n} \\sum |x_i - \\bar{x}|$" ;
+    stats:computationMethod "Compute center (usually mean); take absolute differences to center; average over valid values."@en ;
     skos:broader stats:Dispersion ;
     skos:inScheme stats: ;
     skos:exactMatch wikidata:Q1067186, ddi:015ce0a .
@@ -413,6 +495,9 @@ stats:AverageAbsoluteDeviation a skos:Concept ;
 stats:MedianAbsoluteDeviation a skos:Concept ;
     skos:prefLabel "Median absolute deviation"@en ;
     skos:definition "The median of the absolute deviations from the median, a robust measure of variability."@en ;
+    skos:scopeNote "Compute the median; take absolute deviations from the median; take the median of those deviations (optionally scale by 1.4826)."@en ;
+    stats:formula "$\\mathrm{MAD} = \\mathrm{median}(|x_i - \\mathrm{median}(x)|)$" ;
+    stats:computationMethod "Median over valid values; compute absolute deviations; take median; optionally multiply by consistency factor."@en ;
     skos:broader stats:Dispersion ;
     skos:inScheme stats: ;
     skos:exactMatch wikidata:Q3853702, ddi:5dc5781 .
@@ -420,6 +505,9 @@ stats:MedianAbsoluteDeviation a skos:Concept ;
 stats:InterquartileRange a skos:Concept ;
     skos:prefLabel "Interquartile range"@en ;
     skos:definition "The difference between the third and first quartiles (Q3 - Q1)."@en ;
+    skos:scopeNote "Compute quartiles using a defined convention; subtract Q1 from Q3."@en ;
+    stats:formula "$\\mathrm{IQR} = Q_3 - Q_1$" ;
+    stats:computationMethod "Estimate Q1 and Q3 (inclusive/exclusive or interpolation method) and take their difference."@en ;
     skos:broader stats:Dispersion ;
     skos:inScheme stats: ;
     skos:exactMatch wikidata:Q1916617, ddi:a7f7339 .
@@ -427,6 +515,9 @@ stats:InterquartileRange a skos:Concept ;
 stats:InterquintileRange a skos:Concept ;
     skos:prefLabel "Interquintile range"@en ;
     skos:definition "The difference between the fourth and first quintiles."@en ;
+    skos:scopeNote "Estimate quintiles under a chosen method; subtract Q20 from Q80."@en ;
+    stats:formula "$Q_{80} - Q_{20}$" ;
+    stats:computationMethod "Compute 20th and 80th percentiles; subtract lower from upper."@en ;
     skos:broader stats:Dispersion ;
     skos:inScheme stats: ;
     skos:exactMatch ddi:b3ab24e .
@@ -434,6 +525,9 @@ stats:InterquintileRange a skos:Concept ;
 stats:InterdecileRange a skos:Concept ;
     skos:prefLabel "Interdecile range"@en ;
     skos:definition "The difference between the ninth and first deciles (P90 - P10)."@en ;
+    skos:scopeNote "Estimate deciles under a chosen method; subtract P10 from P90."@en ;
+    stats:formula "$P_{90} - P_{10}$" ;
+    stats:computationMethod "Compute 10th and 90th percentiles; subtract lower from upper."@en ;
     skos:broader stats:Dispersion ;
     skos:inScheme stats: ;
     skos:altLabel "P90-P10 range"@en ;
@@ -442,6 +536,9 @@ stats:InterdecileRange a skos:Concept ;
 stats:GiniCoefficient a skos:Concept ;
     skos:prefLabel "Gini Coefficient"@en ;
     skos:definition "A measure of statistical dispersion representing inequality in a distribution."@en ;
+    skos:scopeNote "Compute area between the Lorenz curve and line of equality; normalize to [0,1]."@en ;
+    stats:formula "$G = 1 - 2 \\int_0^1 L(p) \\mathrm{d}p$ (Lorenz curve $L$)" ;
+    stats:computationMethod "Estimate Lorenz curve from sorted values; compute normalized area difference (various discrete formulas exist)."@en ;
     skos:broader stats:Dispersion ;
     skos:inScheme stats: ;
     skos:exactMatch wikidata:Q162455 .
@@ -451,6 +548,8 @@ stats:GiniCoefficient a skos:Concept ;
 stats:ValidCases a skos:Concept ;
     skos:prefLabel "Valid cases"@en ;
     skos:definition "The count of observations with valid, non-missing values."@en ;
+    skos:scopeNote "Exclude missing and invalid values; count remaining observations."@en ;
+    stats:computationMethod "Filter to non-missing, in-range values; return count."@en ;
     skos:broader stats:SizeCount ;
     skos:inScheme stats: ;
     skos:exactMatch ddi:c646dd8 .
@@ -458,6 +557,8 @@ stats:ValidCases a skos:Concept ;
 stats:InvalidCases a skos:Concept ;
     skos:prefLabel "Invalid cases"@en ;
     skos:definition "The count of observations with invalid or out-of-range values."@en ;
+    skos:scopeNote "Apply validation rules or ranges; count entries failing them."@en ;
+    stats:computationMethod "Define validity constraints; count observations that violate constraints."@en ;
     skos:broader stats:SizeCount, stats:MissingnessCompleteness ;
     skos:inScheme stats: ;
     skos:exactMatch ddi:6459c62 .
@@ -465,48 +566,65 @@ stats:InvalidCases a skos:Concept ;
 stats:NullCases a skos:Concept ;
     skos:prefLabel "Cases that have null/empty value"@en ;
     skos:definition "The count of observations with null, missing, or empty values."@en ;
+    skos:scopeNote "Identify null, NaN, empty strings or designated missing codes; count occurrences."@en ;
+    stats:computationMethod "Normalize missing-value representations; count entries considered missing."@en ;
     skos:broader stats:SizeCount, stats:MissingnessCompleteness ;
     skos:inScheme stats: .
 
 stats:UniqueCases a skos:Concept ;
     skos:prefLabel "Unique Cases/Values"@en ;
     skos:definition "The count of distinct values in the dataset."@en ;
+    skos:scopeNote "Use a set/deduplication over valid values; report cardinality."@en ;
+    stats:computationMethod "Remove duplicates among non-missing values; return number of distinct values."@en ;
     skos:broader stats:SizeCount ;
     skos:inScheme stats: .
 
 stats:Sparsity a skos:Concept ;
     skos:prefLabel "Sparsity"@en ;
     skos:definition "The proportion of zero or null values in a dataset."@en ;
+    skos:scopeNote "Compute ratio of (zero + null) entries to total observations."@en ;
+    stats:formula "$\\frac{n_{=0} + n_{\\text{null}}}{n}$" ;
+    stats:computationMethod "Count zeros and missing/nulls; divide by total n."@en ;
     skos:broader stats:SizeCount ;
     skos:inScheme stats: .
 
 stats:PositiveCount a skos:Concept ;
     skos:prefLabel "Count of positive values"@en ;
     skos:definition "The number of observations with positive values (> 0)."@en ;
+    skos:scopeNote "Count observations strictly greater than zero among valid values."@en ;
+    stats:computationMethod "Filter non-missing values where x > 0; return count."@en ;
     skos:broader stats:SizeCount ;
     skos:inScheme stats: .
 
 stats:ZeroCount a skos:Concept ;
     skos:prefLabel "Count of zero values"@en ;
     skos:definition "The number of observations with exactly zero value."@en ;
+    skos:scopeNote "Count observations equal to zero among valid values."@en ;
+    stats:computationMethod "Filter non-missing values where x == 0; return count."@en ;
     skos:broader stats:SizeCount ;
     skos:inScheme stats: .
 
 stats:NegativeCount a skos:Concept ;
     skos:prefLabel "Count of negative values"@en ;
     skos:definition "The number of observations with negative values (< 0)."@en ;
+    skos:scopeNote "Count observations strictly less than zero among valid values."@en ;
+    stats:computationMethod "Filter non-missing values where x < 0; return count."@en ;
     skos:broader stats:SizeCount ;
     skos:inScheme stats: .
 
 stats:SignificantDigits a skos:Concept ;
     skos:prefLabel "Number of digits needed to safely store the data"@en ;
     skos:definition "The precision or number of significant digits required to represent the values."@en ;
+    skos:scopeNote "Determine minimal digits to preserve value distinctions given measurement or rounding rules."@en ;
+    stats:computationMethod "Analyze value magnitudes and required precision; choose number of digits avoiding loss of information."@en ;
     skos:broader stats:SizeCount ;
     skos:inScheme stats: .
 
 stats:Frequency a skos:Concept ;
     skos:prefLabel "Frequency"@en ;
     skos:definition "The number of times a particular value or category appears."@en ;
+    skos:scopeNote "Count occurrences per distinct value or category; may be used to form histograms."@en ;
+    stats:computationMethod "Group by value/category among valid entries; count per group."@en ;
     skos:broader stats:SizeCount ;
     skos:inScheme stats: ;
     skos:exactMatch wikidata:Q762856 .
@@ -514,6 +632,8 @@ stats:Frequency a skos:Concept ;
 stats:Other a skos:Concept ;
     skos:prefLabel "Other"@en ;
     skos:definition "A count or size measure not otherwise categorized."@en ;
+    skos:scopeNote "Specify custom count/size computation; document filters and units."@en ;
+    stats:computationMethod "Provide a clear description of the atypical measure and its computation."@en ;
     skos:broader stats:SizeCount ;
     skos:inScheme stats: ;
     skos:exactMatch ddi:6311ae1 .
@@ -523,18 +643,27 @@ stats:Other a skos:Concept ;
 stats:ModeZScore a skos:Concept ;
     skos:prefLabel "Z-score of mode"@en ;
     skos:definition "The standardized distance of the mode from the mean in standard deviation units."@en ;
+    skos:scopeNote "Compute the mode; standardize its value using mean and standard deviation to obtain a z-score."@en ;
+    stats:formula "$z_{\\text{mode}} = \\frac{\\text{mode} - \\bar{x}}{s}$" ;
+    stats:computationMethod "Find the mode of valid values; compute mean and sample standard deviation; apply z = (mode − mean)/s."@en ;
     skos:broader stats:DerivedRatios ;
     skos:inScheme stats: .
 
 stats:StdDevRangeRatio a skos:Concept ;
     skos:prefLabel "Range to Standard Deviation Ratio"@en ;
     skos:definition "The ratio of the range to the standard deviation."@en ;
+    skos:scopeNote "Compute range and sample standard deviation; divide range by s."@en ;
+    stats:formula "$\\frac{R}{s}$" ;
+    stats:computationMethod "Find max and min to get range R; compute sample standard deviation s; take ratio R/s."@en ;
     skos:broader stats:DerivedRatios ;
     skos:inScheme stats: .
 
 stats:CoefficientOfVariation a skos:Concept ;
     skos:prefLabel "Coefficient of variation"@en ;
     skos:definition "The ratio of the standard deviation to the mean, expressing variability relative to the mean."@en ;
+    skos:scopeNote "Use sample or population definitions consistently; divide standard deviation by mean (mean > 0)."@en ;
+    stats:formula "$\\mathrm{CV} = \\frac{s}{\\bar{x}}$" ;
+    stats:computationMethod "Compute mean and standard deviation over valid values; take ratio s/mean (report as fraction or percentage)."@en ;
     skos:broader stats:DerivedRatios ;
     skos:inScheme stats: ;
     skos:exactMatch wikidata:Q623738, ddi:3279fce .
@@ -542,6 +671,9 @@ stats:CoefficientOfVariation a skos:Concept ;
 stats:PercentageOfValidCases a skos:Concept ;
     skos:prefLabel "Percentage of valid cases"@en ;
     skos:definition "The proportion of valid observations expressed as a percentage."@en ;
+    skos:scopeNote "Compute the fraction of valid observations and multiply by 100 to express as a percentage."@en ;
+    stats:formula "$100 \\times \\frac{n_{valid}}{n}$" ;
+    stats:computationMethod "Count valid values; divide by total n; multiply by 100."@en ;
     skos:broader stats:DerivedRatios ;
     skos:inScheme stats: ;
     skos:exactMatch ddi:ecf4107 .
@@ -549,6 +681,9 @@ stats:PercentageOfValidCases a skos:Concept ;
 stats:PercentageOfInvalidCases a skos:Concept ;
     skos:prefLabel "Percentage of invalid cases"@en ;
     skos:definition "The proportion of invalid observations expressed as a percentage."@en ;
+    skos:scopeNote "Compute the fraction of invalid observations and multiply by 100 to express as a percentage."@en ;
+    stats:formula "$100 \\times \\frac{n_{invalid}}{n}$" ;
+    stats:computationMethod "Count invalid values; divide by total n; multiply by 100."@en ;
     skos:broader stats:DerivedRatios ;
     skos:inScheme stats: ;
     skos:exactMatch ddi:e592a55 .
@@ -556,6 +691,9 @@ stats:PercentageOfInvalidCases a skos:Concept ;
 stats:QuartileDispersionCoefficient a skos:Concept ;
     skos:prefLabel "Quartile Coefficient of Dispersion"@en ;
     skos:definition "A relative measure of dispersion based on quartiles: (Q3 - Q1) / (Q3 + Q1)."@en ;
+    skos:scopeNote "Estimate Q1 and Q3; take their difference over their sum."@en ;
+    stats:formula "$\\frac{Q_3 - Q_1}{Q_3 + Q_1}$" ;
+    stats:computationMethod "Compute Q1 and Q3 under a chosen convention; apply formula."@en ;
     skos:broader stats:DerivedRatios ;
     skos:inScheme stats: .
 
@@ -563,6 +701,9 @@ stats:ModeFrequencyRatio a skos:Concept ;
     skos:prefLabel "Mode frequency ratio"@en ;
     skos:definition "The proportion of observations equal to the mode value."@en ;
     skos:altLabel "Mode share"@en ;
+    skos:scopeNote "Compute the frequency of the modal value and divide by total observations."@en ;
+    stats:formula "$\\frac{f_{\\text{mode}}}{n}$" ;
+    stats:computationMethod "Find the modal value; count its frequency; divide by n."@en ;
     skos:broader stats:DerivedRatios ;
     skos:inScheme stats: .
 
@@ -570,6 +711,9 @@ stats:NonZeroRate a skos:Concept ;
     skos:prefLabel "Non-zero rate"@en ;
     skos:definition "The proportion of observations with non-zero values."@en ;
     skos:altLabel "Non-zero share"@en ;
+    skos:scopeNote "Count non-zero values and divide by total observations."@en ;
+    stats:formula "$\\frac{n_{\\neq 0}}{n}$" ;
+    stats:computationMethod "Count observations where value != 0; divide by n."@en ;
     skos:broader stats:DerivedRatios ;
     skos:inScheme stats: .
 
@@ -577,6 +721,9 @@ stats:PositiveShare a skos:Concept ;
     skos:prefLabel "Positive share"@en ;
     skos:definition "The proportion of observations with positive values."@en ;
     skos:altLabel "Positive proportion"@en ;
+    skos:scopeNote "Count positive values (>0) and divide by total observations."@en ;
+    stats:formula "$\\frac{n_{>0}}{n}$" ;
+    stats:computationMethod "Count observations where value > 0; divide by n."@en ;
     skos:broader stats:DerivedRatios ;
     skos:inScheme stats: .
 
@@ -584,6 +731,9 @@ stats:NegativeShare a skos:Concept ;
     skos:prefLabel "Negative share"@en ;
     skos:definition "The proportion of observations with negative values."@en ;
     skos:altLabel "Negative proportion"@en ;
+    skos:scopeNote "Count negative values (<0) and divide by total observations."@en ;
+    stats:formula "$\\frac{n_{<0}}{n}$" ;
+    stats:computationMethod "Count observations where value < 0; divide by n."@en ;
     skos:broader stats:DerivedRatios ;
     skos:inScheme stats: .
 
@@ -592,6 +742,9 @@ stats:NegativeShare a skos:Concept ;
 stats:Beta1 a skos:Concept ;
     skos:prefLabel "Skewness"@en ;
     skos:definition "A measure of the asymmetry of the distribution around its mean."@en ;
+    skos:scopeNote "Compute standardized third moment or a robust alternative; report sample or population convention."@en ;
+    stats:formula "$\\gamma_1 = \\frac{\\mathrm{E}[(X-\\mu)^3]}{\\sigma^3}$ (population)" ;
+    stats:computationMethod "Center by mean; compute third moment; divide by cube of standard deviation (apply sample correction if needed)."@en ;
     skos:broader stats:ShapeDistribution ;
     skos:inScheme stats: ;
     skos:exactMatch wikidata:Q1037340, ddi:3713b65 .
@@ -599,6 +752,9 @@ stats:Beta1 a skos:Concept ;
 stats:Beta2 a skos:Concept ;
     skos:prefLabel "Kurtosis"@en ;
     skos:definition "A measure of the tailedness or peakedness of the distribution."@en ;
+    skos:scopeNote "Compute standardized fourth moment; optionally report excess kurtosis (minus 3)."@en ;
+    stats:formula "$\\beta_2 = \\frac{\\mathrm{E}[(X-\\mu)^4]}{\\sigma^4}$" ;
+    stats:computationMethod "Center by mean; compute fourth moment; divide by fourth power of standard deviation."@en ;
     skos:broader stats:ShapeDistribution ;
     skos:inScheme stats: ;
     skos:exactMatch wikidata:Q287251, ddi:01aac65 .
@@ -606,6 +762,9 @@ stats:Beta2 a skos:Concept ;
 stats:BowleySkewnessCoefficient a skos:Concept ;
     skos:prefLabel "Bowley's Skewness Coefficient"@en ;
     skos:definition "A quartile-based measure of skewness robust to outliers."@en ;
+    skos:scopeNote "Use quartiles: (Q3 + Q1 − 2·Q2) / (Q3 − Q1)."@en ;
+    stats:formula "$\\frac{Q_3 + Q_1 - 2Q_2}{Q_3 - Q_1}$" ;
+    stats:computationMethod "Estimate quartiles under a chosen method; apply formula."@en ;
     skos:broader stats:ShapeDistribution ;
     skos:inScheme stats: ;
     skos:exactMatch wikidata:Q108253995 .
@@ -613,6 +772,8 @@ stats:BowleySkewnessCoefficient a skos:Concept ;
 stats:ShapiroWilk a skos:Concept ;
     skos:prefLabel "Shapiro-Wilk"@en ;
     skos:definition "A test statistic for assessing normality of a distribution."@en ;
+    skos:scopeNote "Compute W using ordered sample and tabulated coefficients; compare to critical values or p-values."@en ;
+    stats:computationMethod "Order sample; apply Shapiro–Wilk formula with coefficients a_i; derive W and significance."@en ;
     skos:broader stats:ShapeDistribution ;
     skos:inScheme stats: ;
     skos:exactMatch wikidata:Q1396441, ddi:699a82e .
@@ -620,60 +781,82 @@ stats:ShapiroWilk a skos:Concept ;
 stats:AndersonDarling a skos:Concept ;
     skos:prefLabel "Anderson–Darling test"@en ;
     skos:definition "A statistical test for whether a sample comes from a specified distribution."@en ;
+    skos:scopeNote "Compute A² using empirical CDF weights; adjust for parameter estimation and compare to critical values."@en ;
+    stats:computationMethod "Order sample; evaluate EDF; apply Anderson–Darling formula; report statistic and p-value."@en ;
     skos:broader stats:ShapeDistribution ;
     skos:inScheme stats: .
 
 stats:KolmogorovSmirnov a skos:Concept ;
     skos:prefLabel "Kolmogorov–Smirnov test"@en ;
     skos:definition "A nonparametric test for comparing a sample distribution with a reference distribution."@en ;
+    skos:scopeNote "Compute D as the maximum absolute difference between EDF and reference CDF; use KS tables or p-values."@en ;
+    stats:computationMethod "Order sample; compute EDF; evaluate reference CDF; report D statistic and significance."@en ;
     skos:broader stats:ShapeDistribution ;
     skos:inScheme stats: .
 
 stats:JarqueBera a skos:Concept ;
     skos:prefLabel "Jarque–Bera test"@en ;
     skos:definition "A goodness-of-fit test for normality based on skewness and kurtosis."@en ;
+    skos:scopeNote "Compute JB = n/6·(S² + (K−3)²/4) and compare to chi-square distribution with 2 df."@en ;
+    stats:formula "$\\mathrm{JB} = \\frac{n}{6}\\left(S^2 + \\frac{(K-3)^2}{4}\\right)$" ;
+    stats:computationMethod "Estimate sample skewness S and kurtosis K; compute JB; assess significance."@en ;
     skos:broader stats:ShapeDistribution ;
     skos:inScheme stats: .
 
 stats:ExcessKurtosis a skos:Concept ;
     skos:prefLabel "Excess kurtosis"@en ;
     skos:definition "Kurtosis minus 3, measuring deviation from the normal distribution's tailedness."@en ;
+    skos:scopeNote "Compute kurtosis and subtract 3 to normalize relative to the normal distribution."@en ;
+    stats:formula "$\\gamma_2 = \\beta_2 - 3$" ;
+    stats:computationMethod "Estimate kurtosis using chosen method; subtract 3."@en ;
     skos:broader stats:ShapeDistribution ;
     skos:inScheme stats: .
 
 stats:FisherSkewness a skos:Concept ;
     skos:prefLabel "Fisher skewness (moment coefficient)"@en ;
     skos:definition "The standardized third moment about the mean."@en ;
+    skos:scopeNote "Use unbiased sample estimators when reporting sample skewness."@en ;
+    stats:computationMethod "Apply standardized third moment formula with sample correction as appropriate."@en ;
     skos:broader stats:ShapeDistribution ;
     skos:inScheme stats: .
 
 stats:PearsonSkewness a skos:Concept ;
     skos:prefLabel "Pearson skewness (moment coefficient)"@en ;
     skos:definition "A skewness measure based on the third standardized moment."@en ;
+    skos:scopeNote "Compute third standardized moment using Pearson’s convention; specify sample or population."@en ;
+    stats:computationMethod "Center by mean; compute third moment; divide by s^3 with appropriate correction."@en ;
     skos:broader stats:ShapeDistribution ;
     skos:inScheme stats: .
 
 stats:SampleSkewness a skos:Concept ;
     skos:prefLabel "Sample skewness"@en ;
     skos:definition "Skewness calculated with sample-based denominator adjustment."@en ;
+    skos:scopeNote "Use common unbiased estimator for finite samples (e.g., adjusted Fisher-Pearson coefficient)."@en ;
+    stats:computationMethod "Apply sample adjustment factors to standardized third moment."@en ;
     skos:broader stats:ShapeDistribution ;
     skos:inScheme stats: .
 
 stats:PopulationSkewness a skos:Concept ;
     skos:prefLabel "Population skewness"@en ;
     skos:definition "Skewness calculated assuming the data represents the entire population."@en ;
+    skos:scopeNote "Use population standardized moment definition without finite-sample correction."@en ;
+    stats:computationMethod "Compute third standardized moment with population denominator."@en ;
     skos:broader stats:ShapeDistribution ;
     skos:inScheme stats: .
 
 stats:SampleExcessKurtosis a skos:Concept ;
     skos:prefLabel "Sample excess kurtosis"@en ;
     skos:definition "Excess kurtosis calculated with sample-based denominator adjustment."@en ;
+    skos:scopeNote "Apply unbiased sample estimator for excess kurtosis; subtract 3 from kurtosis after correction."@en ;
+    stats:computationMethod "Compute standardized fourth moment with sample correction, then subtract 3."@en ;
     skos:broader stats:ShapeDistribution ;
     skos:inScheme stats: .
 
 stats:PopulationExcessKurtosis a skos:Concept ;
     skos:prefLabel "Population excess kurtosis"@en ;
     skos:definition "Excess kurtosis calculated assuming the data represents the entire population."@en ;
+    skos:scopeNote "Compute population kurtosis and subtract 3 (no finite-sample correction)."@en ;
+    stats:computationMethod "Standardized fourth moment with population denominator; minus 3."@en ;
     skos:broader stats:ShapeDistribution ;
     skos:inScheme stats: .
 
@@ -682,60 +865,84 @@ stats:PopulationExcessKurtosis a skos:Concept ;
 stats:MinLength a skos:Concept ;
     skos:prefLabel "Minimum length"@en ;
     skos:definition "The length of the shortest text value in characters."@en ;
+    skos:scopeNote "Measure length in characters for each text; take minimum."@en ;
+    stats:computationMethod "Compute per-value character counts; return smallest count."@en ;
     skos:broader stats:TextMeasures ;
     skos:inScheme stats: .
 
 stats:MaxLength a skos:Concept ;
     skos:prefLabel "Maximum length"@en ;
     skos:definition "The length of the longest text value in characters."@en ;
+    skos:scopeNote "Measure length in characters for each text; take maximum."@en ;
+    stats:computationMethod "Compute per-value character counts; return largest count."@en ;
     skos:broader stats:TextMeasures ;
     skos:inScheme stats: .
 
 stats:AverageLength a skos:Concept ;
     skos:prefLabel "Average length"@en ;
     skos:definition "The mean length of text values in characters."@en ;
+    skos:scopeNote "Compute character counts per value; average over valid values."@en ;
+    stats:formula "$\\frac{1}{n} \\sum \\text{len}(x_i)$" ;
+    stats:computationMethod "Sum character counts and divide by number of non-empty text values."@en ;
     skos:broader stats:TextMeasures ;
     skos:inScheme stats: .
 
 stats:LengthStdDev a skos:Concept ;
     skos:prefLabel "Length standard deviation"@en ;
     skos:definition "The standard deviation of text lengths in characters."@en ;
+    skos:scopeNote "Compute character counts per value; take standard deviation across counts."@en ;
+    stats:computationMethod "Use sample standard deviation over per-value character counts."@en ;
     skos:broader stats:TextMeasures ;
     skos:inScheme stats: .
 
 stats:MinWordCount a skos:Concept ;
     skos:prefLabel "Minimum word count"@en ;
     skos:definition "The smallest number of words in any text value."@en ;
+    skos:scopeNote "Tokenize text to words using a defined tokenizer; take minimum count."@en ;
+    stats:computationMethod "Split texts into words (consistent rules); count words per value; return smallest count."@en ;
     skos:broader stats:TextMeasures ;
     skos:inScheme stats: .
 
 stats:MaxWordCount a skos:Concept ;
     skos:prefLabel "Maximum word count"@en ;
     skos:definition "The largest number of words in any text value."@en ;
+    skos:scopeNote "Tokenize text to words using a defined tokenizer; take maximum count."@en ;
+    stats:computationMethod "Split texts into words; count per value; return largest count."@en ;
     skos:broader stats:TextMeasures ;
     skos:inScheme stats: .
 
 stats:AverageWordCount a skos:Concept ;
     skos:prefLabel "Average word count"@en ;
     skos:definition "The mean number of words per text value."@en ;
+    skos:scopeNote "Tokenize to words and average the per-value counts."@en ;
+    stats:formula "$\\frac{1}{n} \\sum \\text{wc}(x_i)$" ;
+    stats:computationMethod "Sum word counts over valid texts; divide by number of texts considered."@en ;
     skos:broader stats:TextMeasures ;
     skos:inScheme stats: .
 
 stats:TotalWordCount a skos:Concept ;
     skos:prefLabel "Total word count"@en ;
     skos:definition "The sum of all words across all text values."@en ;
+    skos:scopeNote "Tokenize to words and sum counts across all values."@en ;
+    stats:formula "$\\sum \\text{wc}(x_i)$" ;
+    stats:computationMethod "Count words per value and sum across the dataset."@en ;
     skos:broader stats:TextMeasures ;
     skos:inScheme stats: .
 
 stats:UniqueWordCount a skos:Concept ;
     skos:prefLabel "Unique word count"@en ;
     skos:definition "The number of distinct words appearing across all text values."@en ;
+    skos:scopeNote "Normalize case and optionally strip punctuation; take set cardinality across all words."@en ;
+    stats:computationMethod "Tokenize texts; normalize tokens; compute number of unique tokens across the corpus."@en ;
     skos:broader stats:TextMeasures ;
     skos:inScheme stats: .
 
 stats:LexicalDiversity a skos:Concept ;
     skos:prefLabel "Lexical diversity"@en ;
     skos:definition "The ratio of unique words to total words, measuring vocabulary richness."@en ;
+    skos:scopeNote "Compute type-token ratio (unique/total) or alternative normalized measures as needed."@en ;
+    stats:formula "$\\frac{\\text{unique words}}{\\text{total words}}$" ;
+    stats:computationMethod "Tokenize and normalize; count unique and total tokens; take ratio."@en ;
     skos:broader stats:TextMeasures ;
     skos:inScheme stats: ;
     skos:exactMatch wikidata:Q18346297 .
@@ -743,6 +950,8 @@ stats:LexicalDiversity a skos:Concept ;
 stats:Languages a skos:Concept ;
     skos:prefLabel "Languages"@en ;
     skos:definition "The set of natural languages detected or present in text values."@en ;
+    skos:scopeNote "Apply a language detection algorithm per text; aggregate detected language set or distribution."@en ;
+    stats:computationMethod "Run language ID per value; collect unique languages and optionally their frequencies."@en ;
     skos:broader stats:TextMeasures ;
     skos:inScheme stats: ;
     skos:exactMatch wikidata:Q34770 .
@@ -761,6 +970,9 @@ stats:MissingRate a skos:Concept ;
     skos:prefLabel "Missing rate"@en ;
     skos:altLabel "Null rate"@en ;
     skos:definition "The proportion of values that are missing or null."@en ;
+    skos:scopeNote "Divide the number of missing/null entries by the total number of observations."@en ;
+    stats:formula "$\\text{MissingRate} = \\frac{m}{n}$" ;
+    stats:computationMethod "Count missing/null values (m) and divide by total observations (n)."@en ;
     skos:broader stats:MissingnessCompleteness ;
     skos:inScheme stats: .
 
@@ -768,6 +980,9 @@ stats:NonNullRate a skos:Concept ;
     skos:prefLabel "Non-null rate"@en ;
     skos:altLabel "Completeness"@en ;
     skos:definition "The proportion of values that are present and non-null."@en ;
+    skos:scopeNote "Divide the number of present, non-null entries by the total number of observations."@en ;
+    stats:formula "$\\text{NonNullRate} = \\frac{n_{valid}}{n}$" ;
+    stats:computationMethod "Count non-null, valid values and divide by total observations (n)."@en ;
     skos:broader stats:MissingnessCompleteness ;
     skos:inScheme stats: .
 
@@ -791,6 +1006,9 @@ stats:FileRecordCount a skos:Concept ;
     skos:prefLabel "Total record count"@en ;
     skos:altLabel "Row count"@en ;
     skos:definition "The total number of records (rows) in the file."@en ;
+    skos:scopeNote "Count the number of data records (rows) in the file, excluding header rows if present."@en ;
+    stats:formula "$n_{\\text{rows}}$" ;
+    stats:computationMethod "Parse the file structure and count all data rows, excluding header or metadata rows."@en ;
     skos:broader stats:FileLevel ;
     skos:inScheme stats: .
 
@@ -798,36 +1016,49 @@ stats:FileVariableCount a skos:Concept ;
     skos:prefLabel "Total variable/column count"@en ;
     skos:altLabel "Column count"@en ;
     skos:definition "The total number of variables or columns in the file."@en ;
+    skos:scopeNote "Count the number of variables (columns) in the file based on the schema or header row."@en ;
+    stats:formula "$n_{\\text{cols}}$" ;
+    stats:computationMethod "Determine the number of columns from the file header or schema definition."@en ;
     skos:broader stats:FileLevel ;
     skos:inScheme stats: .
 
 stats:FileSizeBytes a skos:Concept ;
     skos:prefLabel "File size (bytes)"@en ;
     skos:definition "The size of the file measured in bytes."@en ;
+    skos:scopeNote "Retrieve the file size in bytes from the file system metadata."@en ;
+    stats:computationMethod "Query the file system for the byte size of the file."@en ;
     skos:broader stats:FileLevel ;
     skos:inScheme stats: .
 
 stats:FileChecksum a skos:Concept ;
     skos:prefLabel "File checksum"@en ;
     skos:definition "A hash value used to verify file integrity."@en ;
+    skos:scopeNote "Compute a cryptographic hash (e.g., MD5, SHA-256) of the file contents to verify integrity."@en ;
+    stats:computationMethod "Read the entire file byte stream and compute the hash using a chosen algorithm (e.g., SHA-256)."@en ;
     skos:broader stats:FileLevel ;
     skos:inScheme stats: .
 
 stats:FileEncoding a skos:Concept ;
     skos:prefLabel "File character encoding"@en ;
     skos:definition "The character encoding used to represent text in the file (e.g., UTF-8)."@en ;
+    skos:scopeNote "Detect or retrieve the character encoding (e.g., UTF-8, ISO-8859-1) from file metadata or content analysis."@en ;
+    stats:computationMethod "Inspect file metadata or use encoding detection algorithms to identify the character set."@en ;
     skos:broader stats:FileLevel ;
     skos:inScheme stats: .
 
 stats:FileCompression a skos:Concept ;
     skos:prefLabel "File compression"@en ;
     skos:definition "The compression format or status applied to the file (e.g., gzip)."@en ;
+    skos:scopeNote "Identify the compression format (e.g., gzip, zip, bzip2) or confirm if the file is uncompressed."@en ;
+    stats:computationMethod "Check file extension, magic bytes, or metadata to determine compression type."@en ;
     skos:broader stats:FileLevel ;
     skos:inScheme stats: .
 
 stats:FileSchemaVersion a skos:Concept ;
     skos:prefLabel "File schema/version"@en ;
     skos:definition "The schema identifier or version describing the file's structure."@en ;
+    skos:scopeNote "Extract the schema version or identifier from file metadata or embedded schema declarations."@en ;
+    stats:computationMethod "Parse metadata fields or embedded schema annotations to retrieve version information."@en ;
     skos:broader stats:FileLevel ;
     skos:inScheme stats: .
 
@@ -835,6 +1066,8 @@ stats:FileLastModifiedTime a skos:Concept ;
     skos:prefLabel "File last modified time"@en ;
     skos:altLabel "Last modified timestamp"@en ;
     skos:definition "The timestamp when the file was last modified."@en ;
+    skos:scopeNote "Retrieve the last modified timestamp from file system metadata."@en ;
+    stats:computationMethod "Query the file system for the last modified timestamp (e.g., via stat or file metadata APIs)."@en ;
     skos:broader stats:FileLevel ;
     skos:inScheme stats: .
 
@@ -842,6 +1075,8 @@ stats:FileCreationTime a skos:Concept ;
     skos:prefLabel "File creation time"@en ;
     skos:altLabel "Created timestamp"@en ;
     skos:definition "The timestamp when the file was originally created."@en ;
+    skos:scopeNote "Retrieve the creation timestamp from file system metadata (may not be available on all systems)."@en ;
+    stats:computationMethod "Query the file system for the creation timestamp (e.g., via stat or file metadata APIs)."@en ;
     skos:broader stats:FileLevel ;
     skos:inScheme stats: .
 
@@ -849,6 +1084,8 @@ stats:FileMimeType a skos:Concept ;
     skos:prefLabel "File MIME/media type"@en ;
     skos:altLabel "Media type"@en ;
     skos:definition "The media type that describes the file's format (e.g., text/csv)."@en ;
+    skos:scopeNote "Determine the MIME type from file extension, magic bytes, or content inspection."@en ;
+    stats:computationMethod "Use MIME type detection libraries or inspect file signatures to identify the media type."@en ;
     skos:broader stats:FileLevel ;
     skos:inScheme stats: .
 
@@ -856,6 +1093,9 @@ stats:RecordVariableRatio a skos:Concept ;
     skos:prefLabel "Record-to-variable ratio"@en ;
     skos:altLabel "Rows-to-columns ratio"@en ;
     skos:definition "The ratio of records to variables, indicating dataset shape."@en ;
+    skos:scopeNote "Compute by dividing the number of records (rows) by the number of variables (columns)."@en ;
+    stats:formula "$\\frac{n_{\\text{rows}}}{n_{\\text{cols}}}$" ;
+    stats:computationMethod "Divide the total record count by the total variable count."@en ;
     skos:broader stats:FileLevel ;
     skos:inScheme stats: .
 
@@ -865,6 +1105,9 @@ stats:ShannonEntropy a skos:Concept ;
     skos:prefLabel "Shannon entropy"@en ;
     skos:altLabel "Information entropy"@en ;
     skos:definition "The expected information content per symbol based on its probability distribution."@en ;
+    skos:scopeNote "Estimate category probabilities (e.g., via relative frequencies) and apply the entropy formula; choose log base appropriately (e or 2)."@en ;
+    stats:formula "$H = - \\sum_{i} p_i \\log p_i$" ;
+    stats:computationMethod "Compute relative frequencies p_i over valid categories; apply the entropy formula using chosen logarithm base."@en ;
     skos:broader stats:InformationContent ;
     skos:inScheme stats: .
 
@@ -881,6 +1124,9 @@ stats:OutlierCountIQR a skos:Concept ;
     skos:prefLabel "Outlier count (IQR rule)"@en ;
     skos:altLabel "Tukey fence outliers"@en ;
     skos:definition "The number of observations beyond k×IQR fences from the quartiles."@en ;
+    skos:scopeNote "Compute IQR; define lower/upper fences Q1 − k·IQR and Q3 + k·IQR (k typically 1.5 or 3); count values outside."@en ;
+    stats:formula "$\\text{Lower} = Q_1 - k\\,\\mathrm{IQR}, \\quad \\text{Upper} = Q_3 + k\\,\\mathrm{IQR}$" ;
+    stats:computationMethod "Estimate Q1 and Q3; pick k (e.g., 1.5); count observations below lower fence or above upper fence."@en ;
     skos:broader stats:Outliers ;
     skos:inScheme stats: .
 
@@ -888,6 +1134,9 @@ stats:OutlierCountZScore a skos:Concept ;
     skos:prefLabel "Outlier count (Z-score rule)"@en ;
     skos:altLabel "Z-score outliers"@en ;
     skos:definition "The number of observations with standardized values exceeding a threshold (e.g., |z|>3)."@en ;
+    skos:scopeNote "Compute z-scores and count observations where |z| exceeds the chosen threshold."@en ;
+    stats:formula "$z_i = \\frac{x_i - \\bar{x}}{s}$" ;
+    stats:computationMethod "Compute mean and sample standard deviation; standardize each value; count values with absolute z above threshold."@en ;
     skos:broader stats:Outliers ;
     skos:inScheme stats: .
 
@@ -897,6 +1146,8 @@ stats:TopKCategories a skos:Concept ;
     skos:prefLabel "Top-k categories"@en ;
     skos:altLabel "Top categories"@en ;
     skos:definition "The most frequent k categories ranked by count."@en ;
+    skos:scopeNote "Count the frequency of each category, sort in descending order, and select the top k most frequent categories."@en ;
+    stats:computationMethod "Aggregate value counts by category, sort descending by frequency, and return the first k categories."@en ;
     skos:broader stats:CategoricalProfiling ;
     skos:inScheme stats: .
 
@@ -904,6 +1155,9 @@ stats:TopKCategoryShare a skos:Concept ;
     skos:prefLabel "Top-k category share"@en ;
     skos:altLabel "Top-k cumulative share"@en ;
     skos:definition "The cumulative proportion contributed by the top k categories."@en ;
+    skos:scopeNote "Compute by summing the frequencies of the top k categories and dividing by the total frequency."@en ;
+    stats:formula "$\\frac{\\sum_{i=1}^{k} f_i}{\\sum_{j=1}^{m} f_j}$" ;
+    stats:computationMethod "Sum counts of the top k categories and divide by the total count of all categories."@en ;
     skos:broader stats:CategoricalProfiling ;
     skos:inScheme stats: .
 
@@ -911,6 +1165,8 @@ stats:CardinalityBucket a skos:Concept ;
     skos:prefLabel "Cardinality bucket"@en ;
     skos:altLabel "Cardinality class"@en ;
     skos:definition "A categorization of the number of distinct values into predefined buckets."@en ;
+    skos:scopeNote "Classify the cardinality (number of unique values) into buckets (e.g., low, medium, high) based on thresholds."@en ;
+    stats:computationMethod "Count distinct values, then map the count to a predefined cardinality bucket based on threshold rules."@en ;
     skos:broader stats:CategoricalProfiling ;
     skos:inScheme stats: .
 
@@ -918,5 +1174,8 @@ stats:ImbalanceRatio a skos:Concept ;
     skos:prefLabel "Imbalance ratio"@en ;
     skos:altLabel "Class imbalance ratio"@en ;
     skos:definition "The ratio between majority and minority class frequencies."@en ;
+    skos:scopeNote "Compute by dividing the frequency of the most common category by the frequency of the least common category."@en ;
+    stats:formula "$\\frac{f_{\\text{max}}}{f_{\\text{min}}}$" ;
+    stats:computationMethod "Find the maximum and minimum category frequencies, then divide max by min."@en ;
     skos:broader stats:CategoricalProfiling ;
     skos:inScheme stats: .

@@ -10,6 +10,7 @@ searchableAttributes:
   - "hiddenLabel"
   - "example"
   - "definition"
+  - "scopeNote"
 ui:
   title: "HVDNet Vocabularies" # Title is mandatory
   logo: "hvdnet_logo.png" # Path
@@ -36,4 +37,20 @@ ui:
       font_style: "normal"
       font_weight: 700
       name: "ubuntu-v20-latin-700"
-
+  footer:
+    - id: "imprint"
+      text: 
+        en: "Imprint"
+        de: "Impressum"
+        fr: "Mentions légales"
+    - id: "privacy"
+      text: 
+        en: "Privacy Policy"
+        de: "Datenschutz"
+        fr:  "Politique de confidentialité"
+    - id: "contact"
+      href: "https://hvdnet.example.org/contact"
+      text:
+        en: "Contact"
+        de: "Kontakt"
+        fr: "Contact"

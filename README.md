@@ -2,6 +2,8 @@
 
 This repository hosts a collection of controlled vocabularies developed and maintained by the [**High-Value Data Network**](https://highvaluedata.net). The vocabularies are designed to provide standard, structured sets of concepts and terms for describing and organizing data across various domains and use cases.
 
+**Live site:** <https://hvdnet.github.io/hvdnet-vocabs>
+
 ## Vocabularies
 
 ### Statistics Vocabulary
@@ -15,19 +17,20 @@ The descriptive statistics vocabulary provides a controlled set of concepts for 
 #### Structure
 
 The statistics vocabulary is organized into several categories:
+- **Size/Count**: Valid/Invalid cases, Sample size, Unique cases, Frequency, Sparsity, etc.
+- **Missingness/Completeness**: Missing rate, Non-null rate
 - **Central Tendency/Location**: Arithmetic mean, Geometric mean, Median, Mode, Quartiles, Percentiles, etc.
 - **Dispersion/Variability**: Variance, Standard Deviation, Range, IQR, MAD, Gini coefficient, etc.
 - **Association/Dependence**: Covariance, Pearson/Spearman/Kendall correlations, etc.
 - **Shape/Distribution**: Skewness, Kurtosis, Normality tests (Shapiro-Wilk, Anderson-Darling, etc.)
-- **Robust Statistics**: Trimmed mean, Winsorized mean, Trimean, Biweight midvariance, Qn/Sn estimators
-- **Size/Count**: Valid/Invalid cases, Sample size, Unique cases, Frequency, Sparsity, etc.
-- **Derived Ratios**: Coefficient of variation, Z-scores, Shares, Rates, etc.
-- **Missingness/Completeness**: Missing rate, Non-null rate
 - **Outliers**: Outlier counts (IQR-based, Z-score-based)
-- **Information Content**: Shannon entropy
-- **Text Measures**: Length statistics, Word counts, Lexical diversity, Languages
-- **File-level Statistics**: Record/Variable counts, File size, Checksum, Encoding, MIME type, etc.
+- **Derived Ratios**: Coefficient of variation, Z-scores, Shares, Rates, etc.
+- **Robust Statistics**: Trimmed mean, Winsorized mean, Trimean, Biweight midvariance, Qn/Sn estimators
 - **Categorical Profiling**: Top-k categories, Category shares, Cardinality buckets, Imbalance ratio
+- **Information Content**: Shannon entropy
+- **File-level Statistics**: Record/Variable counts, File size, Checksum, Encoding, MIME type, etc.
+- **Text Measures**: Length statistics, Word counts, Lexical diversity, Languages
+<!-- cSpell:ignore Gini Wilk Winsorized Trimean Biweight midvariance Missingness -->
 
 Each concept includes:
 - **skos:scopeNote**: Human-readable computation guidance

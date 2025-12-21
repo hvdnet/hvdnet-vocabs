@@ -14,7 +14,7 @@
 # for improved machine-resolution.
 
 stats: a skos:ConceptScheme ;
-    dct:title "Descriptive Statistics Vocabulary"@en ;
+    dct:title "Descriptive Statistics Vocabulary [DRAFT]"@en ;
     dct:description "The descriptive statistics vocabulary provides a controlled set of concepts for describing statistical measures and summary statistics for FAIR data."@en ;
     dct:created "2025-12-20"^^xsd:date ;
     skos:hasTopConcept stats:AssociationDependence, stats:CategoricalProfiling, stats:CentralTendency, 

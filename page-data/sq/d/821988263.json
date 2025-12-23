@@ -1,1 +1,1 @@
-{"data":{"allConceptScheme":{"edges":[{"node":{"id":"https://w3id.org/hvdnet/statistics/","fields":{"languages":["en"]}}}]}}}
+{"data":{"allConceptScheme":{"edges":[{"node":{"id":"https://w3id.org/hvdnet/qsv/","fields":{"languages":["en"]}}},{"node":{"id":"https://w3id.org/hvdnet/statistics/","fields":{"languages":["en"]}}}]}}}

@@ -126,7 +126,7 @@ jobs:
           -v $(pwd)/config.yaml:/app/config.yaml
           -v $(pwd)/static:/app/static
           -e GATSBY_RESPOSITORY_URL=https://github.com/$GITHUB_REPOSITORY
-          skohub/skohub-vocabs-docker:latest
+          kulnor/skohub-vocabs-docker:latest
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3

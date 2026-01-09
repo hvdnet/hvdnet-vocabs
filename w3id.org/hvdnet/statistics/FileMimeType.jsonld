@@ -36,9 +36,6 @@
       "id": "https://w3id.org/hvdnet/statistics/"
     }
   ],
-  "computationMethod": {
-    "en": "Use MIME type detection libraries or inspect file signatures to identify the media type."
-  },
   "@context": {
     "@version": 1.1,
     "id": "@id",

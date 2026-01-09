@@ -31,9 +31,6 @@
       "id": "https://w3id.org/hvdnet/statistics/"
     }
   ],
-  "computationMethod": {
-    "en": "Filter non-missing values where x == 0; return count."
-  },
   "@context": {
     "@version": 1.1,
     "id": "@id",

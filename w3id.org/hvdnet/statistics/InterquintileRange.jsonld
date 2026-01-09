@@ -36,10 +36,6 @@
       "id": "https://w3id.org/hvdnet/statistics/"
     }
   ],
-  "formula": "$Q_{80} - Q_{20}$",
-  "computationMethod": {
-    "en": "Compute 20th and 80th percentiles; subtract lower from upper."
-  },
   "@context": {
     "@version": 1.1,
     "id": "@id",

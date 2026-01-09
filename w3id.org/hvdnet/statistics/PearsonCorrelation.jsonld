@@ -36,10 +36,6 @@
       "id": "https://w3id.org/hvdnet/statistics/"
     }
   ],
-  "formula": "$r = \\frac{\\sum (x_i - \\bar{x})(y_i - \\bar{y})}{\\sqrt{\\sum (x_i - \\bar{x})^2} \\sqrt{\\sum (y_i - \\bar{y})^2}}$",
-  "computationMethod": {
-    "en": "Compute covariance of x and y and scale by their sample standard deviations."
-  },
   "@context": {
     "@version": 1.1,
     "id": "@id",

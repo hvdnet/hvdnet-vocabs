@@ -36,10 +36,6 @@
       "id": "https://w3id.org/hvdnet/statistics/"
     }
   ],
-  "formula": "$\\frac{\\sum_{i=1}^{k} f_i}{\\sum_{j=1}^{m} f_j}$",
-  "computationMethod": {
-    "en": "Sum counts of the top k categories and divide by the total count of all categories."
-  },
   "@context": {
     "@version": 1.1,
     "id": "@id",

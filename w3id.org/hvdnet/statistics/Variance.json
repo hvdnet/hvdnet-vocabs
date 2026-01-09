@@ -36,10 +36,6 @@
       "id": "https://w3id.org/hvdnet/statistics/"
     }
   ],
-  "formula": "Sample: $s^2 = \\frac{1}{n-1} \\sum_{i=1}^{n} (x_i - \\bar{x})^2$; Population: $\\sigma^2 = \\frac{1}{n} \\sum_{i=1}^{n} (x_i - \\mu)^2$",
-  "computationMethod": {
-    "en": "Compute mean of valid values; sum squared deviations; divide by n or (n−1) per convention."
-  },
   "@context": {
     "@version": 1.1,
     "id": "@id",

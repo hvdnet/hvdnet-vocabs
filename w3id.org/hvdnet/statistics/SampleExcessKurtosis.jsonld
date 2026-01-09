@@ -31,9 +31,6 @@
       "id": "https://w3id.org/hvdnet/statistics/"
     }
   ],
-  "computationMethod": {
-    "en": "Compute standardized fourth moment with sample correction, then subtract 3."
-  },
   "@context": {
     "@version": 1.1,
     "id": "@id",

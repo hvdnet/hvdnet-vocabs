@@ -39,10 +39,6 @@
       "id": "https://w3id.org/hvdnet/statistics/"
     }
   ],
-  "formula": "About mean: $\\frac{1}{n} \\sum |x_i - \\bar{x}|$",
-  "computationMethod": {
-    "en": "Compute center (usually mean); take absolute differences to center; average over valid values."
-  },
   "@context": {
     "@version": 1.1,
     "id": "@id",

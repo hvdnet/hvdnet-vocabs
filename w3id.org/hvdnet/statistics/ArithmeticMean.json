@@ -39,10 +39,6 @@
       "id": "https://w3id.org/hvdnet/statistics/"
     }
   ],
-  "formula": "$\\bar{x} = \\frac{1}{n} \\sum_{i=1}^{n} x_i$",
-  "computationMethod": {
-    "en": "Sum all non-missing values and divide by the number of non-missing observations (n)."
-  },
   "@context": {
     "@version": 1.1,
     "id": "@id",

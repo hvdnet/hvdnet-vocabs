@@ -36,10 +36,6 @@
       "id": "https://w3id.org/hvdnet/statistics/"
     }
   ],
-  "formula": "$\\frac{f_{\\text{max}}}{f_{\\text{min}}}$",
-  "computationMethod": {
-    "en": "Find the maximum and minimum category frequencies, then divide max by min."
-  },
   "@context": {
     "@version": 1.1,
     "id": "@id",

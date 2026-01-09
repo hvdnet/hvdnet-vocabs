@@ -36,10 +36,6 @@
       "id": "https://w3id.org/hvdnet/statistics/"
     }
   ],
-  "formula": "$\\text{MissingRate} = \\frac{m}{n}$",
-  "computationMethod": {
-    "en": "Count missing/null values (m) and divide by total observations (n)."
-  },
   "@context": {
     "@version": 1.1,
     "id": "@id",

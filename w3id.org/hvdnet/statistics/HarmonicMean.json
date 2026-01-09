@@ -39,10 +39,6 @@
       "id": "https://w3id.org/hvdnet/statistics/"
     }
   ],
-  "formula": "$\\left( \\frac{1}{n} \\sum_{i=1}^{n} \\frac{1}{x_i} \\right)^{-1}$",
-  "computationMethod": {
-    "en": "Compute the mean of reciprocals of valid, non-zero values and invert the result."
-  },
   "@context": {
     "@version": 1.1,
     "id": "@id",

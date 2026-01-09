@@ -25,9 +25,6 @@
       "id": "https://w3id.org/hvdnet/statistics/"
     }
   ],
-  "computationMethod": {
-    "en": "Normalize missing-value representations; count entries considered missing."
-  },
   "@context": {
     "@version": 1.1,
     "id": "@id",

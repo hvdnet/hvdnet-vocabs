@@ -36,10 +36,6 @@
       "id": "https://w3id.org/hvdnet/statistics/"
     }
   ],
-  "formula": "$\\frac{f_{\\text{mode}}}{n}$",
-  "computationMethod": {
-    "en": "Find the modal value; count its frequency; divide by n."
-  },
   "@context": {
     "@version": 1.1,
     "id": "@id",

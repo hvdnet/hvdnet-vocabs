@@ -36,9 +36,6 @@
       "id": "https://w3id.org/hvdnet/statistics/"
     }
   ],
-  "computationMethod": {
-    "en": "Aggregate value counts by category, sort descending by frequency, and return the first k categories."
-  },
   "@context": {
     "@version": 1.1,
     "id": "@id",

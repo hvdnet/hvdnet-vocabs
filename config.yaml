@@ -52,15 +52,15 @@ ui:
         target: _blank
         rel: "noopener noreferrer"
 namespaces:
-  - statscv: "https://w3id.org/hvdnet/statistics#"
+  - statscv: "https://w3id.org/hvdnet/statistics/cv"
 custom_properties:
   - id: "formula"
     label: "Formula"
-    property: "https://w3id.org/hvdnet/statistics#formula"
+    property: "https://w3id.org/hvdnet/statistics/cv/formula"
     classes: ["Concept"]
     type: "string"
   - id: "computationMethod"
     label: "Computation Method"
-    property: "https://w3id.org/hvdnet/statistics#computationMethod"
+    property: "https://w3id.org/hvdnet/statistics/cv/computationMethod"
     classes: ["Concept"]
     type: "languageMap"

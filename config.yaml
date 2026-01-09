@@ -56,11 +56,11 @@ namespaces:
 custom_properties:
   - id: "formula"
     label: "Formula"
-    property: "statscv:formula"
+    property: "https://w3id.org/hvdnet/statistics#formula"
     classes: ["Concept"]
     type: "string"
   - id: "computationMethod"
     label: "Computation Method"
-    property: "statscv:computationMethod"
+    property: "https://w3id.org/hvdnet/statistics#computationMethod"
     classes: ["Concept"]
     type: "languageMap"

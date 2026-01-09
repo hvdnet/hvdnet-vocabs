@@ -52,7 +52,7 @@ ui:
         target: _blank
         rel: "noopener noreferrer"
 namespaces:
-  statscv: "https://w3id.org/hvdnet/statistics#"
+  statscv: "https://w3id.org/hvdnet/statistics/cv/"
 custom_properties:
   - id: "formula"
     label: "Formula"

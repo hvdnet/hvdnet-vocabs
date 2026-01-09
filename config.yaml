@@ -50,4 +50,17 @@ ui:
       - title: "Contact"
         url: "https://www.highvaluedata.net"
         target: _blank
-        rel: "noopener noreferrer"        
+        rel: "noopener noreferrer"
+namespaces:
+  - statscv: "https://w3id.org/hvdnet/statistics#"
+custom_properties:
+  - id: "formula"
+    label: "Formula"
+    property: "statscv:formula"
+    classes: ["Concept"]
+    type: "string"
+  - id: "computationMethod"
+    label: "Computation Method"
+    property: "statscv:computationMethod"
+    classes: ["Concept"]
+    type: "languageMap"

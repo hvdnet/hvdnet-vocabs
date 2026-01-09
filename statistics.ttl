@@ -1,5 +1,5 @@
 @prefix stats: <https://w3id.org/hvdnet/statistics/> .
-@prefix statscv: <https://w3id.org/hvdnet/statistics/cv/> .
+@prefix statscv: <https://w3id.org/hvdnet/statistics#> .
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
@@ -17,17 +17,17 @@
 
 # Property declarations (custom annotations)
 
-#statscv:formula a rdf:Property ;
-#    rdfs:label "formula"@en ;
-#    rdfs:comment "Compact mathematical formula (e.g., LaTeX) describing how the statistic is computed."@en ;
-#    rdfs:domain skos:Concept ;
-#    rdfs:range xsd:string .
+statscv:formula a rdf:Property ;
+    rdfs:label "formula"@en ;
+    rdfs:comment "Compact mathematical formula (e.g., LaTeX) describing how the statistic is computed."@en ;
+    rdfs:domain skos:Concept ;
+    rdfs:range xsd:string .
 
-#statscv:computationMethod a rdf:Property ;
-#   rdfs:label "computation method"@en ;
-#    rdfs:comment "Brief textual steps describing how to compute the statistic, including conventions and exclusions."@en ;
-#    rdfs:domain skos:Concept ;
-#    rdfs:range xsd:string .
+statscv:computationMethod a rdf:Property ;
+   rdfs:label "computation method"@en ;
+    rdfs:comment "Brief textual steps describing how to compute the statistic, including conventions and exclusions."@en ;
+    rdfs:domain skos:Concept ;
+    rdfs:range xsd:string .
 
 stats: a skos:ConceptScheme ;
     dct:title "Descriptive Statistics Vocabulary [DRAFT]"@en ;

@@ -36,6 +36,7 @@
       "id": "https://w3id.org/hvdnet/statistics/"
     }
   ],
+  "formula": "$G = 1 - 2 \\int_0^1 L(p) \\mathrm{d}p$ (Lorenz curve $L$)",
   "@context": {
     "@version": 1.1,
     "id": "@id",

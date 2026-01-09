@@ -30,6 +30,7 @@
       "id": "https://w3id.org/hvdnet/statistics/"
     }
   ],
+  "formula": "Informal: mean after Winsorizing tails at chosen cutoffs (e.g., 5th/95th percentiles)",
   "@context": {
     "@version": 1.1,
     "id": "@id",

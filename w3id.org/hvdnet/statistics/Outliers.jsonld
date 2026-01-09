@@ -2,7 +2,7 @@
   "id": "https://w3id.org/hvdnet/statistics/Outliers",
   "type": "Concept",
   "prefLabel": {
-    "en": "Outlier Flags"
+    "en": "Outliers"
   },
   "narrower": [
     {

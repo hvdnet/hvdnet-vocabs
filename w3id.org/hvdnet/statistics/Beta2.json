@@ -39,6 +39,7 @@
       "id": "https://w3id.org/hvdnet/statistics/"
     }
   ],
+  "formula": "$\\beta_2 = \\frac{\\mathrm{E}[(X-\\mu)^4]}{\\sigma^4}$",
   "@context": {
     "@version": 1.1,
     "id": "@id",

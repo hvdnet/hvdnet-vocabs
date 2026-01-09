@@ -44,6 +44,7 @@
       "id": "https://w3id.org/hvdnet/statistics/"
     }
   ],
+  "formula": "$P_{90} - P_{10}$",
   "@context": {
     "@version": 1.1,
     "id": "@id",

@@ -36,6 +36,7 @@
       "id": "https://w3id.org/hvdnet/statistics/"
     }
   ],
+  "formula": "$\\tau = \\frac{N_c - N_d}{\\tfrac{1}{2}n(n-1)}$ (Tau-a)",
   "@context": {
     "@version": 1.1,
     "id": "@id",

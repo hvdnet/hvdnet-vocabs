@@ -31,6 +31,7 @@
       "id": "https://w3id.org/hvdnet/statistics/"
     }
   ],
+  "formula": "$\\frac{Q_1 + 2Q_2 + Q_3}{4}$",
   "@context": {
     "@version": 1.1,
     "id": "@id",

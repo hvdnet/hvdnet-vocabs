@@ -20,7 +20,7 @@
   "broader": {
     "id": "https://w3id.org/hvdnet/statistics/Outliers",
     "prefLabel": {
-      "en": "Outlier Flags"
+      "en": "Outliers"
     }
   },
   "inScheme": [
@@ -36,6 +36,7 @@
       "id": "https://w3id.org/hvdnet/statistics/"
     }
   ],
+  "formula": "$\\text{Lower} = Q_1 - k\\,\\mathrm{IQR}, \\quad \\text{Upper} = Q_3 + k\\,\\mathrm{IQR}$",
   "@context": {
     "@version": 1.1,
     "id": "@id",

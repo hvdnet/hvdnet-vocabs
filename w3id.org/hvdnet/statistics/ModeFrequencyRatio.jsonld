@@ -36,6 +36,7 @@
       "id": "https://w3id.org/hvdnet/statistics/"
     }
   ],
+  "formula": "$\\frac{f_{\\text{mode}}}{n}$",
   "@context": {
     "@version": 1.1,
     "id": "@id",

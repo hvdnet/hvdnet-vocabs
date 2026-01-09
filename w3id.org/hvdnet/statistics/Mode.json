@@ -39,6 +39,9 @@
       "id": "https://w3id.org/hvdnet/statistics/"
     }
   ],
+  "computationMethod": {
+    "en": "Compute a frequency table over valid values and return the category with highest frequency (ties possible)."
+  },
   "@context": {
     "@version": 1.1,
     "id": "@id",

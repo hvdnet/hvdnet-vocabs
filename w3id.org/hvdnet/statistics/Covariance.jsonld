@@ -37,6 +37,9 @@
     }
   ],
   "formula": "Sample: $s_{xy} = \\frac{1}{n-1} \\sum_{i=1}^{n} (x_i - \\bar{x})(y_i - \\bar{y})$",
+  "computationMethod": {
+    "en": "Compute means of x and y; multiply centered pairs; sum and divide by (n−1)."
+  },
   "@context": {
     "@version": 1.1,
     "id": "@id",

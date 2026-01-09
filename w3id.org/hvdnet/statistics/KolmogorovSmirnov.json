@@ -31,6 +31,9 @@
       "id": "https://w3id.org/hvdnet/statistics/"
     }
   ],
+  "computationMethod": {
+    "en": "Order sample; compute EDF; evaluate reference CDF; report D statistic and significance."
+  },
   "@context": {
     "@version": 1.1,
     "id": "@id",

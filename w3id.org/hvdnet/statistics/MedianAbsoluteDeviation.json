@@ -40,6 +40,9 @@
     }
   ],
   "formula": "$\\mathrm{MAD} = \\mathrm{median}(|x_i - \\mathrm{median}(x)|)$",
+  "computationMethod": {
+    "en": "Median over valid values; compute absolute deviations; take median; optionally multiply by consistency factor."
+  },
   "@context": {
     "@version": 1.1,
     "id": "@id",

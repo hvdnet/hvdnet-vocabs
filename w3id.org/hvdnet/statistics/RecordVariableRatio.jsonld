@@ -37,6 +37,9 @@
     }
   ],
   "formula": "$\\frac{n_{\\text{rows}}}{n_{\\text{cols}}}$",
+  "computationMethod": {
+    "en": "Divide the total record count by the total variable count."
+  },
   "@context": {
     "@version": 1.1,
     "id": "@id",

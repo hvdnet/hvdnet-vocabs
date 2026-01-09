@@ -30,6 +30,9 @@
       "id": "https://w3id.org/hvdnet/statistics/"
     }
   ],
+  "computationMethod": {
+    "en": "Define validity constraints; count observations that violate constraints."
+  },
   "@context": {
     "@version": 1.1,
     "id": "@id",

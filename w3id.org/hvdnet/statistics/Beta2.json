@@ -40,6 +40,9 @@
     }
   ],
   "formula": "$\\beta_2 = \\frac{\\mathrm{E}[(X-\\mu)^4]}{\\sigma^4}$",
+  "computationMethod": {
+    "en": "Center by mean; compute fourth moment; divide by fourth power of standard deviation."
+  },
   "@context": {
     "@version": 1.1,
     "id": "@id",

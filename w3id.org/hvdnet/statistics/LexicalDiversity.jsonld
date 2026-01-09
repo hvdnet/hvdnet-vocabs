@@ -37,6 +37,9 @@
     }
   ],
   "formula": "$\\frac{\\text{unique words}}{\\text{total words}}$",
+  "computationMethod": {
+    "en": "Tokenize and normalize; count unique and total tokens; take ratio."
+  },
   "@context": {
     "@version": 1.1,
     "id": "@id",

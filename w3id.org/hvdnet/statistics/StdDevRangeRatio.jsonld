@@ -32,6 +32,9 @@
     }
   ],
   "formula": "$\\frac{R}{s}$",
+  "computationMethod": {
+    "en": "Find max and min to get range R; compute sample standard deviation s; take ratio R/s."
+  },
   "@context": {
     "@version": 1.1,
     "id": "@id",

@@ -40,6 +40,9 @@
     }
   ],
   "formula": "$\\mathrm{IQR} = Q_3 - Q_1$",
+  "computationMethod": {
+    "en": "Estimate Q1 and Q3 (inclusive/exclusive or interpolation method) and take their difference."
+  },
   "@context": {
     "@version": 1.1,
     "id": "@id",

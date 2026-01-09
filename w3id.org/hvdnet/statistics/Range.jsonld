@@ -37,6 +37,9 @@
     }
   ],
   "formula": "$R = x_{\\max} - x_{\\min}$",
+  "computationMethod": {
+    "en": "Find maximum and minimum among non-missing values; subtract min from max."
+  },
   "@context": {
     "@version": 1.1,
     "id": "@id",

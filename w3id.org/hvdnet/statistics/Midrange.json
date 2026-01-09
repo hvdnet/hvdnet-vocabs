@@ -32,6 +32,9 @@
     }
   ],
   "formula": "$\\frac{x_{\\min} + x_{\\max}}{2}$",
+  "computationMethod": {
+    "en": "Find min and max among valid values; take their average."
+  },
   "@context": {
     "@version": 1.1,
     "id": "@id",

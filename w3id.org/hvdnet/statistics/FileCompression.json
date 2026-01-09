@@ -31,6 +31,9 @@
       "id": "https://w3id.org/hvdnet/statistics/"
     }
   ],
+  "computationMethod": {
+    "en": "Check file extension, magic bytes, or metadata to determine compression type."
+  },
   "@context": {
     "@version": 1.1,
     "id": "@id",

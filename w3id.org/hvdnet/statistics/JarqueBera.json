@@ -32,6 +32,9 @@
     }
   ],
   "formula": "$\\mathrm{JB} = \\frac{n}{6}\\left(S^2 + \\frac{(K-3)^2}{4}\\right)$",
+  "computationMethod": {
+    "en": "Estimate sample skewness S and kurtosis K; compute JB; assess significance."
+  },
   "@context": {
     "@version": 1.1,
     "id": "@id",

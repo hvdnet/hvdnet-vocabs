@@ -37,6 +37,9 @@
     }
   ],
   "formula": "$\\frac{Q_3 + Q_1 - 2Q_2}{Q_3 - Q_1}$",
+  "computationMethod": {
+    "en": "Estimate quartiles under a chosen method; apply formula."
+  },
   "@context": {
     "@version": 1.1,
     "id": "@id",

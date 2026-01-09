@@ -37,6 +37,9 @@
     }
   ],
   "formula": "Sample: $s = \\sqrt{s^2}$; Population: $\\sigma = \\sqrt{\\sigma^2}$",
+  "computationMethod": {
+    "en": "Compute variance with the chosen denominator and take its square root."
+  },
   "@context": {
     "@version": 1.1,
     "id": "@id",

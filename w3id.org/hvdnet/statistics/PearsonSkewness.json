@@ -31,6 +31,9 @@
       "id": "https://w3id.org/hvdnet/statistics/"
     }
   ],
+  "computationMethod": {
+    "en": "Center by mean; compute third moment; divide by s^3 with appropriate correction."
+  },
   "@context": {
     "@version": 1.1,
     "id": "@id",

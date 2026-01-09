@@ -31,6 +31,9 @@
       "id": "https://w3id.org/hvdnet/statistics/"
     }
   ],
+  "computationMethod": {
+    "en": "Tokenize texts; normalize tokens; compute number of unique tokens across the corpus."
+  },
   "@context": {
     "@version": 1.1,
     "id": "@id",

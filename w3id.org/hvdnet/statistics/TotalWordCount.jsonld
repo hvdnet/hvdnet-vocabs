@@ -32,6 +32,9 @@
     }
   ],
   "formula": "$\\sum \\text{wc}(x_i)$",
+  "computationMethod": {
+    "en": "Count words per value and sum across the dataset."
+  },
   "@context": {
     "@version": 1.1,
     "id": "@id",

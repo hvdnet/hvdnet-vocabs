@@ -37,6 +37,9 @@
     }
   ],
   "formula": "$\\text{Lower} = Q_1 - k\\,\\mathrm{IQR}, \\quad \\text{Upper} = Q_3 + k\\,\\mathrm{IQR}$",
+  "computationMethod": {
+    "en": "Estimate Q1 and Q3; pick k (e.g., 1.5); count observations below lower fence or above upper fence."
+  },
   "@context": {
     "@version": 1.1,
     "id": "@id",

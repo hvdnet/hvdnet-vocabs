@@ -31,6 +31,9 @@
       "id": "https://w3id.org/hvdnet/statistics/"
     }
   ],
+  "computationMethod": {
+    "en": "Read the entire file byte stream and compute the hash using a chosen algorithm (e.g., SHA-256)."
+  },
   "@context": {
     "@version": 1.1,
     "id": "@id",

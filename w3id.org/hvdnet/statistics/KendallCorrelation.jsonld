@@ -37,6 +37,9 @@
     }
   ],
   "formula": "$\\tau = \\frac{N_c - N_d}{\\tfrac{1}{2}n(n-1)}$ (Tau-a)",
+  "computationMethod": {
+    "en": "For all pairs (i,j), compare relative order in x and y; compute tau using chosen variant (a/b/c)."
+  },
   "@context": {
     "@version": 1.1,
     "id": "@id",

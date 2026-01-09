@@ -37,6 +37,9 @@
     }
   ],
   "formula": "$z_i = \\frac{x_i - \\bar{x}}{s}$",
+  "computationMethod": {
+    "en": "Compute mean and sample standard deviation; standardize each value; count values with absolute z above threshold."
+  },
   "@context": {
     "@version": 1.1,
     "id": "@id",

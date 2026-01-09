@@ -37,6 +37,9 @@
     }
   ],
   "formula": "$n_{\\text{cols}}$",
+  "computationMethod": {
+    "en": "Determine the number of columns from the file header or schema definition."
+  },
   "@context": {
     "@version": 1.1,
     "id": "@id",

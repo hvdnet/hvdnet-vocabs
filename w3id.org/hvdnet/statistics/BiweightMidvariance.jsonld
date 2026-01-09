@@ -25,6 +25,9 @@
       "id": "https://w3id.org/hvdnet/statistics/"
     }
   ],
+  "computationMethod": {
+    "en": "Median center; standardize residuals by cMAD; apply biweight weight function; estimate scale."
+  },
   "@context": {
     "@version": 1.1,
     "id": "@id",

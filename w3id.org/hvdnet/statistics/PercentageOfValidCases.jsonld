@@ -37,6 +37,9 @@
     }
   ],
   "formula": "$100 \\times \\frac{n_{valid}}{n}$",
+  "computationMethod": {
+    "en": "Count valid values; divide by total n; multiply by 100."
+  },
   "@context": {
     "@version": 1.1,
     "id": "@id",

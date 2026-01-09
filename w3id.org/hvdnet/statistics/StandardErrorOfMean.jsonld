@@ -40,6 +40,9 @@
     }
   ],
   "formula": "$\\mathrm{SE}(\\bar{x}) = \\frac{s}{\\sqrt{n}}$",
+  "computationMethod": {
+    "en": "Compute sample standard deviation s and divide by sqrt(n)."
+  },
   "@context": {
     "@version": 1.1,
     "id": "@id",

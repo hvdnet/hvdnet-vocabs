@@ -30,6 +30,10 @@
       "id": "https://w3id.org/hvdnet/statistics/"
     }
   ],
+  "formula": "Informal: mean after Winsorizing tails at chosen cutoffs (e.g., 5th/95th percentiles)",
+  "computationMethod": {
+    "en": "Winsorize: clamp values below the lower cutoff to the cutoff, and above the upper cutoff to the cutoff; compute arithmetic mean."
+  },
   "@context": {
     "@version": 1.1,
     "id": "@id",

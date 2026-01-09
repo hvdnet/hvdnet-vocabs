@@ -36,6 +36,10 @@
       "id": "https://w3id.org/hvdnet/statistics/"
     }
   ],
+  "formula": "$H = - \\sum_{i} p_i \\log p_i$",
+  "computationMethod": {
+    "en": "Compute relative frequencies p_i over valid categories; apply the entropy formula using chosen logarithm base."
+  },
   "@context": {
     "@version": 1.1,
     "id": "@id",

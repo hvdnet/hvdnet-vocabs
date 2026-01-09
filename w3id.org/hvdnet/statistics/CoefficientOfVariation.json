@@ -39,6 +39,10 @@
       "id": "https://w3id.org/hvdnet/statistics/"
     }
   ],
+  "formula": "$\\mathrm{CV} = \\frac{s}{\\bar{x}}$",
+  "computationMethod": {
+    "en": "Compute mean and standard deviation over valid values; take ratio s/mean (report as fraction or percentage)."
+  },
   "@context": {
     "@version": 1.1,
     "id": "@id",

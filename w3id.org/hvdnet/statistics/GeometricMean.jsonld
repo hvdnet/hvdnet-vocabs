@@ -39,6 +39,10 @@
       "id": "https://w3id.org/hvdnet/statistics/"
     }
   ],
+  "formula": "$\\left(\\prod_{i=1}^{n} x_i\\right)^{1/n}$",
+  "computationMethod": {
+    "en": "Multiply all positive, non-missing values and raise to the power of 1/n."
+  },
   "@context": {
     "@version": 1.1,
     "id": "@id",

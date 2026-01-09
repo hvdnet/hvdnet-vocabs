@@ -36,6 +36,9 @@
       "id": "https://w3id.org/hvdnet/statistics/"
     }
   ],
+  "computationMethod": {
+    "en": "Query the file system for the creation timestamp (e.g., via stat or file metadata APIs)."
+  },
   "@context": {
     "@version": 1.1,
     "id": "@id",

@@ -33,6 +33,10 @@
       "id": "https://w3id.org/hvdnet/statistics/"
     }
   ],
+  "formula": "Informal: average of the middle (1−2α) fraction after α-trim on both tails",
+  "computationMethod": {
+    "en": "Sort valid values, remove α·n lowest and α·n highest observations, compute the arithmetic mean of the rest."
+  },
   "@context": {
     "@version": 1.1,
     "id": "@id",

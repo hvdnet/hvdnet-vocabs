@@ -31,6 +31,9 @@
       "id": "https://w3id.org/hvdnet/statistics/"
     }
   ],
+  "computationMethod": {
+    "en": "Analyze value magnitudes and required precision; choose number of digits avoiding loss of information."
+  },
   "@context": {
     "@version": 1.1,
     "id": "@id",

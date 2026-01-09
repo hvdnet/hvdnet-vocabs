@@ -44,6 +44,10 @@
       "id": "https://w3id.org/hvdnet/statistics/"
     }
   ],
+  "formula": "$P_{90} - P_{10}$",
+  "computationMethod": {
+    "en": "Compute 10th and 90th percentiles; subtract lower from upper."
+  },
   "@context": {
     "@version": 1.1,
     "id": "@id",

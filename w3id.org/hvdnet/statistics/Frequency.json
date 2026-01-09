@@ -36,6 +36,9 @@
       "id": "https://w3id.org/hvdnet/statistics/"
     }
   ],
+  "computationMethod": {
+    "en": "Group by value/category among valid entries; count per group."
+  },
   "@context": {
     "@version": 1.1,
     "id": "@id",

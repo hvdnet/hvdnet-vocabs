@@ -31,6 +31,10 @@
       "id": "https://w3id.org/hvdnet/statistics/"
     }
   ],
+  "formula": "$z_{\\text{mode}} = \\frac{\\text{mode} - \\bar{x}}{s}$",
+  "computationMethod": {
+    "en": "Find the mode of valid values; compute mean and sample standard deviation; apply z = (mode − mean)/s."
+  },
   "@context": {
     "@version": 1.1,
     "id": "@id",

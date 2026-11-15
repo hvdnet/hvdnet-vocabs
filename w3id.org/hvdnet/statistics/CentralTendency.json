@@ -78,6 +78,12 @@
       }
     },
     {
+      "id": "https://w3id.org/hvdnet/statistics/Midhinge",
+      "prefLabel": {
+        "en": "Midhinge"
+      }
+    },
+    {
       "id": "https://w3id.org/hvdnet/statistics/Minimum",
       "prefLabel": {
         "en": "Minimum"

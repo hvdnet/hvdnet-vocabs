@@ -6,9 +6,21 @@
   },
   "narrower": [
     {
+      "id": "https://w3id.org/hvdnet/statistics/CoefficientOfDetermination",
+      "prefLabel": {
+        "en": "Coefficient of determination"
+      }
+    },
+    {
       "id": "https://w3id.org/hvdnet/statistics/Covariance",
       "prefLabel": {
         "en": "Covariance"
+      }
+    },
+    {
+      "id": "https://w3id.org/hvdnet/statistics/CramersV",
+      "prefLabel": {
+        "en": "Cramér's V"
       }
     },
     {
@@ -18,9 +30,27 @@
       }
     },
     {
+      "id": "https://w3id.org/hvdnet/statistics/Lag1Autocorrelation",
+      "prefLabel": {
+        "en": "Lag-1 autocorrelation"
+      }
+    },
+    {
       "id": "https://w3id.org/hvdnet/statistics/MaxAbsCorrelation",
       "prefLabel": {
         "en": "Maximum absolute correlation (matrix summary)"
+      }
+    },
+    {
+      "id": "https://w3id.org/hvdnet/statistics/MutualInformation",
+      "prefLabel": {
+        "en": "Mutual information"
+      }
+    },
+    {
+      "id": "https://w3id.org/hvdnet/statistics/NormalizedMutualInformation",
+      "prefLabel": {
+        "en": "Normalized mutual information"
       }
     },
     {
@@ -30,9 +60,27 @@
       }
     },
     {
+      "id": "https://w3id.org/hvdnet/statistics/RegressionIntercept",
+      "prefLabel": {
+        "en": "Simple linear regression intercept"
+      }
+    },
+    {
+      "id": "https://w3id.org/hvdnet/statistics/RegressionSlope",
+      "prefLabel": {
+        "en": "Simple linear regression slope"
+      }
+    },
+    {
       "id": "https://w3id.org/hvdnet/statistics/SpearmanCorrelation",
       "prefLabel": {
         "en": "Spearman rank correlation"
+      }
+    },
+    {
+      "id": "https://w3id.org/hvdnet/statistics/UncertaintyCoefficient",
+      "prefLabel": {
+        "en": "Uncertainty coefficient"
       }
     }
   ],

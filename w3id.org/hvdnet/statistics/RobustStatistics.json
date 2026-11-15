@@ -6,6 +6,12 @@
   },
   "narrower": [
     {
+      "id": "https://w3id.org/hvdnet/statistics/Midhinge",
+      "prefLabel": {
+        "en": "Midhinge"
+      }
+    },
+    {
       "id": "https://w3id.org/hvdnet/statistics/TrimmedMean",
       "prefLabel": {
         "en": "Trimmed mean"
@@ -15,6 +21,30 @@
       "id": "https://w3id.org/hvdnet/statistics/WinsorizedMean",
       "prefLabel": {
         "en": "Winsorized Mean"
+      }
+    },
+    {
+      "id": "https://w3id.org/hvdnet/statistics/RobustCoefficientOfVariation",
+      "prefLabel": {
+        "en": "Robust coefficient of variation"
+      }
+    },
+    {
+      "id": "https://w3id.org/hvdnet/statistics/LCV",
+      "prefLabel": {
+        "en": "L-moment coefficient of variation"
+      }
+    },
+    {
+      "id": "https://w3id.org/hvdnet/statistics/NormalizedIQR",
+      "prefLabel": {
+        "en": "Normalized IQR"
+      }
+    },
+    {
+      "id": "https://w3id.org/hvdnet/statistics/NormalizedMAD",
+      "prefLabel": {
+        "en": "Normalized MAD"
       }
     },
     {
@@ -33,6 +63,18 @@
       "id": "https://w3id.org/hvdnet/statistics/BiweightMidvariance",
       "prefLabel": {
         "en": "Biweight midvariance"
+      }
+    },
+    {
+      "id": "https://w3id.org/hvdnet/statistics/LKurtosis",
+      "prefLabel": {
+        "en": "L-kurtosis"
+      }
+    },
+    {
+      "id": "https://w3id.org/hvdnet/statistics/LSkewness",
+      "prefLabel": {
+        "en": "L-skewness"
       }
     },
     {

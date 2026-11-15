@@ -6,9 +6,33 @@
   },
   "narrower": [
     {
+      "id": "https://w3id.org/hvdnet/statistics/DecimalPrecision",
+      "prefLabel": {
+        "en": "Maximum decimal precision"
+      }
+    },
+    {
+      "id": "https://w3id.org/hvdnet/statistics/InferredDataType",
+      "prefLabel": {
+        "en": "Inferred data type"
+      }
+    },
+    {
       "id": "https://w3id.org/hvdnet/statistics/IsAscii",
       "prefLabel": {
         "en": "ASCII characters only"
+      }
+    },
+    {
+      "id": "https://w3id.org/hvdnet/statistics/SortOrder",
+      "prefLabel": {
+        "en": "Sort order"
+      }
+    },
+    {
+      "id": "https://w3id.org/hvdnet/statistics/ZeroPaddedNumeric",
+      "prefLabel": {
+        "en": "Zero-padded numeric string indicator"
       }
     }
   ],

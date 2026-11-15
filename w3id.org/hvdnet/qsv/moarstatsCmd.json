@@ -9,9 +9,63 @@
   },
   "narrower": [
     {
+      "id": "https://w3id.org/hvdnet/qsv/atkinson_index",
+      "prefLabel": {
+        "en": "atkinson_index"
+      }
+    },
+    {
+      "id": "https://w3id.org/hvdnet/qsv/benford_mad",
+      "prefLabel": {
+        "en": "benford_mad"
+      }
+    },
+    {
+      "id": "https://w3id.org/hvdnet/qsv/berger_parker_dominance",
+      "prefLabel": {
+        "en": "berger_parker_dominance"
+      }
+    },
+    {
+      "id": "https://w3id.org/hvdnet/qsv/bimodality_coefficient",
+      "prefLabel": {
+        "en": "bimodality_coefficient"
+      }
+    },
+    {
+      "id": "https://w3id.org/hvdnet/qsv/covariance_population",
+      "prefLabel": {
+        "en": "covariance_population"
+      }
+    },
+    {
+      "id": "https://w3id.org/hvdnet/qsv/covariance_sample",
+      "prefLabel": {
+        "en": "covariance_sample"
+      }
+    },
+    {
+      "id": "https://w3id.org/hvdnet/qsv/cramers_v",
+      "prefLabel": {
+        "en": "cramers_v"
+      }
+    },
+    {
       "id": "https://w3id.org/hvdnet/qsv/gini_coefficient",
       "prefLabel": {
         "en": "gini_coefficient"
+      }
+    },
+    {
+      "id": "https://w3id.org/hvdnet/qsv/hoover_index",
+      "prefLabel": {
+        "en": "hoover_index"
+      }
+    },
+    {
+      "id": "https://w3id.org/hvdnet/qsv/iqr_normalized",
+      "prefLabel": {
+        "en": "iqr_normalized"
       }
     },
     {
@@ -21,15 +75,69 @@
       }
     },
     {
+      "id": "https://w3id.org/hvdnet/qsv/jarque_bera",
+      "prefLabel": {
+        "en": "jarque_bera"
+      }
+    },
+    {
+      "id": "https://w3id.org/hvdnet/qsv/jarque_bera_pvalue",
+      "prefLabel": {
+        "en": "jarque_bera_pvalue"
+      }
+    },
+    {
+      "id": "https://w3id.org/hvdnet/qsv/kelly_skewness",
+      "prefLabel": {
+        "en": "kelly_skewness"
+      }
+    },
+    {
+      "id": "https://w3id.org/hvdnet/qsv/kendall_tau",
+      "prefLabel": {
+        "en": "kendall_tau"
+      }
+    },
+    {
       "id": "https://w3id.org/hvdnet/qsv/kurtosis",
       "prefLabel": {
         "en": "kurtosis"
       }
     },
     {
+      "id": "https://w3id.org/hvdnet/qsv/l_cv",
+      "prefLabel": {
+        "en": "l_cv"
+      }
+    },
+    {
+      "id": "https://w3id.org/hvdnet/qsv/l_kurtosis",
+      "prefLabel": {
+        "en": "l_kurtosis"
+      }
+    },
+    {
+      "id": "https://w3id.org/hvdnet/qsv/l_skewness",
+      "prefLabel": {
+        "en": "l_skewness"
+      }
+    },
+    {
+      "id": "https://w3id.org/hvdnet/qsv/lag1_autocorrelation",
+      "prefLabel": {
+        "en": "lag1_autocorrelation"
+      }
+    },
+    {
       "id": "https://w3id.org/hvdnet/qsv/lower_outer_fence_zscore",
       "prefLabel": {
         "en": "lower_outer_fence_zscore"
+      }
+    },
+    {
+      "id": "https://w3id.org/hvdnet/qsv/mad_normalized",
+      "prefLabel": {
+        "en": "mad_normalized"
       }
     },
     {
@@ -45,9 +153,21 @@
       }
     },
     {
+      "id": "https://w3id.org/hvdnet/qsv/mean_ad",
+      "prefLabel": {
+        "en": "mean_ad"
+      }
+    },
+    {
       "id": "https://w3id.org/hvdnet/qsv/median_mean_ratio",
       "prefLabel": {
         "en": "median_mean_ratio"
+      }
+    },
+    {
+      "id": "https://w3id.org/hvdnet/qsv/midhinge",
+      "prefLabel": {
+        "en": "midhinge"
       }
     },
     {
@@ -60,6 +180,24 @@
       "id": "https://w3id.org/hvdnet/qsv/mode_zscore",
       "prefLabel": {
         "en": "mode_zscore"
+      }
+    },
+    {
+      "id": "https://w3id.org/hvdnet/qsv/moment_skewness",
+      "prefLabel": {
+        "en": "moment_skewness"
+      }
+    },
+    {
+      "id": "https://w3id.org/hvdnet/qsv/mutual_information",
+      "prefLabel": {
+        "en": "mutual_information"
+      }
+    },
+    {
+      "id": "https://w3id.org/hvdnet/qsv/n_pairs",
+      "prefLabel": {
+        "en": "n_pairs"
       }
     },
     {
@@ -84,6 +222,18 @@
       "id": "https://w3id.org/hvdnet/qsv/non_outliers_variance",
       "prefLabel": {
         "en": "non_outliers_variance"
+      }
+    },
+    {
+      "id": "https://w3id.org/hvdnet/qsv/normalized_entropy",
+      "prefLabel": {
+        "en": "normalized_entropy"
+      }
+    },
+    {
+      "id": "https://w3id.org/hvdnet/qsv/normalized_mutual_information",
+      "prefLabel": {
+        "en": "normalized_mutual_information"
       }
     },
     {
@@ -195,9 +345,21 @@
       }
     },
     {
+      "id": "https://w3id.org/hvdnet/qsv/pearson_correlation",
+      "prefLabel": {
+        "en": "pearson_correlation"
+      }
+    },
+    {
       "id": "https://w3id.org/hvdnet/qsv/pearson_skewness",
       "prefLabel": {
         "en": "pearson_skewness"
+      }
+    },
+    {
+      "id": "https://w3id.org/hvdnet/qsv/percentile_ratio_90_10",
+      "prefLabel": {
+        "en": "percentile_ratio_90_10"
       }
     },
     {
@@ -207,15 +369,81 @@
       }
     },
     {
+      "id": "https://w3id.org/hvdnet/qsv/r_squared",
+      "prefLabel": {
+        "en": "r_squared"
+      }
+    },
+    {
       "id": "https://w3id.org/hvdnet/qsv/range_stddev_ratio",
       "prefLabel": {
         "en": "range_stddev_ratio"
       }
     },
     {
+      "id": "https://w3id.org/hvdnet/qsv/regression_intercept",
+      "prefLabel": {
+        "en": "regression_intercept"
+      }
+    },
+    {
+      "id": "https://w3id.org/hvdnet/qsv/regression_slope",
+      "prefLabel": {
+        "en": "regression_slope"
+      }
+    },
+    {
       "id": "https://w3id.org/hvdnet/qsv/relative_standard_error",
       "prefLabel": {
         "en": "relative_standard_error"
+      }
+    },
+    {
+      "id": "https://w3id.org/hvdnet/qsv/robust_cv",
+      "prefLabel": {
+        "en": "robust_cv"
+      }
+    },
+    {
+      "id": "https://w3id.org/hvdnet/qsv/robust_max_zscore",
+      "prefLabel": {
+        "en": "robust_max_zscore"
+      }
+    },
+    {
+      "id": "https://w3id.org/hvdnet/qsv/robust_min_zscore",
+      "prefLabel": {
+        "en": "robust_min_zscore"
+      }
+    },
+    {
+      "id": "https://w3id.org/hvdnet/qsv/shannon_entropy",
+      "prefLabel": {
+        "en": "shannon_entropy"
+      }
+    },
+    {
+      "id": "https://w3id.org/hvdnet/qsv/simpsons_diversity_index",
+      "prefLabel": {
+        "en": "simpsons_diversity_index"
+      }
+    },
+    {
+      "id": "https://w3id.org/hvdnet/qsv/spearman_correlation",
+      "prefLabel": {
+        "en": "spearman_correlation"
+      }
+    },
+    {
+      "id": "https://w3id.org/hvdnet/qsv/theil_index",
+      "prefLabel": {
+        "en": "theil_index"
+      }
+    },
+    {
+      "id": "https://w3id.org/hvdnet/qsv/trimean",
+      "prefLabel": {
+        "en": "trimean"
       }
     },
     {
@@ -252,6 +480,18 @@
       "id": "https://w3id.org/hvdnet/qsv/trimmed_variance_25pct",
       "prefLabel": {
         "en": "trimmed_variance_25pct"
+      }
+    },
+    {
+      "id": "https://w3id.org/hvdnet/qsv/u_field1_given_field2",
+      "prefLabel": {
+        "en": "u_field1_given_field2"
+      }
+    },
+    {
+      "id": "https://w3id.org/hvdnet/qsv/u_field2_given_field1",
+      "prefLabel": {
+        "en": "u_field2_given_field1"
       }
     },
     {
@@ -294,6 +534,18 @@
       "id": "https://w3id.org/hvdnet/qsv/winsorized_variance_25pct",
       "prefLabel": {
         "en": "winsorized_variance_25pct"
+      }
+    },
+    {
+      "id": "https://w3id.org/hvdnet/qsv/xsd_type",
+      "prefLabel": {
+        "en": "xsd_type"
+      }
+    },
+    {
+      "id": "https://w3id.org/hvdnet/qsv/zero_share",
+      "prefLabel": {
+        "en": "zero_share"
       }
     }
   ],

@@ -6,6 +6,12 @@
   },
   "narrower": [
     {
+      "id": "https://w3id.org/hvdnet/statistics/DecimalPrecision",
+      "prefLabel": {
+        "en": "Maximum decimal precision"
+      }
+    },
+    {
       "id": "https://w3id.org/hvdnet/statistics/InvalidCases",
       "prefLabel": {
         "en": "Invalid cases"

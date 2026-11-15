@@ -13,6 +13,11 @@
       "en": "moarstats command"
     }
   },
+  "exactMatch": [
+    {
+      "id": "https://w3id.org/hvdnet/statistics/OutlierPercentage"
+    }
+  ],
   "inScheme": [
     {
       "id": "https://w3id.org/hvdnet/qsv/",

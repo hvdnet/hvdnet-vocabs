@@ -6,6 +6,12 @@
   },
   "narrower": [
     {
+      "id": "https://w3id.org/hvdnet/statistics/LengthCoefficientOfVariation",
+      "prefLabel": {
+        "en": "String length coefficient of variation"
+      }
+    },
+    {
       "id": "https://w3id.org/hvdnet/statistics/AverageLength",
       "prefLabel": {
         "en": "Average length"
@@ -27,6 +33,12 @@
       "id": "https://w3id.org/hvdnet/statistics/LengthStdDev",
       "prefLabel": {
         "en": "Length standard deviation"
+      }
+    },
+    {
+      "id": "https://w3id.org/hvdnet/statistics/LengthVariance",
+      "prefLabel": {
+        "en": "String length variance"
       }
     },
     {
@@ -57,6 +69,12 @@
       "id": "https://w3id.org/hvdnet/statistics/MinWordCount",
       "prefLabel": {
         "en": "Minimum word count"
+      }
+    },
+    {
+      "id": "https://w3id.org/hvdnet/statistics/TotalCharacterLength",
+      "prefLabel": {
+        "en": "Total character length"
       }
     },
     {

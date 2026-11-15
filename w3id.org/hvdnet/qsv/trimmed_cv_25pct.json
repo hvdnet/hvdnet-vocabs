@@ -13,6 +13,11 @@
       "en": "moarstats command"
     }
   },
+  "broadMatch": [
+    {
+      "id": "https://w3id.org/hvdnet/statistics/TrimmedMean"
+    }
+  ],
   "inScheme": [
     {
       "id": "https://w3id.org/hvdnet/qsv/",

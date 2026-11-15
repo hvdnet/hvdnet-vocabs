@@ -18,6 +18,12 @@
       }
     },
     {
+      "id": "https://w3id.org/hvdnet/statistics/LengthCoefficientOfVariation",
+      "prefLabel": {
+        "en": "String length coefficient of variation"
+      }
+    },
+    {
       "id": "https://w3id.org/hvdnet/statistics/ModeFrequencyRatio",
       "prefLabel": {
         "en": "Mode frequency ratio"
@@ -42,6 +48,12 @@
       }
     },
     {
+      "id": "https://w3id.org/hvdnet/statistics/OutlierPercentage",
+      "prefLabel": {
+        "en": "Outlier percentage"
+      }
+    },
+    {
       "id": "https://w3id.org/hvdnet/statistics/PercentageOfInvalidCases",
       "prefLabel": {
         "en": "Percentage of invalid cases"
@@ -51,6 +63,12 @@
       "id": "https://w3id.org/hvdnet/statistics/PercentageOfValidCases",
       "prefLabel": {
         "en": "Percentage of valid cases"
+      }
+    },
+    {
+      "id": "https://w3id.org/hvdnet/statistics/PercentileRatio",
+      "prefLabel": {
+        "en": "Percentile ratio (P90/P10)"
       }
     },
     {
@@ -66,9 +84,27 @@
       }
     },
     {
+      "id": "https://w3id.org/hvdnet/statistics/RelativeStandardError",
+      "prefLabel": {
+        "en": "Relative standard error"
+      }
+    },
+    {
+      "id": "https://w3id.org/hvdnet/statistics/RobustCoefficientOfVariation",
+      "prefLabel": {
+        "en": "Robust coefficient of variation"
+      }
+    },
+    {
       "id": "https://w3id.org/hvdnet/statistics/StdDevRangeRatio",
       "prefLabel": {
         "en": "Range to Standard Deviation Ratio"
+      }
+    },
+    {
+      "id": "https://w3id.org/hvdnet/statistics/ZeroShare",
+      "prefLabel": {
+        "en": "Zero share"
       }
     }
   ],

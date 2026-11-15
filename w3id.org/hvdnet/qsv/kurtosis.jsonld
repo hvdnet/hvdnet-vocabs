@@ -5,7 +5,7 @@
     "en": "kurtosis"
   },
   "definition": {
-    "en": "A measure of tail-heaviness/peakedness of the distribution (kurtosis)."
+    "en": "A measure of tail-heaviness/peakedness of the distribution (sample excess kurtosis, G2)."
   },
   "broader": {
     "id": "https://w3id.org/hvdnet/qsv/moarstatsCmd",
@@ -13,6 +13,11 @@
       "en": "moarstats command"
     }
   },
+  "exactMatch": [
+    {
+      "id": "https://w3id.org/hvdnet/statistics/SampleExcessKurtosis"
+    }
+  ],
   "inScheme": [
     {
       "id": "https://w3id.org/hvdnet/qsv/",

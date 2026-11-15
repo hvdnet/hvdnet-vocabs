@@ -289,6 +289,12 @@
       "prefLabel": {
         "en": "variance_length"
       }
+    },
+    {
+      "id": "https://w3id.org/hvdnet/qsv/zero_padded_numeric",
+      "prefLabel": {
+        "en": "zero_padded_numeric"
+      }
     }
   ],
   "inScheme": [

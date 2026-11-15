@@ -5,7 +5,7 @@
     "en": "skewness"
   },
   "definition": {
-    "en": "A measure of asymmetry of the numeric value distribution."
+    "en": "A measure of asymmetry of the numeric value distribution (quartile-based Bowley skewness)."
   },
   "broader": {
     "id": "https://w3id.org/hvdnet/qsv/statsCmd",
@@ -13,6 +13,11 @@
       "en": "stats command"
     }
   },
+  "exactMatch": [
+    {
+      "id": "https://w3id.org/hvdnet/statistics/BowleySkewnessCoefficient"
+    }
+  ],
   "inScheme": [
     {
       "id": "https://w3id.org/hvdnet/qsv/",

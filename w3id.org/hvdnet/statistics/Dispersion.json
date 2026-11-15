@@ -6,6 +6,24 @@
   },
   "narrower": [
     {
+      "id": "https://w3id.org/hvdnet/statistics/PercentileRatio",
+      "prefLabel": {
+        "en": "Percentile ratio (P90/P10)"
+      }
+    },
+    {
+      "id": "https://w3id.org/hvdnet/statistics/RelativeStandardError",
+      "prefLabel": {
+        "en": "Relative standard error"
+      }
+    },
+    {
+      "id": "https://w3id.org/hvdnet/statistics/AtkinsonIndex",
+      "prefLabel": {
+        "en": "Atkinson index"
+      }
+    },
+    {
       "id": "https://w3id.org/hvdnet/statistics/AverageAbsoluteDeviation",
       "prefLabel": {
         "en": "Average absolute deviation"
@@ -15,6 +33,12 @@
       "id": "https://w3id.org/hvdnet/statistics/GiniCoefficient",
       "prefLabel": {
         "en": "Gini Coefficient"
+      }
+    },
+    {
+      "id": "https://w3id.org/hvdnet/statistics/HooverIndex",
+      "prefLabel": {
+        "en": "Hoover index"
       }
     },
     {
@@ -36,9 +60,27 @@
       }
     },
     {
+      "id": "https://w3id.org/hvdnet/statistics/LCV",
+      "prefLabel": {
+        "en": "L-moment coefficient of variation"
+      }
+    },
+    {
       "id": "https://w3id.org/hvdnet/statistics/MedianAbsoluteDeviation",
       "prefLabel": {
         "en": "Median absolute deviation"
+      }
+    },
+    {
+      "id": "https://w3id.org/hvdnet/statistics/NormalizedIQR",
+      "prefLabel": {
+        "en": "Normalized IQR"
+      }
+    },
+    {
+      "id": "https://w3id.org/hvdnet/statistics/NormalizedMAD",
+      "prefLabel": {
+        "en": "Normalized MAD"
       }
     },
     {
@@ -69,6 +111,12 @@
       "id": "https://w3id.org/hvdnet/statistics/StandardErrorOfMean",
       "prefLabel": {
         "en": "Standard error of the mean"
+      }
+    },
+    {
+      "id": "https://w3id.org/hvdnet/statistics/TheilIndex",
+      "prefLabel": {
+        "en": "Theil index"
       }
     },
     {

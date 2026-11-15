@@ -6,6 +6,42 @@
   },
   "narrower": [
     {
+      "id": "https://w3id.org/hvdnet/statistics/MutualInformation",
+      "prefLabel": {
+        "en": "Mutual information"
+      }
+    },
+    {
+      "id": "https://w3id.org/hvdnet/statistics/NormalizedMutualInformation",
+      "prefLabel": {
+        "en": "Normalized mutual information"
+      }
+    },
+    {
+      "id": "https://w3id.org/hvdnet/statistics/UncertaintyCoefficient",
+      "prefLabel": {
+        "en": "Uncertainty coefficient"
+      }
+    },
+    {
+      "id": "https://w3id.org/hvdnet/statistics/BergerParkerIndex",
+      "prefLabel": {
+        "en": "Berger-Parker dominance index"
+      }
+    },
+    {
+      "id": "https://w3id.org/hvdnet/statistics/SimpsonsDiversityIndex",
+      "prefLabel": {
+        "en": "Simpson's diversity index"
+      }
+    },
+    {
+      "id": "https://w3id.org/hvdnet/statistics/NormalizedEntropy",
+      "prefLabel": {
+        "en": "Normalized Shannon entropy"
+      }
+    },
+    {
       "id": "https://w3id.org/hvdnet/statistics/Perplexity",
       "prefLabel": {
         "en": "Perplexity"

@@ -13,6 +13,11 @@
       "en": "stats command"
     }
   },
+  "exactMatch": [
+    {
+      "id": "https://w3id.org/hvdnet/statistics/InferredDataType"
+    }
+  ],
   "inScheme": [
     {
       "id": "https://w3id.org/hvdnet/qsv/",

@@ -6,6 +6,24 @@
   },
   "narrower": [
     {
+      "id": "https://w3id.org/hvdnet/statistics/OutlierPercentage",
+      "prefLabel": {
+        "en": "Outlier percentage"
+      }
+    },
+    {
+      "id": "https://w3id.org/hvdnet/statistics/LowerInnerFence",
+      "prefLabel": {
+        "en": "Lower inner Tukey fence"
+      }
+    },
+    {
+      "id": "https://w3id.org/hvdnet/statistics/LowerOuterFence",
+      "prefLabel": {
+        "en": "Lower outer Tukey fence"
+      }
+    },
+    {
       "id": "https://w3id.org/hvdnet/statistics/OutlierCountIQR",
       "prefLabel": {
         "en": "Outlier count (IQR rule)"
@@ -15,6 +33,18 @@
       "id": "https://w3id.org/hvdnet/statistics/OutlierCountZScore",
       "prefLabel": {
         "en": "Outlier count (Z-score rule)"
+      }
+    },
+    {
+      "id": "https://w3id.org/hvdnet/statistics/UpperInnerFence",
+      "prefLabel": {
+        "en": "Upper inner Tukey fence"
+      }
+    },
+    {
+      "id": "https://w3id.org/hvdnet/statistics/UpperOuterFence",
+      "prefLabel": {
+        "en": "Upper outer Tukey fence"
       }
     }
   ],

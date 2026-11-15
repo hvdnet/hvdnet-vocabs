@@ -6,6 +6,12 @@
   },
   "narrower": [
     {
+      "id": "https://w3id.org/hvdnet/statistics/BergerParkerIndex",
+      "prefLabel": {
+        "en": "Berger-Parker dominance index"
+      }
+    },
+    {
       "id": "https://w3id.org/hvdnet/statistics/CardinalityBucket",
       "prefLabel": {
         "en": "Cardinality bucket"
@@ -15,6 +21,12 @@
       "id": "https://w3id.org/hvdnet/statistics/ImbalanceRatio",
       "prefLabel": {
         "en": "Imbalance ratio"
+      }
+    },
+    {
+      "id": "https://w3id.org/hvdnet/statistics/SimpsonsDiversityIndex",
+      "prefLabel": {
+        "en": "Simpson's diversity index"
       }
     },
     {

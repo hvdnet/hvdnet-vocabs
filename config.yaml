@@ -40,7 +40,7 @@ ui:
   footer:
     links:
       - title:  "License"
-        url: "https://creativecommons.org/publicdomain/zero/1.0/"
+        url: "https://creativecommons.org/licenses/by/4.0/"
         target: _blank
         rel: "noopener noreferrer"
       - title: "Issues"

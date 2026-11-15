@@ -33,6 +33,7 @@ stats: a skos:ConceptScheme ;
     dct:title "Descriptive Statistics Vocabulary [DRAFT]"@en ;
     dct:description "The descriptive statistics vocabulary provides a controlled set of concepts for describing statistical measures and summary statistics for FAIR data."@en ;
     dct:created "2025-12-20"^^xsd:date ;
+    dct:modified "2026-11-15"^^xsd:date ;
     skos:hasTopConcept stats:AssociationDependence, stats:CategoricalProfiling, stats:CentralTendency, 
         stats:DerivedRatios, stats:Dispersion, stats:FileLevel, stats:InformationContent, 
         stats:Metadata, stats:MissingnessCompleteness, stats:Outliers, stats:RobustStatistics, 
@@ -44,37 +45,46 @@ stats: a skos:ConceptScheme ;
 stats:AssociationDependence a skos:Concept ;
     skos:prefLabel "Association/Dependence"@en ;
     skos:topConceptOf stats: ;
-    skos:narrower stats:Covariance, stats:KendallCorrelation, stats:MaxAbsCorrelation, stats:PearsonCorrelation, stats:SpearmanCorrelation .
+    skos:narrower         stats:CoefficientOfDetermination, stats:Covariance, stats:CramersV, stats:KendallCorrelation,
+        stats:Lag1Autocorrelation, stats:MaxAbsCorrelation, stats:MutualInformation,
+        stats:NormalizedMutualInformation, stats:PearsonCorrelation, stats:RegressionIntercept,
+        stats:RegressionSlope, stats:SpearmanCorrelation, stats:UncertaintyCoefficient .
 
 stats:CategoricalProfiling a skos:Concept ;
     skos:prefLabel "Categorical Profiling"@en ;
     skos:topConceptOf stats: ;
-    skos:narrower stats:CardinalityBucket, stats:ImbalanceRatio, stats:TopKCategories, stats:TopKCategoryShare .
+    skos:narrower         stats:BergerParkerIndex, stats:CardinalityBucket, stats:ImbalanceRatio, stats:SimpsonsDiversityIndex,
+        stats:TopKCategories, stats:TopKCategoryShare .
 
 stats:CentralTendency a skos:Concept ;
     skos:prefLabel "Central Tendency/Location"@en ;
     skos:topConceptOf stats: ;
     skos:narrower 
-        stats:ArithmeticMean, stats:EighthDecile, stats:FifthDecile, stats:FirstDecile, stats:FirstQuartile, 
-        stats:FirstQuintile, stats:FourthDecile, stats:FourthQuintile, stats:GeometricMean, stats:HarmonicMean, 
-        stats:Maximum, stats:Median, stats:Minimum, stats:Mode, stats:NinthDecile, stats:OtherPercentile, 
-        stats:SecondDecile, stats:SecondQuartile, stats:SecondQuintile, stats:SeventhDecile, stats:SixthDecile, 
-        stats:Sum, stats:ThirdDecile, stats:ThirdQuartile, stats:ThirdQuintile, stats:TrimmedMean, 
-        stats:WinsorizedMean .
+                stats:ArithmeticMean, stats:EighthDecile, stats:FifthDecile, stats:FirstDecile, stats:FirstQuartile,
+        stats:FirstQuintile, stats:FourthDecile, stats:FourthQuintile, stats:GeometricMean,
+        stats:HarmonicMean, stats:Maximum, stats:Median, stats:Midhinge, stats:Minimum, stats:Mode,
+        stats:NinthDecile, stats:OtherPercentile, stats:SecondDecile, stats:SecondQuartile,
+        stats:SecondQuintile, stats:SeventhDecile, stats:SixthDecile, stats:Sum, stats:ThirdDecile,
+        stats:ThirdQuartile, stats:ThirdQuintile, stats:TrimmedMean, stats:WinsorizedMean .
 
 stats:DerivedRatios a skos:Concept ;
     skos:prefLabel "Derived/Other Ratios"@en ;
     skos:topConceptOf stats: ;  
-    skos:narrower stats:CoefficientOfVariation, stats:DistinctnessRatio, stats:ModeFrequencyRatio, 
-    stats:ModeZScore, stats:NegativeShare, stats:NonZeroRate, stats:PercentageOfInvalidCases, 
-    stats:PercentageOfValidCases, stats:PositiveShare, stats:QuartileDispersionCoefficient, stats:StdDevRangeRatio .
+    skos:narrower         stats:CoefficientOfVariation, stats:DistinctnessRatio, stats:LengthCoefficientOfVariation,
+        stats:ModeFrequencyRatio, stats:ModeZScore, stats:NegativeShare, stats:NonZeroRate,
+        stats:OutlierPercentage, stats:PercentageOfInvalidCases, stats:PercentageOfValidCases,
+        stats:PercentileRatio, stats:PositiveShare, stats:QuartileDispersionCoefficient,
+        stats:RelativeStandardError, stats:RobustCoefficientOfVariation, stats:StdDevRangeRatio,
+        stats:ZeroShare .
 
 stats:Dispersion a skos:Concept ;
     skos:prefLabel "Dispersion/Variability"@en ;
     skos:topConceptOf stats: ;
-    skos:narrower stats:AverageAbsoluteDeviation, stats:GiniCoefficient, stats:InterdecileRange, 
-        stats:InterquartileRange, stats:InterquintileRange, stats:MedianAbsoluteDeviation, stats:QnEstimator, 
-        stats:Range, stats:SnEstimator, stats:StandardDeviation, stats:StandardErrorOfMean, stats:Variance .
+    skos:narrower         stats:AtkinsonIndex, stats:AverageAbsoluteDeviation, stats:GiniCoefficient, stats:HooverIndex,
+        stats:InterdecileRange, stats:InterquartileRange, stats:InterquintileRange, stats:LCV,
+        stats:MedianAbsoluteDeviation, stats:NormalizedIQR, stats:NormalizedMAD, stats:PercentileRatio,
+        stats:QnEstimator, stats:Range, stats:RelativeStandardError, stats:SnEstimator,
+        stats:StandardDeviation, stats:StandardErrorOfMean, stats:TheilIndex, stats:Variance .
 
 stats:FileLevel a skos:Concept ;
     skos:prefLabel "File-level Statistics/Attributes"@en ;
@@ -86,12 +96,15 @@ stats:FileLevel a skos:Concept ;
 stats:InformationContent a skos:Concept ;
     skos:prefLabel "Information Content"@en ;
     skos:topConceptOf stats: ;
-    skos:narrower stats:Perplexity, stats:ShannonEntropy .
+    skos:narrower         stats:BergerParkerIndex, stats:MutualInformation, stats:NormalizedEntropy,
+        stats:NormalizedMutualInformation, stats:Perplexity, stats:ShannonEntropy,
+        stats:SimpsonsDiversityIndex, stats:UncertaintyCoefficient .
 
 stats:Metadata a skos:Concept ;
     skos:prefLabel "Metadata"@en ;
     skos:topConceptOf stats: ;
-    skos:narrower stats:IsAscii .
+    skos:narrower         stats:DecimalPrecision, stats:InferredDataType, stats:IsAscii, stats:SortOrder,
+        stats:ZeroPaddedNumeric .
 
 stats:MissingnessCompleteness a skos:Concept ;
     skos:prefLabel "Missingness/Completeness"@en ;
@@ -101,35 +114,40 @@ stats:MissingnessCompleteness a skos:Concept ;
 stats:Outliers a skos:Concept ;
     skos:prefLabel "Outliers"@en ;
     skos:topConceptOf stats: ;
-    skos:narrower stats:OutlierCountIQR, stats:OutlierCountZScore .
+    skos:narrower         stats:LowerInnerFence, stats:LowerOuterFence, stats:OutlierCountIQR, stats:OutlierCountZScore,
+        stats:OutlierPercentage, stats:UpperInnerFence, stats:UpperOuterFence .
 
 stats:RobustStatistics a skos:Concept ;
     skos:prefLabel "Robust Location/Scale"@en ;
     skos:topConceptOf stats: ;
-    skos:narrower stats:BiweightMidvariance, stats:Midrange, stats:QnEstimator, stats:SnEstimator, 
-        stats:Trimean, stats:TrimmedMean, stats:WinsorizedMean .
+    skos:narrower         stats:BiweightMidvariance, stats:LCV, stats:LKurtosis, stats:LSkewness, stats:Midhinge,
+        stats:Midrange, stats:NormalizedIQR, stats:NormalizedMAD, stats:QnEstimator,
+        stats:RobustCoefficientOfVariation, stats:SnEstimator, stats:Trimean, stats:TrimmedMean,
+        stats:WinsorizedMean .
 
 stats:ShapeDistribution a skos:Concept ;
     skos:prefLabel "Shape/Distribution"@en ;
     skos:topConceptOf stats: ;
-    skos:narrower stats:AndersonDarling, stats:Beta1, stats:Beta2, stats:BowleySkewnessCoefficient, 
-        stats:ExcessKurtosis, stats:FisherSkewness, stats:JarqueBera, stats:KolmogorovSmirnov, 
-        stats:PearsonSkewness, stats:PopulationExcessKurtosis, stats:PopulationSkewness, stats:SampleExcessKurtosis, 
-        stats:SampleSkewness, stats:ShapiroWilk .
+    skos:narrower         stats:AndersonDarling, stats:BenfordMAD, stats:Beta1, stats:Beta2, stats:BimodalityCoefficient,
+        stats:BowleySkewnessCoefficient, stats:ExcessKurtosis, stats:FisherSkewness, stats:JarqueBera,
+        stats:KellySkewness, stats:KolmogorovSmirnov, stats:LKurtosis, stats:LSkewness,
+        stats:Lag1Autocorrelation, stats:PearsonSkewness, stats:PopulationExcessKurtosis,
+        stats:PopulationSkewness, stats:SampleExcessKurtosis, stats:SampleSkewness, stats:ShapiroWilk .
 
 stats:SizeCount a skos:Concept ;
     skos:prefLabel "Size/Count"@en ;
     skos:topConceptOf stats: ;
-    skos:narrower stats:Frequency, stats:InvalidCases, stats:NegativeCount, stats:NullCases, stats:Other, 
-    stats:PositiveCount, stats:SignificantDigits, stats:Sparsity, stats:UniqueCases, stats:ValidCases, 
-    stats:ZeroCount .
+    skos:narrower         stats:DecimalPrecision, stats:Frequency, stats:InvalidCases, stats:NegativeCount, stats:NullCases,
+        stats:Other, stats:PositiveCount, stats:SignificantDigits, stats:Sparsity, stats:UniqueCases,
+        stats:ValidCases, stats:ZeroCount .
 
 stats:TextMeasures a skos:Concept ;
     skos:prefLabel "Text/String Measures"@en ;
     skos:topConceptOf stats: ;
-    skos:narrower stats:AverageLength, stats:AverageWordCount, stats:Languages, stats:LengthStdDev, 
-    stats:LexicalDiversity, stats:MaxLength, stats:MaxWordCount, stats:MinLength, stats:MinWordCount, 
-    stats:TotalWordCount, stats:UniqueWordCount .
+    skos:narrower         stats:AverageLength, stats:AverageWordCount, stats:Languages, stats:LengthCoefficientOfVariation,
+        stats:LengthStdDev, stats:LengthVariance, stats:LexicalDiversity, stats:MaxLength,
+        stats:MaxWordCount, stats:MinLength, stats:MinWordCount, stats:TotalCharacterLength,
+        stats:TotalWordCount, stats:UniqueWordCount .
 
 # Concepts - Central Tendency/Location
 
@@ -1181,4 +1199,359 @@ stats:ImbalanceRatio a skos:Concept ;
     statscv:formula "$\\frac{f_{\\text{max}}}{f_{\\text{min}}}$" ;
     statscv:computationMethod "Find the maximum and minimum category frequencies, then divide max by min."@en ;
     skos:broader stats:CategoricalProfiling ;
+    skos:inScheme stats: .
+
+# Concepts - Additional FAIR Data & QSV-Aligned Measures
+
+stats:CramersV a skos:Concept ;
+    skos:prefLabel "Cramér's V"@en ;
+    skos:definition "A measure of association between two categorical variables based on Pearson's chi-squared statistic, ranging from 0 (no association) to 1 (complete association)."@en ;
+    skos:scopeNote "Compute chi-squared from the contingency table and normalize by sample size and the smaller table dimension minus one."@en ;
+    statscv:formula "$V = \\sqrt{\\frac{\\chi^2}{n \\cdot \\min(r - 1, c - 1)}}$" ;
+    statscv:computationMethod "Construct contingency table of counts, compute chi-squared statistic, divide by n * min(r-1, c-1), and take square root."@en ;
+    skos:broader stats:AssociationDependence ;
+    skos:inScheme stats: .
+
+stats:MutualInformation a skos:Concept ;
+    skos:prefLabel "Mutual information"@en ;
+    skos:definition "A measure of the mutual dependence between two variables, quantifying the amount of information obtained about one variable by observing the other."@en ;
+    skos:scopeNote "Compute from joint and marginal probability distributions; equals 0 if and only if the variables are statistically independent."@en ;
+    statscv:formula "$I(X; Y) = \\sum_{y \\in Y} \\sum_{x \\in X} p(x, y) \\log \\left( \\frac{p(x, y)}{p(x) p(y)} \\right)$" ;
+    statscv:computationMethod "Estimate joint and marginal frequencies over paired valid observations and sum p(x,y) * log(p(x,y) / (p(x)*p(y)))."@en ;
+    skos:broader stats:AssociationDependence, stats:InformationContent ;
+    skos:inScheme stats: .
+
+stats:NormalizedMutualInformation a skos:Concept ;
+    skos:prefLabel "Normalized mutual information"@en ;
+    skos:definition "Mutual information scaled to the interval [0, 1] by dividing by a function of the marginal entropies (e.g., geometric or arithmetic mean)."@en ;
+    skos:scopeNote "Commonly normalized by the geometric mean sqrt(H(X) * H(Y)) or arithmetic mean (H(X) + H(Y)) / 2 of the individual entropies."@en ;
+    statscv:formula "$\\mathrm{NMI}(X, Y) = \\frac{I(X; Y)}{\\sqrt{H(X) H(Y)}}$" ;
+    statscv:computationMethod "Compute mutual information I(X;Y) and individual Shannon entropies H(X), H(Y), then divide I(X;Y) by the chosen normalization factor."@en ;
+    skos:broader stats:AssociationDependence, stats:InformationContent ;
+    skos:inScheme stats: .
+
+stats:UncertaintyCoefficient a skos:Concept ;
+    skos:prefLabel "Uncertainty coefficient"@en ;
+    skos:altLabel "Theil's U"@en ;
+    skos:definition "A directed measure of nominal association representing the proportion of uncertainty (entropy) in one variable reduced by knowing the other."@en ;
+    skos:scopeNote "Asymmetric measure in [0, 1]; U(Y|X) = I(X;Y) / H(Y)."@en ;
+    statscv:formula "$U(Y \\mid X) = \\frac{I(X; Y)}{H(Y)}$" ;
+    statscv:computationMethod "Compute mutual information I(X;Y) and divide by the Shannon entropy of the target variable H(Y)."@en ;
+    skos:broader stats:AssociationDependence, stats:InformationContent ;
+    skos:inScheme stats: .
+
+stats:CoefficientOfDetermination a skos:Concept ;
+    skos:prefLabel "Coefficient of determination"@en ;
+    skos:altLabel "R-squared"@en ;
+    skos:definition "The proportion of the variance in a dependent variable that is predictable from an independent variable in a regression model."@en ;
+    skos:scopeNote "For simple linear regression with an intercept, R² equals the square of the Pearson correlation coefficient."@en ;
+    statscv:formula "$R^2 = 1 - \\frac{\\sum (y_i - \\hat{y}_i)^2}{\\sum (y_i - \\bar{y})^2}$" ;
+    statscv:computationMethod "Fit linear regression model, compute residual sum of squares and total sum of squares, and compute 1 - SS_res / SS_tot."@en ;
+    skos:broader stats:AssociationDependence ;
+    skos:inScheme stats: .
+
+stats:RegressionSlope a skos:Concept ;
+    skos:prefLabel "Simple linear regression slope"@en ;
+    skos:definition "The rate of change of the dependent variable per unit change in the independent variable in an ordinary least-squares linear fit."@en ;
+    skos:scopeNote "Equals the sample covariance divided by the variance of the independent variable."@en ;
+    statscv:formula "$\\beta_1 = \\frac{\\sum (x_i - \\bar{x})(y_i - \\bar{y})}{\\sum (x_i - \\bar{x})^2}$" ;
+    statscv:computationMethod "Compute sample covariance of (x, y) and divide by the sample variance of x over valid pairs."@en ;
+    skos:broader stats:AssociationDependence ;
+    skos:inScheme stats: .
+
+stats:RegressionIntercept a skos:Concept ;
+    skos:prefLabel "Simple linear regression intercept"@en ;
+    skos:definition "The expected value of the dependent variable when the independent variable equals zero in an ordinary least-squares linear fit."@en ;
+    skos:scopeNote "Computed from the means of x and y and the estimated regression slope."@en ;
+    statscv:formula "$\\beta_0 = \\bar{y} - \\beta_1 \\bar{x}$" ;
+    statscv:computationMethod "Compute means of x and y and the regression slope beta_1, then compute y_bar - beta_1 * x_bar."@en ;
+    skos:broader stats:AssociationDependence ;
+    skos:inScheme stats: .
+
+stats:NormalizedEntropy a skos:Concept ;
+    skos:prefLabel "Normalized Shannon entropy"@en ;
+    skos:definition "Shannon entropy divided by the maximum possible entropy (log of cardinality), scaling uncertainty to the range [0, 1]."@en ;
+    skos:scopeNote "Equals 0 when all values are identical and 1 when all distinct values occur with equal frequency."@en ;
+    statscv:formula "$H_{\\text{norm}} = \\frac{H}{\\log k}$" ;
+    statscv:computationMethod "Compute Shannon entropy H and divide by log(k) using the same logarithm base, where k is the number of distinct categories."@en ;
+    skos:broader stats:InformationContent ;
+    skos:inScheme stats: .
+
+stats:SimpsonsDiversityIndex a skos:Concept ;
+    skos:prefLabel "Simpson's diversity index"@en ;
+    skos:altLabel "Gini-Simpson index"@en ;
+    skos:definition "The probability that two observations randomly selected from a dataset belong to different categories."@en ;
+    skos:scopeNote "Ranges from 0 (no diversity, all identical) to 1 (infinite diversity)."@en ;
+    statscv:formula "$1 - \\sum_{i} p_i^2$" ;
+    statscv:computationMethod "Compute relative frequencies p_i of each distinct value, sum their squares, and subtract from 1."@en ;
+    skos:broader stats:InformationContent, stats:CategoricalProfiling ;
+    skos:inScheme stats: .
+
+stats:BergerParkerIndex a skos:Concept ;
+    skos:prefLabel "Berger-Parker dominance index"@en ;
+    skos:definition "The proportional abundance of the most frequent value (mode) in a dataset."@en ;
+    skos:scopeNote "Defined as the frequency of the most common value divided by the total number of observations."@en ;
+    statscv:formula "$d = \\frac{N_{\\max}}{N}$" ;
+    statscv:computationMethod "Identify the maximum frequency among distinct values and divide by total observation count."@en ;
+    skos:broader stats:InformationContent, stats:CategoricalProfiling ;
+    skos:inScheme stats: .
+
+stats:AtkinsonIndex a skos:Concept ;
+    skos:prefLabel "Atkinson index"@en ;
+    skos:definition "A welfare-based measure of inequality across positive values parameterized by an inequality aversion parameter epsilon."@en ;
+    skos:scopeNote "Ranges from 0 (perfect equality) to 1 (maximal inequality); higher epsilon places greater weight on lower-tail differences."@en ;
+    statscv:formula "$A_\\varepsilon = 1 - \\frac{1}{\\bar{x}} \\left( \\frac{1}{n} \\sum_{i=1}^{n} x_i^{1-\\varepsilon} \\right)^{\\frac{1}{1-\\varepsilon}} \\; (\\varepsilon \\neq 1)$" ;
+    statscv:computationMethod "For positive values, apply the generalized mean formula for the chosen epsilon (or geometric-to-arithmetic mean ratio for epsilon = 1)."@en ;
+    skos:broader stats:Dispersion ;
+    skos:inScheme stats: .
+
+stats:TheilIndex a skos:Concept ;
+    skos:prefLabel "Theil index"@en ;
+    skos:definition "An entropy-based measure of economic inequality and concentration across positive values, decomposable into within- and between-group components."@en ;
+    skos:scopeNote "Equals 0 for complete equality and increases with concentration; only defined for strictly positive values."@en ;
+    statscv:formula "$T = \\frac{1}{n} \\sum_{i=1}^{n} \\frac{x_i}{\\bar{x}} \\ln\\left(\\frac{x_i}{\\bar{x}}\\right)$" ;
+    statscv:computationMethod "Compute mean of positive values, then average (x_i / mean) * ln(x_i / mean) across observations."@en ;
+    skos:broader stats:Dispersion ;
+    skos:inScheme stats: .
+
+stats:HooverIndex a skos:Concept ;
+    skos:prefLabel "Hoover index"@en ;
+    skos:altLabel "Robin Hood index"@en ;
+    skos:definition "The proportion of the total sum of non-negative values that would have to be redistributed to achieve uniform equality."@en ;
+    skos:scopeNote "Ranges from 0 (perfect equality) to 1 (maximal inequality); equals half the relative mean absolute deviation."@en ;
+    statscv:formula "$H = \\frac{\\sum_{i=1}^{n} |x_i - \\bar{x}|}{2 \\sum_{i=1}^{n} x_i}$" ;
+    statscv:computationMethod "Sum absolute deviations from the mean and divide by twice the sum of all non-negative observations."@en ;
+    skos:broader stats:Dispersion ;
+    skos:inScheme stats: .
+
+stats:RelativeStandardError a skos:Concept ;
+    skos:prefLabel "Relative standard error"@en ;
+    skos:definition "The standard error of the mean expressed as a ratio or percentage of the arithmetic mean."@en ;
+    skos:scopeNote "Measures the relative precision of the sample mean estimate; undefined when mean is zero."@en ;
+    statscv:formula "$\\mathrm{RSE} = \\frac{\\mathrm{SEM}}{\\bar{x}}$" ;
+    statscv:computationMethod "Compute the standard error of the mean and divide by the arithmetic mean."@en ;
+    skos:broader stats:Dispersion, stats:DerivedRatios ;
+    skos:inScheme stats: .
+
+stats:PercentileRatio a skos:Concept ;
+    skos:prefLabel "Percentile ratio (P90/P10)"@en ;
+    skos:altLabel "P90/P10 ratio"@en ;
+    skos:definition "The ratio of the 90th percentile to the 10th percentile, measuring upper-to-lower tail spread and inequality."@en ;
+    skos:scopeNote "Defined when the 10th percentile is strictly positive."@en ;
+    statscv:formula "$\\frac{P_{90}}{P_{10}}$" ;
+    statscv:computationMethod "Estimate the 90th and 10th percentiles and divide P90 by P10."@en ;
+    skos:broader stats:Dispersion, stats:DerivedRatios ;
+    skos:inScheme stats: .
+
+stats:Midhinge a skos:Concept ;
+    skos:prefLabel "Midhinge"@en ;
+    skos:definition "The arithmetic mean of the first and third quartiles, providing a robust measure of central location."@en ;
+    skos:scopeNote "Complements the median and midrange by averaging the 25th and 75th percentiles."@en ;
+    statscv:formula "$\\frac{Q_1 + Q_3}{2}$" ;
+    statscv:computationMethod "Estimate first quartile Q1 and third quartile Q3, then compute their average."@en ;
+    skos:broader stats:RobustStatistics, stats:CentralTendency ;
+    skos:inScheme stats: .
+
+stats:RobustCoefficientOfVariation a skos:Concept ;
+    skos:prefLabel "Robust coefficient of variation"@en ;
+    skos:definition "A robust analogue of the coefficient of variation computed as the median absolute deviation divided by the magnitude of the median."@en ;
+    skos:scopeNote "Resistant to extreme outliers; undefined when median is zero."@en ;
+    statscv:formula "$\\frac{\\mathrm{MAD}}{|\\mathrm{median}(x)|}$" ;
+    statscv:computationMethod "Compute MAD and median over valid values, then divide MAD by |median|."@en ;
+    skos:broader stats:RobustStatistics, stats:DerivedRatios ;
+    skos:inScheme stats: .
+
+stats:NormalizedMAD a skos:Concept ;
+    skos:prefLabel "Normalized MAD"@en ;
+    skos:definition "The median absolute deviation scaled by a consistency constant (1 / 0.6745 ≈ 1.4826) to match the standard deviation of a normal distribution."@en ;
+    skos:scopeNote "Provides a consistent, outlier-resistant estimator of population standard deviation under normality."@en ;
+    statscv:formula "$\\mathrm{MAD}_{\\text{norm}} = \\frac{\\mathrm{MAD}}{0.6745} \\approx 1.4826 \\times \\mathrm{MAD}$" ;
+    statscv:computationMethod "Compute median absolute deviation (MAD) and divide by 0.6745."@en ;
+    skos:broader stats:RobustStatistics, stats:Dispersion ;
+    skos:inScheme stats: .
+
+stats:NormalizedIQR a skos:Concept ;
+    skos:prefLabel "Normalized IQR"@en ;
+    skos:definition "The interquartile range scaled by a consistency constant (1 / 1.349 ≈ 0.7413) to match the standard deviation of a normal distribution."@en ;
+    skos:scopeNote "Provides a consistent, outlier-resistant estimator of population standard deviation under normality."@en ;
+    statscv:formula "$\\mathrm{IQR}_{\\text{norm}} = \\frac{\\mathrm{IQR}}{1.349}$" ;
+    statscv:computationMethod "Compute interquartile range (Q3 - Q1) and divide by 1.349."@en ;
+    skos:broader stats:RobustStatistics, stats:Dispersion ;
+    skos:inScheme stats: .
+
+stats:LCV a skos:Concept ;
+    skos:prefLabel "L-moment coefficient of variation"@en ;
+    skos:altLabel "L-CV"@en ;
+    skos:definition "A bounded, robust analogue of the coefficient of variation defined as the ratio of the second L-moment to the first L-moment."@en ;
+    skos:scopeNote "Computed from linear combinations of order statistics; bounded in (0, 1) for positive data."@en ;
+    statscv:formula "$\\tau_2 = \\frac{\\lambda_2}{\\lambda_1}$" ;
+    statscv:computationMethod "Compute the first two sample L-moments (lambda_1, lambda_2) from sorted observations and divide lambda_2 by lambda_1."@en ;
+    skos:broader stats:RobustStatistics, stats:Dispersion ;
+    skos:inScheme stats: .
+
+stats:LSkewness a skos:Concept ;
+    skos:prefLabel "L-skewness"@en ;
+    skos:definition "A robust measure of distributional asymmetry defined as the ratio of the third L-moment to the second L-moment."@en ;
+    skos:scopeNote "Bounded in [-1, 1] and less sensitive to extreme outliers than conventional moment skewness."@en ;
+    statscv:formula "$\\tau_3 = \\frac{\\lambda_3}{\\lambda_2}$" ;
+    statscv:computationMethod "Compute sample L-moments lambda_2 and lambda_3 from sorted observations and divide lambda_3 by lambda_2."@en ;
+    skos:broader stats:RobustStatistics, stats:ShapeDistribution ;
+    skos:inScheme stats: .
+
+stats:LKurtosis a skos:Concept ;
+    skos:prefLabel "L-kurtosis"@en ;
+    skos:definition "A robust measure of tail-heaviness and peakedness defined as the ratio of the fourth L-moment to the second L-moment."@en ;
+    skos:scopeNote "Approximately 0.1226 for a normal distribution; less sensitive to extreme values than conventional kurtosis."@en ;
+    statscv:formula "$\\tau_4 = \\frac{\\lambda_4}{\\lambda_2}$" ;
+    statscv:computationMethod "Compute sample L-moments lambda_2 and lambda_4 from sorted observations and divide lambda_4 by lambda_2."@en ;
+    skos:broader stats:RobustStatistics, stats:ShapeDistribution ;
+    skos:inScheme stats: .
+
+stats:BimodalityCoefficient a skos:Concept ;
+    skos:prefLabel "Bimodality coefficient"@en ;
+    skos:definition "A statistic derived from sample skewness and excess kurtosis used to assess whether a distribution is unimodal or bimodal/multimodal."@en ;
+    skos:scopeNote "Values above 5/9 (≈ 0.555, corresponding to a uniform distribution) suggest bimodality or multimodality, though heavy skew can also inflate it."@en ;
+    statscv:formula "$\\mathrm{BC} = \\frac{G_1^2 + 1}{G_2 + \\frac{3(n-1)^2}{(n-2)(n-3)}}$" ;
+    statscv:computationMethod "Compute sample skewness G1, sample excess kurtosis G2, and sample size n, then evaluate the bimodality coefficient formula."@en ;
+    skos:broader stats:ShapeDistribution ;
+    skos:inScheme stats: .
+
+stats:KellySkewness a skos:Concept ;
+    skos:prefLabel "Kelly's skewness"@en ;
+    skos:definition "A percentile-based measure of skewness using the 10th, 50th, and 90th percentiles."@en ;
+    skos:scopeNote "Captures more of the distribution than Bowley's quartile skewness while remaining robust to extreme outliers."@en ;
+    statscv:formula "$\\frac{P_{90} + P_{10} - 2\\,\\mathrm{median}}{P_{90} - P_{10}}$" ;
+    statscv:computationMethod "Estimate P10, P50 (median), and P90, then divide (P90 + P10 - 2*median) by (P90 - P10)."@en ;
+    skos:broader stats:ShapeDistribution ;
+    skos:inScheme stats: .
+
+stats:Lag1Autocorrelation a skos:Concept ;
+    skos:prefLabel "Lag-1 autocorrelation"@en ;
+    skos:definition "The Pearson correlation between consecutive observations in sequence order, measuring serial dependence or trend."@en ;
+    skos:scopeNote "Values near +1 indicate strong positive serial correlation or ordering; values near 0 indicate serial independence."@en ;
+    statscv:formula "$r_1 = \\frac{\\sum_{t=1}^{n-1} (x_t - \\bar{x})(x_{t+1} - \\bar{x})}{\\sum_{t=1}^{n} (x_t - \\bar{x})^2}$" ;
+    statscv:computationMethod "Compute mean over ordered valid observations, sum products of consecutive centered values, and divide by total sum of squares."@en ;
+    skos:broader stats:ShapeDistribution, stats:AssociationDependence ;
+    skos:inScheme stats: .
+
+stats:BenfordMAD a skos:Concept ;
+    skos:prefLabel "Benford's law MAD"@en ;
+    skos:definition "The mean absolute deviation between observed first-significant-digit proportions and the theoretical distribution predicted by Benford's law."@en ;
+    skos:scopeNote "Used in data quality auditing and anomaly detection; smaller values indicate closer conformity to Benford's law."@en ;
+    statscv:formula "$\\mathrm{MAD} = \\frac{1}{9} \\sum_{d=1}^{9} \\left| p_{\\text{obs}}(d) - \\log_{10}\\left(1 + \\frac{1}{d}\\right) \\right|$" ;
+    statscv:computationMethod "Extract leading non-zero digits (1-9), compute empirical proportions, and average absolute differences from log10(1 + 1/d)."@en ;
+    skos:broader stats:ShapeDistribution ;
+    skos:inScheme stats: .
+
+stats:ZeroShare a skos:Concept ;
+    skos:prefLabel "Zero share"@en ;
+    skos:definition "The proportion of valid numeric observations that are exactly equal to zero."@en ;
+    skos:scopeNote "Complements PositiveShare and NegativeShare to quantify zero-inflation."@en ;
+    statscv:formula "$\\frac{n_{=0}}{n_{<0} + n_{=0} + n_{>0}}$" ;
+    statscv:computationMethod "Divide the count of zero values by the total count of valid numeric observations."@en ;
+    skos:broader stats:DerivedRatios ;
+    skos:inScheme stats: .
+
+stats:LowerInnerFence a skos:Concept ;
+    skos:prefLabel "Lower inner Tukey fence"@en ;
+    skos:definition "The lower threshold for mild outliers under Tukey's IQR rule, typically Q1 − 1.5 × IQR."@en ;
+    skos:scopeNote "Observations below this threshold (and above the lower outer fence) are classified as mild lower outliers."@en ;
+    statscv:formula "$Q_1 - 1.5 \\times \\mathrm{IQR}$" ;
+    statscv:computationMethod "Compute first quartile Q1 and interquartile range IQR, then subtract 1.5 * IQR from Q1."@en ;
+    skos:broader stats:Outliers ;
+    skos:inScheme stats: .
+
+stats:UpperInnerFence a skos:Concept ;
+    skos:prefLabel "Upper inner Tukey fence"@en ;
+    skos:definition "The upper threshold for mild outliers under Tukey's IQR rule, typically Q3 + 1.5 × IQR."@en ;
+    skos:scopeNote "Observations above this threshold (and below the upper outer fence) are classified as mild upper outliers."@en ;
+    statscv:formula "$Q_3 + 1.5 \\times \\mathrm{IQR}$" ;
+    statscv:computationMethod "Compute third quartile Q3 and interquartile range IQR, then add 1.5 * IQR to Q3."@en ;
+    skos:broader stats:Outliers ;
+    skos:inScheme stats: .
+
+stats:LowerOuterFence a skos:Concept ;
+    skos:prefLabel "Lower outer Tukey fence"@en ;
+    skos:definition "The lower threshold for extreme outliers under Tukey's IQR rule, typically Q1 − 3 × IQR."@en ;
+    skos:scopeNote "Observations below this threshold are classified as extreme lower outliers."@en ;
+    statscv:formula "$Q_1 - 3 \\times \\mathrm{IQR}$" ;
+    statscv:computationMethod "Compute first quartile Q1 and interquartile range IQR, then subtract 3 * IQR from Q1."@en ;
+    skos:broader stats:Outliers ;
+    skos:inScheme stats: .
+
+stats:UpperOuterFence a skos:Concept ;
+    skos:prefLabel "Upper outer Tukey fence"@en ;
+    skos:definition "The upper threshold for extreme outliers under Tukey's IQR rule, typically Q3 + 3 × IQR."@en ;
+    skos:scopeNote "Observations above this threshold are classified as extreme upper outliers."@en ;
+    statscv:formula "$Q_3 + 3 \\times \\mathrm{IQR}$" ;
+    statscv:computationMethod "Compute third quartile Q3 and interquartile range IQR, then add 3 * IQR to Q3."@en ;
+    skos:broader stats:Outliers ;
+    skos:inScheme stats: .
+
+stats:OutlierPercentage a skos:Concept ;
+    skos:prefLabel "Outlier percentage"@en ;
+    skos:definition "The percentage of valid observations classified as outliers relative to the total valid observation count."@en ;
+    skos:scopeNote "Typically computed using Tukey IQR fences or Z-score thresholds."@en ;
+    statscv:formula "$\\frac{n_{\\text{outliers}}}{n_{\\text{valid}}} \\times 100$" ;
+    statscv:computationMethod "Divide the total count of detected outliers by the number of valid observations and multiply by 100."@en ;
+    skos:broader stats:Outliers, stats:DerivedRatios ;
+    skos:inScheme stats: .
+
+stats:TotalCharacterLength a skos:Concept ;
+    skos:prefLabel "Total character length"@en ;
+    skos:definition "The sum of character lengths across all non-null string values in a column."@en ;
+    skos:scopeNote "Measure character count using UTF-8 code points or grapheme clusters according to convention."@en ;
+    statscv:formula "$\\sum_{i=1}^{n} \\mathrm{len}(s_i)$" ;
+    statscv:computationMethod "Sum the character lengths of all non-null values."@en ;
+    skos:broader stats:TextMeasures ;
+    skos:inScheme stats: .
+
+stats:LengthVariance a skos:Concept ;
+    skos:prefLabel "String length variance"@en ;
+    skos:definition "The variance of character lengths across non-null string values."@en ;
+    skos:scopeNote "Equals the square of string length standard deviation."@en ;
+    statscv:formula "$\\frac{1}{n} \\sum_{i=1}^{n} (\\mathrm{len}(s_i) - \\bar{L})^2$" ;
+    statscv:computationMethod "Compute variance over the character lengths of all non-null string values."@en ;
+    skos:broader stats:TextMeasures ;
+    skos:inScheme stats: .
+
+stats:LengthCoefficientOfVariation a skos:Concept ;
+    skos:prefLabel "String length coefficient of variation"@en ;
+    skos:definition "The ratio of the standard deviation of string lengths to the average string length."@en ;
+    skos:scopeNote "Measures relative variability in string lengths across values."@en ;
+    statscv:formula "$\\frac{s_L}{\\bar{L}}$" ;
+    statscv:computationMethod "Divide string length standard deviation by average string length."@en ;
+    skos:broader stats:TextMeasures, stats:DerivedRatios ;
+    skos:inScheme stats: .
+
+stats:InferredDataType a skos:Concept ;
+    skos:prefLabel "Inferred data type"@en ;
+    skos:definition "The most specific data type inferred for all non-null values in a variable or column (e.g., string, integer, float, date, boolean)."@en ;
+    skos:scopeNote "Supports FAIR metadata profiling and schema generation."@en ;
+    statscv:computationMethod "Scan non-null values against type grammars (integer, float, boolean, date/datetime, fallback string) and select the tightest matching type."@en ;
+    skos:broader stats:Metadata ;
+    skos:inScheme stats: .
+
+stats:ZeroPaddedNumeric a skos:Concept ;
+    skos:prefLabel "Zero-padded numeric string indicator"@en ;
+    skos:definition "A boolean indicator denoting that a text column contains exclusively numeric character strings where at least one value carries a significant leading zero that would be lost if cast to a numeric type."@en ;
+    skos:scopeNote "Important for FAIR tabular data preservation (e.g., postal codes, ICD codes, padded identifiers)."@en ;
+    statscv:computationMethod "Verify that all non-null values parse as numeric strings and at least one non-fraction value begins with a leading zero."@en ;
+    skos:broader stats:Metadata ;
+    skos:inScheme stats: .
+
+stats:DecimalPrecision a skos:Concept ;
+    skos:prefLabel "Maximum decimal precision"@en ;
+    skos:definition "The maximum number of digits observed after the decimal point across numeric values."@en ;
+    skos:scopeNote "Useful for schema sizing and numeric precision preservation in FAIR datasets."@en ;
+    statscv:computationMethod "Count fractional digits for each numeric observation and take the maximum."@en ;
+    skos:broader stats:SizeCount, stats:Metadata ;
+    skos:inScheme stats: .
+
+stats:SortOrder a skos:Concept ;
+    skos:prefLabel "Sort order"@en ;
+    skos:definition "A categorical indicator describing whether observed values are ordered (e.g., ascending, descending, or unsorted)."@en ;
+    skos:scopeNote "Aids query optimization, indexing, and structural profiling of datasets."@en ;
+    statscv:computationMethod "Compare consecutive non-null values to classify sequence order as ascending, descending, constant, or unsorted."@en ;
+    skos:broader stats:Metadata ;
     skos:inScheme stats: .

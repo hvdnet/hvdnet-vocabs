@@ -1,0 +1,74 @@
+# ==============================================================================
+# Skosmos Vocabulary Configuration for HVDNet Vocabularies
+#
+# This file provides the vocabulary definitions to be included in your Skosmos
+# config.ttl (or loaded into the Skosmos configuration SPARQL graph).
+#
+# Documentation: https://github.com/NatLibFi/Skosmos/wiki/Configuration
+# ==============================================================================
+
+@prefix void:    <http://rdfs.org/ns/void#> .
+@prefix skosmos: <http://purl.org/net/skosmos#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix dct:     <http://purl.org/dc/terms/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix statscv: <https://w3id.org/hvdnet/statistics/cv/> .
+@prefix :        <http://localhost/skosmos/> .
+
+# ------------------------------------------------------------------------------
+# Descriptive Statistics Vocabulary
+# ------------------------------------------------------------------------------
+:statistics a skosmos:Vocabulary, void:Dataset ;
+    dc:title "Descriptive Statistics Vocabulary"@en ;
+    skosmos:shortName "stats" ;
+    dc:description "Controlled vocabulary of summary statistics, distribution properties, robust location/scale metrics, and data quality indicators for FAIR data."@en ;
+    dc:subject :cat_general ;
+
+    void:uriSpace "https://w3id.org/hvdnet/statistics/" ;
+    skosmos:mainConceptScheme <https://w3id.org/hvdnet/statistics/> ;
+    skosmos:sparqlGraph <https://w3id.org/hvdnet/statistics/> ;
+
+    skosmos:defaultLanguage "en" ;
+    skosmos:language "en" ;
+
+    skosmos:showTopConcepts true ;
+    skosmos:fullAlphabeticalIndex true ;
+    skosmos:additionalSearchLanguages "en" ;
+
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
+    void:dataDump <https://raw.githubusercontent.com/hvdnet/hvdnet-vocabs/main/statistics.ttl> ;
+
+    # Custom property labels for Skosmos concept display
+    skosmos:propertyLabel [
+        skosmos:property statscv:formula ;
+        rdfs:label "Formula"@en
+    ] ;
+    skosmos:propertyLabel [
+        skosmos:property statscv:computationMethod ;
+        rdfs:label "Computation Method"@en
+    ] .
+
+# ------------------------------------------------------------------------------
+# QSV Statistics Vocabulary
+# ------------------------------------------------------------------------------
+:qsv-statistics a skosmos:Vocabulary, void:Dataset ;
+    dc:title "QSV Statistics Vocabulary"@en ;
+    skosmos:shortName "qsv-stats" ;
+    dc:description "Controlled vocabulary describing statistical measures and data profiling metrics produced by the QSV Data Wrangling package, mapped to the Descriptive Statistics Vocabulary."@en ;
+    dc:subject :cat_general ;
+
+    void:uriSpace "https://w3id.org/hvdnet/qsv/statistics/" ;
+    skosmos:mainConceptScheme <https://w3id.org/hvdnet/qsv/statistics/> ;
+    skosmos:sparqlGraph <https://w3id.org/hvdnet/qsv/statistics/> ;
+
+    skosmos:defaultLanguage "en" ;
+    skosmos:language "en" ;
+
+    skosmos:showTopConcepts true ;
+    skosmos:fullAlphabeticalIndex true ;
+    skosmos:additionalSearchLanguages "en" ;
+
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
+    void:dataDump <https://raw.githubusercontent.com/hvdnet/hvdnet-vocabs/main/qsv-statistics.ttl> .
+    

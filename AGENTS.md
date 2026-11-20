@@ -10,7 +10,7 @@ HVDNet Vocabularies is developed and maintained by the [High-Value Data Network]
 
 ### Published Vocabularies
 1. **Descriptive Statistics Vocabulary (`statistics.ttl`)**: A generic, tool-agnostic taxonomy of summary statistics, distribution properties, robust location/scale metrics, and data quality indicators for FAIR data.
-2. **QSV Vocabulary (`qsv.ttl`)**: Controlled vocabulary covering statistical measures and data profiling metrics produced by the `qsv stats` and `qsv moarstats` commands from the [QSV Data Wrangling package](https://qsv.dathere.com/), mapped to `statistics.ttl`.
+2. **QSV Vocabulary (`qsv-statistics.ttl`)**: Controlled vocabulary covering statistical measures and data profiling metrics produced by the `qsv stats` and `qsv moarstats` commands from the [QSV Data Wrangling package](https://qsv.dathere.com/), mapped to `statistics.ttl`.
 
 ### Publishing Platform
 Vocabularies are published using a **[Skosmos](https://skosmos.org/)** vocabulary browser server backed by a SPARQL triple store (e.g., Apache Jena Fuseki).
@@ -34,7 +34,7 @@ Vocabularies are published using a **[Skosmos](https://skosmos.org/)** vocabular
 ## 📂 Project Structure
 
 - `statistics.ttl`: Primary descriptive statistics taxonomy.
-- `qsv.ttl`: QSV command statistics mapped to SKOS concepts.
+- `qsv-statistics.ttl`: QSV command statistics mapped to SKOS concepts.
 - `scripts/`: Validation scripts and SPARQL queries.
 - `LICENSE`: Dual-license definition (CC BY 4.0 + MIT).
 - `README.md`: Public documentation and vocabulary index.
@@ -90,7 +90,7 @@ Each individual concept must follow this structure:
 2. **Alphabetical Sorting**: Maintain clean, alphabetically sorted lists for all `skos:narrower` blocks.
 3. **Generic vs. Tool-Specific**:
    - `statistics.ttl` must remain generic, standardized, and focused on FAIR data principles. Avoid tool-specific heuristics or implementation details.
-   - Tool-specific implementations, CLI options, and specialized flags belong in tool vocabularies (e.g., `qsv.ttl`), linked back to `statistics.ttl` via `skos:exactMatch`, `skos:closeMatch`, or `skos:broadMatch`.
+   - Tool-specific implementations, CLI options, and specialized flags belong in tool vocabularies (e.g., `qsv-statistics.ttl`), linked back to `statistics.ttl` via `skos:exactMatch`, `skos:closeMatch`, or `skos:broadMatch`.
 4. **Validation Before Merge**:
    Always validate `.ttl` files using `rdflib` before finalizing turns:
    ```bash
@@ -98,7 +98,7 @@ Each individual concept must follow this structure:
    import rdflib
    g = rdflib.Graph()
    g.parse('statistics.ttl', format='turtle')
-   g.parse('qsv.ttl', format='turtle')
+   g.parse('qsv-statistics.ttl', format='turtle')
    print('Syntax valid!')
    "
    ```
